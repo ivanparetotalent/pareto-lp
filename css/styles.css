@@ -438,6 +438,19 @@ h1, h2, h3, .headline-font {
 .hero-micro { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
 .hero-micro strong { color: var(--text-secondary); }
 
+/* Hero social proof banner */
+.hero-social-proof {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 0;
+}
+.hero-social-proof img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+  opacity: 0.85;
+}
+
 /* VSL */
 .vsl-wrapper {
   max-width: 780px;
@@ -447,6 +460,20 @@ h1, h2, h3, .headline-font {
   border: 1px solid var(--border-glass-strong);
   box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 0 60px rgba(16,185,129,0.04);
   position: relative;
+  z-index: 1;
+}
+.vsl-glow {
+  position: absolute;
+  inset: -60px;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(16,185,129,0.12) 0%, rgba(16,185,129,0.04) 40%, transparent 70%);
+  z-index: -1;
+  filter: blur(40px);
+  pointer-events: none;
+  animation: vslGlowPulse 4s ease-in-out infinite;
+}
+@keyframes vslGlowPulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
 }
 .vsl-wrapper wistia-player { display: block; width: 100%; }
 
@@ -755,6 +782,31 @@ section { padding: 120px 0; position: relative; }
   border-radius: 50%;
   animation: glowPulse 4s ease-in-out infinite;
   pointer-events: none;
+}
+
+/* Program value summary */
+.program-value-summary {
+  margin-top: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.value-total {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  letter-spacing: 0.01em;
+}
+.value-total strong {
+  color: var(--text-primary);
+  font-size: 22px;
+}
+.value-price {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
 /* ═══════════════════════════════════
