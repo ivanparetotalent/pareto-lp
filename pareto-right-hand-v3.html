@@ -1,0 +1,2691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Right Hand Program — Pareto Talent</title>
+<meta name="description" content="A full-time, AI-trained Executive Assistant from Latin America — hand-matched, continuously developed, and backed by the only EA program that also trains you how to lead her.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<!-- Wistia VSL -->
+<script src="https://fast.wistia.com/player.js" async></script>
+<script src="https://fast.wistia.com/embed/6fpq5v0k1l.js" async type="module"></script>
+<script src="https://fast.wistia.com/embed/sw5w2b28uk.js" async type="module"></script>
+<style>
+/* Wistia swatch */
+wistia-player[media-id='6fpq5v0k1l']:not(:defined) {
+  background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/6fpq5v0k1l/swatch');
+  display: block;
+  filter: blur(5px);
+  padding-top: 56.25%;
+}
+
+wistia-player[media-id='sw5w2b28uk']:not(:defined) {
+  background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/sw5w2b28uk/swatch');
+  display: block;
+  filter: blur(5px);
+  padding-top: 177.78%;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-deep: #050A0E;
+  --bg-surface: #0B1119;
+  --bg-elevated: #0F1923;
+  --bg-card: rgba(255,255,255,0.025);
+  --bg-card-hover: rgba(255,255,255,0.045);
+  --border-glass: rgba(255,255,255,0.06);
+  --border-glass-strong: rgba(255,255,255,0.10);
+  --border-glass-hover: rgba(255,255,255,0.16);
+  --green: #10B981;
+  --green-light: #34D399;
+  --green-bright: #6EE7B7;
+  --green-glow: rgba(16,185,129,0.3);
+  --green-muted: rgba(16,185,129,0.08);
+  --green-subtle: rgba(16,185,129,0.04);
+  --indigo: #6366F1;
+  --teal: #14B8A6;
+  --text-primary: #F0F4F8;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-dim: #475569;
+  --radius-xl: 20px;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Noise */
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 0;
+}
+
+/* Ambient orbs */
+.ambient { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+.ambient .orb { position: absolute; border-radius: 50%; filter: blur(140px); }
+.ambient .orb-1 { width: 700px; height: 700px; background: rgba(16,185,129,0.07); top: -300px; right: -200px; }
+.ambient .orb-2 { width: 500px; height: 500px; background: rgba(99,102,241,0.05); bottom: 20%; left: -250px; }
+.ambient .orb-3 { width: 450px; height: 450px; background: rgba(20,184,166,0.04); bottom: -100px; right: 15%; }
+.ambient .orb-4 { width: 300px; height: 300px; background: rgba(16,185,129,0.05); top: 50%; left: 30%; }
+
+.container { max-width: 1140px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
+
+h1, h2, h3, .headline-font {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+/* ═══════════════════════════════════
+   SCROLL ANIMATIONS
+   ═══════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+.reveal-delay-5 { transition-delay: 0.40s; }
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* ═══════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 14px 0;
+  background: rgba(5,10,14,0.6);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid var(--border-glass);
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.nav.scrolled { background: rgba(5,10,14,0.92); }
+.nav .container { display: flex; justify-content: space-between; align-items: center; }
+.nav-logo {
+  display: flex; align-items: center;
+  text-decoration: none;
+}
+.nav-logo img { height: 30px; width: auto; filter: brightness(0) invert(1); }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-link {
+  font-size: 13px; font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-link:hover { color: var(--text-primary); }
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 22px;
+  background: var(--green);
+  color: #050A0E;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700; font-size: 13px;
+  letter-spacing: -0.01em;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  border: none; cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 0 0 1px rgba(16,185,129,0.3), 0 2px 8px rgba(16,185,129,0.2);
+}
+.nav-cta:hover {
+  background: var(--green-light);
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px rgba(16,185,129,0.4), 0 8px 25px rgba(16,185,129,0.3);
+}
+
+/* ═══════════════════════════════════
+   GLASS CARD
+   ═══════════════════════════════════ */
+.glass {
+  background: var(--bg-card);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  position: relative; overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+.glass::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: inherit; padding: 1px;
+  background: linear-gradient(135deg, rgba(16,185,129,0.18) 0%, transparent 35%, transparent 65%, rgba(99,102,241,0.1) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none; opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.glass:hover {
+  border-color: var(--border-glass-hover);
+  background: var(--bg-card-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35), 0 0 40px rgba(16,185,129,0.04);
+}
+.glass:hover::before { opacity: 1; }
+
+/* ═══════════════════════════════════
+   3D PRIMARY BUTTON
+   ═══════════════════════════════════ */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 18px 40px;
+  background: linear-gradient(180deg, var(--green-light) 0%, var(--green) 100%);
+  color: #050A0E;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800; font-size: 15px;
+  letter-spacing: -0.01em;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  border: none; cursor: pointer;
+  position: relative; overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.25) inset,
+    0 -2px 0 0 rgba(0,0,0,0.15) inset,
+    0 0 0 1px rgba(16,185,129,0.4),
+    0 4px 12px rgba(16,185,129,0.25),
+    0 8px 24px rgba(16,185,129,0.15);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+}
+.btn-primary::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 100%);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  pointer-events: none;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.3) inset,
+    0 -2px 0 0 rgba(0,0,0,0.15) inset,
+    0 0 0 1px rgba(16,185,129,0.5),
+    0 8px 20px rgba(16,185,129,0.35),
+    0 16px 40px rgba(16,185,129,0.2),
+    0 0 80px rgba(16,185,129,0.08);
+}
+.btn-primary:hover::after { transform: translateX(100%); }
+.btn-primary:active {
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.15) inset,
+    0 -1px 0 0 rgba(0,0,0,0.1) inset,
+    0 0 0 1px rgba(16,185,129,0.4),
+    0 2px 8px rgba(16,185,129,0.2);
+}
+.btn-primary svg { width: 16px; height: 16px; position: relative; }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 16px 28px;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600; font-size: 14px;
+  border: 1px solid var(--border-glass-strong);
+  border-radius: var(--radius-md);
+  text-decoration: none; cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--green);
+  color: var(--green-light);
+  background: var(--green-muted);
+  box-shadow: 0 0 20px rgba(16,185,129,0.06);
+}
+
+/* ═══════════════════════════════════
+   HERO
+   ═══════════════════════════════════ */
+.hero { padding: 100px 0 40px; text-align: center; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 20px 8px 12px;
+  background: var(--green-subtle);
+  border: 1px solid rgba(16,185,129,0.12);
+  border-radius: 100px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px; font-weight: 600;
+  color: var(--green-light);
+  letter-spacing: 0.06em; text-transform: uppercase;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+}
+.hero-badge .dot {
+  width: 7px; height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--green);
+  animation: breathe 2.5s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes shimmerGlow {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes pulseRing {
+  0% { box-shadow: 0 0 0 0 rgba(16,185,129,0.3); }
+  70% { box-shadow: 0 0 0 12px rgba(16,185,129,0); }
+  100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+@keyframes breathe {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--green); }
+  50% { opacity: 0.5; box-shadow: 0 0 4px var(--green); }
+}
+.hero h1 {
+  font-size: clamp(32px, 4.8vw, 56px);
+  font-weight: 800; line-height: 1.08;
+  margin-bottom: 18px;
+  max-width: 740px;
+  margin-left: auto; margin-right: auto;
+}
+.hero h1 .accent {
+  background: linear-gradient(135deg, var(--green), var(--green-light), var(--teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: clamp(15px, 1.6vw, 17px);
+  color: var(--text-secondary);
+  max-width: 540px;
+  margin: 0 auto 24px; line-height: 1.7;
+}
+.hero-cta-row {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  flex-wrap: wrap; margin-bottom: 12px;
+}
+.hero-micro { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
+.hero-micro strong { color: var(--text-secondary); }
+
+/* VSL */
+.vsl-wrapper {
+  max-width: 780px;
+  margin: 32px auto 0;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--border-glass-strong);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 0 60px rgba(16,185,129,0.04);
+  position: relative;
+}
+.vsl-wrapper wistia-player { display: block; width: 100%; }
+
+/* ═══════════════════════════════════
+   SOCIAL PROOF
+   ═══════════════════════════════════ */
+.proof-bar { padding: 60px 0 20px; }
+.proof-bar .label {
+  text-align: center;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-dim); margin-bottom: 28px;
+}
+.logo-row {
+  display: flex; align-items: center; justify-content: center;
+  gap: 40px; flex-wrap: wrap;
+  opacity: 0.4; filter: grayscale(100%) brightness(2);
+}
+.logo-row img { height: 28px; width: auto; object-fit: contain; }
+
+/* ═══════════════════════════════════
+   STATS
+   ═══════════════════════════════════ */
+.stats-bar { padding: 40px 0 80px; }
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--border-glass);
+  border-radius: var(--radius-xl); overflow: hidden;
+  border: 1px solid var(--border-glass);
+}
+.stat {
+  background: rgba(11,17,25,0.9);
+  backdrop-filter: blur(10px);
+  padding: 36px 20px; text-align: center;
+}
+.stat-number {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 34px; font-weight: 800;
+  background: linear-gradient(135deg, var(--green), var(--green-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 6px; letter-spacing: -0.03em;
+}
+.stat-label { font-size: 13px; color: var(--text-muted); font-weight: 500; line-height: 1.4; }
+
+/* ═══════════════════════════════════
+   SECTION SHARED
+   ═══════════════════════════════════ */
+section { padding: 80px 0; position: relative; }
+.section-badge {
+  display: inline-flex;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--green); margin-bottom: 14px;
+}
+.section-eyebrow {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px; font-weight: 600;
+  color: var(--green-light);
+  margin-bottom: 8px;
+  letter-spacing: 0.01em;
+}
+.section-title {
+  font-size: clamp(30px, 3.8vw, 46px);
+  font-weight: 800; line-height: 1.1;
+  margin-bottom: 18px;
+}
+.section-title .accent {
+  background: linear-gradient(135deg, var(--green), var(--green-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.section-subtitle {
+  font-size: 17px; color: var(--text-secondary);
+  max-width: 580px; line-height: 1.75;
+}
+.section-subtitle.center { margin: 0 auto; text-align: center; }
+.text-center { text-align: center; }
+
+/* Section-level gradient backgrounds */
+.section-gradient-1::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse 80% 60% at 20% 50%, rgba(16,185,129,0.04), transparent);
+  pointer-events: none;
+}
+.section-gradient-2::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse 70% 50% at 80% 40%, rgba(99,102,241,0.03), transparent);
+  pointer-events: none;
+}
+.section-gradient-3::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(16,185,129,0.035), transparent);
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════
+   PROBLEM SECTION — Fixed icons
+   ═══════════════════════════════════ */
+.problem-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px; margin-top: 48px;
+}
+.problem-card { padding: 32px; text-align: center; }
+.problem-card .icon-wrap {
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, var(--green-muted), var(--green-subtle));
+  border: 1px solid rgba(16,185,129,0.1);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 18px;
+  font-size: 22px;
+  line-height: 1;
+}
+/* SVG icons for consistency */
+.problem-card .icon-wrap svg {
+  width: 22px; height: 22px;
+  stroke: var(--green);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.problem-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.problem-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+.problem-tag {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px; font-weight: 700;
+  color: var(--green);
+  background: var(--green-muted);
+  padding: 3px 10px; border-radius: 6px;
+  margin-top: 14px;
+}
+
+/* ═══════════════════════════════════
+   BRIDGE / REFRAME
+   ═══════════════════════════════════ */
+.bridge-card {
+  padding: 56px 48px; text-align: center;
+  background: linear-gradient(135deg, rgba(16,185,129,0.05), rgba(99,102,241,0.03), rgba(20,184,166,0.03));
+  border: 1px solid rgba(16,185,129,0.1);
+}
+
+/* ═══════════════════════════════════
+   ASSISTANT PHOTO SECTION
+   ═══════════════════════════════════ */
+.assistant-section {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0; overflow: hidden; margin-top: 48px;
+  min-height: 560px;
+}
+.assistant-photo {
+  background-image: url('https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/6826971455ccf4d45a709bbd.jpeg');
+  background-size: cover; background-position: center top;
+  min-height: 560px;
+}
+.assistant-content {
+  padding: 48px 44px;
+  display: flex; flex-direction: column; justify-content: center;
+  background: linear-gradient(135deg, rgba(16,185,129,0.03), transparent);
+}
+.assistant-content h3 { font-size: 28px; font-weight: 800; margin-bottom: 18px; line-height: 1.15; }
+.assistant-content p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 14px; }
+.assistant-content .highlight-list { list-style: none; padding: 0; margin-top: 8px; }
+.assistant-content .highlight-list li {
+  font-size: 14px; color: var(--text-secondary); line-height: 1.65;
+  padding: 6px 0 6px 24px; position: relative;
+}
+.assistant-content .highlight-list li::before {
+  content: '';
+  position: absolute; left: 0; top: 13px;
+  width: 8px; height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(16,185,129,0.4);
+}
+
+/* ═══════════════════════════════════
+   SOLUTION / PROGRAM
+   ═══════════════════════════════════ */
+.solution-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; margin-top: 48px;
+}
+.solution-card { padding: 32px; }
+.solution-card .tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.04em; color: var(--green);
+  margin-bottom: 10px; display: block;
+}
+.solution-card .value {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px; font-weight: 700;
+  color: var(--green-light);
+  background: var(--green-muted);
+  border: 1px solid rgba(16,185,129,0.1);
+  padding: 3px 10px; border-radius: 6px;
+  margin-bottom: 12px;
+}
+.solution-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+.solution-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+.solution-full { grid-column: 1 / -1; text-align: center; padding: 44px; }
+
+/* ═══════════════════════════════════
+   COMPARISON
+   ═══════════════════════════════════ */
+.comparison-wrap { margin-top: 48px; border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-glass); }
+.comparison-table { width: 100%; border-collapse: collapse; }
+.comparison-table thead th {
+  background: rgba(11,17,25,0.9); padding: 20px 28px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px; font-weight: 700;
+  text-align: left; color: var(--text-muted);
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--border-glass);
+}
+.comparison-table thead th:last-child { color: var(--green); }
+.comparison-table tbody td {
+  padding: 20px 28px; font-size: 14px;
+  border-bottom: 1px solid var(--border-glass);
+  vertical-align: top; line-height: 1.6;
+}
+.comparison-table tbody tr:last-child td { border-bottom: none; }
+.comparison-table tbody td:first-child { color: var(--text-muted); font-style: italic; }
+.comparison-table tbody td:last-child { color: var(--text-primary); }
+.comparison-table tbody tr { background: rgba(255,255,255,0.01); transition: background 0.3s; }
+.comparison-table tbody tr:hover { background: rgba(16,185,129,0.025); }
+
+/* ═══════════════════════════════════
+   EVOLUTION PATH
+   ═══════════════════════════════════ */
+.evo-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px; margin-top: 48px; position: relative;
+}
+.evo-grid::before {
+  content: '';
+  position: absolute; top: 50%; left: 8%; right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+  opacity: 0.15;
+}
+.evo-card { text-align: center; padding: 40px 24px; position: relative; }
+.evo-card .stage-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  background: linear-gradient(180deg, var(--green-light), var(--green));
+  border-radius: 50%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px; font-weight: 800;
+  color: #050A0E;
+  margin-bottom: 16px; position: relative; z-index: 1;
+  box-shadow: 0 0 0 6px var(--green-muted), 0 4px 12px rgba(16,185,129,0.2);
+}
+.evo-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+.evo-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+
+/* ═══════════════════════════════════
+   TESTIMONIALS
+   ═══════════════════════════════════ */
+.testimonials-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px; margin-top: 16px;
+}
+.testimonial-card { padding: 32px; display: flex; flex-direction: column; }
+.testimonial-card .stars { display: flex; gap: 2px; margin-bottom: 16px; color: var(--green); font-size: 14px; }
+.testimonial-card blockquote {
+  font-size: 15px; font-style: italic; line-height: 1.7;
+  color: var(--text-primary); margin-bottom: 20px; flex: 1;
+}
+.testimonial-card .author-row { display: flex; align-items: center; gap: 12px; }
+.testimonial-card .avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  object-fit: cover; border: 2px solid var(--border-glass-strong);
+}
+.testimonial-card .author-info .name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px; font-weight: 700;
+}
+.testimonial-card .author-info .role { font-size: 12px; color: var(--text-muted); }
+
+/* Video testimonial */
+.testimonial-video {
+  grid-column: 1 / -1;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0; overflow: hidden;
+}
+.testimonial-video .video-side {
+  position: relative; min-height: 280px;
+  background: var(--bg-surface); cursor: pointer;
+}
+.testimonial-video .video-side img {
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0.8; transition: opacity 0.4s;
+}
+.testimonial-video:hover .video-side img { opacity: 0.9; }
+.testimonial-video .video-side .play-btn-sm {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px; height: 60px;
+  background: linear-gradient(180deg, var(--green-light), var(--green));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 0 8px rgba(16,185,129,0.15), 0 4px 20px rgba(16,185,129,0.25);
+  transition: all 0.3s;
+}
+.testimonial-video:hover .play-btn-sm { transform: translate(-50%, -50%) scale(1.06); }
+.play-btn-sm svg { width: 22px; height: 22px; fill: #050A0E; margin-left: 2px; }
+.testimonial-video .quote-side {
+  padding: 40px 36px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.testimonial-video .quote-side blockquote {
+  font-size: 20px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600; font-style: normal;
+  line-height: 1.5; color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+/* ═══════════════════════════════════
+   GUARANTEES
+   ═══════════════════════════════════ */
+.guarantees-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+.guarantee-card { text-align: center; padding: 40px 24px; }
+.guarantee-card .shield-icon {
+  width: 56px; height: 56px;
+  background: linear-gradient(135deg, var(--green-muted), var(--green-subtle));
+  border: 1px solid rgba(16,185,129,0.12);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px; font-size: 24px;
+}
+.guarantee-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+.guarantee-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+
+/* ═══════════════════════════════════
+   FOUNDERS — Full height photo
+   ═══════════════════════════════════ */
+.founders-section {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0; overflow: hidden; margin-top: 48px;
+  min-height: 480px;
+}
+.founders-photo {
+  background-size: cover;
+  background-position: top center;
+  min-height: 480px;
+}
+.founders-text {
+  padding: 48px 44px;
+  display: flex; flex-direction: column; justify-content: center;
+  background: linear-gradient(135deg, rgba(16,185,129,0.03), transparent);
+}
+.founders-text h3 { font-size: 24px; font-weight: 800; margin-bottom: 16px; }
+.founders-text p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; }
+
+/* ═══════════════════════════════════
+   FAQ
+   ═══════════════════════════════════ */
+.faq-list { max-width: 720px; margin: 48px auto 0; }
+.faq-item { border-bottom: 1px solid var(--border-glass); }
+.faq-q {
+  padding: 22px 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px; font-weight: 600;
+  color: var(--text-primary); cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  transition: color 0.3s;
+}
+.faq-q:hover { color: var(--green-light); }
+.faq-q .toggle {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--green-muted);
+  border: 1px solid rgba(16,185,129,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: var(--green);
+  flex-shrink: 0; transition: all 0.3s;
+}
+.faq-item.open .faq-q .toggle { transform: rotate(45deg); background: var(--green); color: #050A0E; }
+.faq-a {
+  font-size: 14px; color: var(--text-secondary); line-height: 1.75;
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding-bottom: 0;
+}
+.faq-item.open .faq-a { max-height: 300px; padding-bottom: 22px; }
+
+/* ═══════════════════════════════════
+   LEAD FORM
+   ═══════════════════════════════════ */
+.form-section { padding: 100px 0; }
+.booking-outer { max-width: 720px; margin: 0 auto; text-align: center; }
+.booking-widget {
+  margin-top: 40px;
+  background: rgba(11,17,25,0.6);
+  border: 1px solid var(--border-glass-strong);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3), 0 0 80px rgba(16,185,129,0.04);
+}
+.booking-widget iframe {
+  display: block;
+}
+.form-fine { text-align: center; font-size: 12px; color: var(--text-dim); margin-top: 14px; line-height: 1.6; }
+
+/* ═══════════════════════════════════
+   FINAL CTA
+   ═══════════════════════════════════ */
+.final-cta { padding: 80px 0 40px; text-align: center; }
+.final-inner {
+  padding: 64px 48px;
+  background: linear-gradient(135deg, rgba(16,185,129,0.06), rgba(99,102,241,0.03), rgba(20,184,166,0.03));
+  border: 1px solid rgba(16,185,129,0.1);
+  border-radius: 24px; position: relative; overflow: hidden;
+}
+.final-inner::before {
+  content: '';
+  position: absolute; top: -40%; left: -20%;
+  width: 140%; height: 140%;
+  background: radial-gradient(ellipse at 30% 20%, rgba(16,185,129,0.06), transparent 60%);
+  pointer-events: none;
+}
+.final-inner h2 { font-size: clamp(26px, 3.2vw, 38px); font-weight: 800; margin-bottom: 14px; position: relative; }
+.final-inner p { font-size: 16px; color: var(--text-secondary); margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; position: relative; }
+
+/* ═══════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════ */
+.footer { padding: 40px 0; border-top: 1px solid var(--border-glass); text-align: center; }
+.footer p { font-size: 13px; color: var(--text-dim); }
+.footer a { color: var(--green); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+/* Strip */
+/* ═══════════════════════════════════
+   ENHANCED ANIMATIONS
+   ═══════════════════════════════════ */
+/* Glass cards subtle hover float */
+.glass.problem-card:hover,
+.glass.solution-card:hover,
+.glass.guarantee-card:hover,
+.glass.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(16,185,129,0.08), 0 0 60px rgba(16,185,129,0.03);
+}
+.glass.problem-card,
+.glass.solution-card,
+.glass.guarantee-card,
+.glass.testimonial-card {
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.5s cubic-bezier(0.4,0,0.2,1), border-color 0.5s;
+}
+/* Staggered float on icon wraps */
+.problem-card:nth-child(1) .icon-wrap { animation: float 4s ease-in-out infinite; }
+.problem-card:nth-child(2) .icon-wrap { animation: float 4.3s ease-in-out 0.2s infinite; }
+.problem-card:nth-child(3) .icon-wrap { animation: float 3.8s ease-in-out 0.5s infinite; }
+.problem-card:nth-child(4) .icon-wrap { animation: float 4.5s ease-in-out 0.3s infinite; }
+.problem-card:nth-child(5) .icon-wrap { animation: float 4.1s ease-in-out 0.6s infinite; }
+.problem-card:nth-child(6) .icon-wrap { animation: float 3.9s ease-in-out 0.1s infinite; }
+
+/* Animated stats counter */
+.stat-number {
+  background: linear-gradient(90deg, var(--green-bright), var(--green), var(--green-light), var(--green-bright));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease infinite;
+}
+/* Evolution stage numbers glow */
+.stage-num {
+  animation: pulseRing 2.5s ease-in-out infinite;
+}
+.evo-card:nth-child(2) .stage-num { animation-delay: 0.4s; }
+.evo-card:nth-child(3) .stage-num { animation-delay: 0.8s; }
+
+/* Hero badge pulse */
+.hero-badge .dot {
+  animation: pulseRing 2s ease-in-out infinite;
+}
+/* Accent text shimmer */
+.accent {
+  background: linear-gradient(90deg, var(--green), var(--green-bright), var(--green-light), var(--green));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmerGlow 4s linear infinite;
+}
+/* Bridge card float - REMOVED */
+/* Guarantee shield icons */
+.shield-icon {
+  animation: float 3.5s ease-in-out infinite;
+}
+.guarantee-card:nth-child(2) .shield-icon { animation-delay: 0.3s; }
+.guarantee-card:nth-child(3) .shield-icon { animation-delay: 0.6s; }
+
+/* Second brain illustrations - REMOVED */
+
+/* Evo brain icons - REMOVED */
+.evo-card { position: relative; overflow: visible; }
+
+/* Neural network background for Second Brain OS card */
+.solution-card-brain {
+  position: relative; overflow: hidden;
+}
+.solution-card-brain::after {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  width: 120px; height: 120px;
+  background: radial-gradient(circle at center, rgba(16,185,129,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: glowPulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Section gradient backgrounds with subtle movement */
+.section-gradient-1::before,
+.section-gradient-2::before,
+.section-gradient-3::before {
+  animation: glowPulse 6s ease-in-out infinite;
+}
+/* Proof bar logo subtle slide */
+.logo-row img {
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+.logo-row img:hover {
+  transform: scale(1.08) translateY(-2px);
+  filter: brightness(1.3);
+}
+/* Comparison table row hover */
+.comparison-table tbody tr:hover {
+  background: rgba(16,185,129,0.04);
+  transform: scale(1.01);
+  transition: all 0.3s ease;
+}
+
+.strip {
+  background: linear-gradient(90deg, var(--green), var(--green-light), var(--teal), var(--green));
+  background-size: 300% 100%;
+  animation: gradientShift 6s ease infinite;
+  color: #050A0E; text-align: center;
+  padding: 10px 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px; font-weight: 700;
+}
+
+/* ═══════════════════════════════════
+   VIDEO EMBED CONTAINER
+   ═══════════════════════════════════ */
+.video-embed-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-top: 24px;
+}
+.video-embed-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+/* ═══════════════════════════════════
+   EVOLUTION STAIRCASE LAYOUT
+   ═══════════════════════════════════ */
+.evo-staircase {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 32px;
+  min-height: 500px;
+  position: relative;
+}
+.evo-staircase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.evo-staircase-card {
+  padding: 40px 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s ease;
+  height: 100%;
+}
+.evo-stage-1 {
+  align-self: flex-end;
+}
+.evo-stage-2 {
+  align-self: center;
+  transform: translateY(-60px);
+}
+.evo-stage-3 {
+  align-self: flex-start;
+  transform: translateY(-120px);
+}
+.evo-staircase-card:hover {
+  transform: translateY(calc(var(--offset) - 8px)) scale(1.03);
+  box-shadow: 0 16px 48px rgba(16,185,129,0.15), 0 0 40px rgba(16,185,129,0.08);
+}
+.evo-stage-1:hover {
+  transform: translateY(-8px);
+}
+.evo-stage-2:hover {
+  transform: translateY(-68px);
+}
+.evo-stage-3:hover {
+  transform: translateY(-128px);
+}
+.stage-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  display: block;
+}
+.evo-staircase-card h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+.evo-staircase-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 20px;
+  flex: 1;
+}
+.stage-metric {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--green-light);
+  background: var(--green-muted);
+  padding: 6px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(16,185,129,0.15);
+  letter-spacing: 0.02em;
+}
+@media (max-width: 900px) {
+  .evo-staircase {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: auto;
+  }
+  .evo-staircase-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .evo-stage-1, .evo-stage-2, .evo-stage-3 {
+    align-self: auto !important;
+    transform: none !important;
+  }
+  .evo-staircase-card:hover {
+    transform: translateY(-4px) !important;
+  }
+}
+
+/* ═══════════════════════════════════
+   EA TIMELINE CARDS REDESIGNED
+   ═══════════════════════════════════ */
+.ea-timeline-card-redesigned {
+  padding: 32px 28px;
+  position: relative;
+  border-left: 4px solid var(--green);
+  background: rgba(16,185,129,0.03);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 0;
+  transition: all 0.4s ease;
+}
+.ea-timeline-card-redesigned:hover {
+  background: rgba(16,185,129,0.06);
+  border-left-color: var(--green-light);
+  transform: translateX(4px);
+}
+.ea-timeline-card-redesigned h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: var(--green-light);
+  letter-spacing: -0.01em;
+}
+.ea-timeline-card-redesigned ul {
+  list-style: none;
+  padding: 0;
+}
+.ea-timeline-card-redesigned li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding: 8px 0 8px 24px;
+  position: relative;
+}
+.ea-timeline-card-redesigned li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* Growth Chart SVG Styling */
+.growth-chart {
+  filter: drop-shadow(0 2px 8px rgba(16,185,129,0.1));
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════ */
+@media (max-width: 900px) {
+  .problem-grid { grid-template-columns: 1fr 1fr; }
+  .solution-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonial-video { grid-template-columns: 1fr; }
+  .testimonial-video .video-side { min-height: 220px; }
+  .founders-section { grid-template-columns: 1fr; }
+  .founders-photo { min-height: 300px; }
+  .assistant-section { grid-template-columns: 1fr; }
+  .assistant-photo { min-height: 360px; }
+}
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .evo-grid { grid-template-columns: 1fr; }
+  .evo-grid::before { display: none; }
+  .guarantees-grid { grid-template-columns: 1fr; }
+  .hero { padding: 90px 0 36px; }
+  section { padding: 60px 0; }
+  .bridge-card { padding: 40px 24px; }
+  .nav-links { display: none; }
+  .problem-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .stat { padding: 24px 14px; }
+  .stat-number { font-size: 28px; }
+  .hero-cta-row { flex-direction: column; }
+  .final-inner { padding: 40px 20px; }
+  /* Hide background pills on small screens to reduce clutter */
+  .falling-pill.bg { display: none; }
+  .falling-pill.mg:nth-child(n+8) { display: none; }
+  /* Growth chart needs horizontal scroll guard */
+  .growth-chart { min-width: 0; }
+}
+
+/* ═══════════════════════════════════
+   MATCHING TIMELINE
+   ═══════════════════════════════════ */
+.matching-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+.matching-step {
+  padding: 36px 28px;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+.matching-step:hover {
+  transform: translateY(-6px);
+  background: var(--bg-card-hover);
+  border-color: rgba(16,185,129,0.15);
+}
+.step-number {
+  background: linear-gradient(135deg, var(--green-muted), rgba(16,185,129,0.1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+}
+
+/* ═══════════════════════════════════
+   STICKY/FLOATING CTA
+   ═══════════════════════════════════ */
+.floating-cta {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(120px);
+  pointer-events: none;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+.floating-cta.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.floating-cta.btn-primary {
+  padding: 16px 28px;
+  font-size: 14px;
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(52,211,169,0.95), rgba(16,185,129,0.95));
+  border: 1px solid rgba(16,185,129,0.3);
+  box-shadow: 0 8px 32px rgba(16,185,129,0.25), 0 0 20px rgba(16,185,129,0.15);
+}
+.floating-cta.btn-primary:hover {
+  background: linear-gradient(135deg, rgba(52,211,169,1), rgba(16,185,129,1));
+  box-shadow: 0 12px 40px rgba(16,185,129,0.35), 0 0 30px rgba(16,185,129,0.25);
+}
+
+@media (max-width: 900px) {
+  .floating-cta {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    width: auto;
+  }
+  .floating-cta.btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ═══════════════════════════════════
+   EA OWNERSHIP TIMELINE
+   ═══════════════════════════════════ */
+.ea-ownership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  margin-top: 48px;
+}
+.ea-timeline-card {
+  padding: 40px 32px;
+  position: relative;
+}
+.ea-timeline-card h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--green-light);
+}
+.ea-timeline-card ul {
+  list-style: none;
+  padding: 0;
+}
+.ea-timeline-card li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding: 10px 0 10px 28px;
+  position: relative;
+}
+.ea-timeline-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* ═══════════════════════════════════
+   TESTIMONIALS REDESIGN
+   ═══════════════════════════════════ */
+.testimonials-featured {
+  margin-top: 48px;
+  margin-bottom: 56px;
+}
+.testimonial-video-featured {
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+.testimonial-video-featured iframe {
+  width: 100%;
+  height: 100%;
+}
+.video-testimonials-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+  margin-bottom: 56px;
+}
+.video-testimonial-card {
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  group: "video-test";
+}
+.video-testimonial-card .thumbnail {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-surface);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.video-testimonial-card .play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.3);
+  transition: background 0.4s ease;
+}
+.video-testimonial-card:hover .play-overlay {
+  background: rgba(0,0,0,0.5);
+}
+.video-testimonial-card .play-btn-large {
+  width: 64px;
+  height: 64px;
+  background: var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 30px rgba(16,185,129,0.4);
+}
+.video-testimonial-card:hover .play-btn-large {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px rgba(16,185,129,0.6);
+}
+.video-testimonial-card .play-btn-large svg {
+  width: 28px;
+  height: 28px;
+  fill: #050A0E;
+}
+.video-testimonial-info {
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(16,185,129,0.03), transparent);
+  border-top: 1px solid rgba(16,185,129,0.1);
+}
+.video-testimonial-info .name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.video-testimonial-info .role {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.testimonials-text-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  margin-top: 48px;
+}
+.testimonial-card {
+  padding: 32px;
+}
+.testimonial-card .avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  display: block;
+}
+.testimonial-card .author-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.testimonial-card .author-info {
+  flex: 1;
+}
+.testimonial-card .name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.testimonial-card .role {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.testimonial-card blockquote {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-primary);
+  font-style: italic;
+  margin: 16px 0;
+}
+
+/* ═══════════════════════════════════
+   SECONDARY CTA SECTION
+   ═══════════════════════════════════ */
+.cta-resources {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+.resource-card {
+  padding: 40px;
+}
+.resource-card h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.resource-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+.video-embed-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(16,185,129,0.05));
+  border: 1px solid rgba(16,185,129,0.15);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  margin-bottom: 16px;
+}
+.video-embed-placeholder:hover {
+  background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(16,185,129,0.08));
+  border-color: rgba(16,185,129,0.25);
+}
+.video-embed-placeholder svg {
+  width: 56px;
+  height: 56px;
+  color: var(--green);
+}
+.video-embed-placeholder-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: transparent;
+  color: var(--green);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  border: 2px solid var(--green);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-ghost:hover {
+  background: rgba(16,185,129,0.1);
+  border-color: var(--green-light);
+  color: var(--green-light);
+}
+
+@media (max-width: 768px) {
+  .cta-resources {
+    grid-template-columns: 1fr;
+  }
+  .matching-timeline {
+    grid-template-columns: 1fr;
+  }
+  .ea-ownership-grid {
+    grid-template-columns: 1fr;
+  }
+  .testimonials-text-grid {
+    grid-template-columns: 1fr;
+  }
+  .video-testimonials-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ═══════════════════════════════════
+   FOUNDER AVATARS
+   ═══════════════════════════════════ */
+.founder-avatar {
+  display: inline-block;
+}
+.founder-avatar:hover {
+  border-color: var(--green) !important;
+  box-shadow: 0 0 20px rgba(16,185,129,0.4);
+}
+.logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+</style>
+</head>
+<body>
+
+<div class="ambient">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+</div>
+
+<!-- Urgency Strip -->
+<div class="strip">
+  Now matching from our latest cohort — 650+ candidates screened. Book your strategy call today.
+</div>
+
+<!-- Nav -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <a href="#" class="nav-logo">
+      <img src="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/65d4092400a2ec10ef5c1bef.png" alt="Pareto Talent">
+    </a>
+    <div class="nav-links">
+      <a href="#program" class="nav-link">The Program</a>
+      <a href="#testimonials" class="nav-link">Results</a>
+      <a href="#guarantees" class="nav-link">Guarantees</a>
+      <a href="#apply" class="nav-cta">Book Your Call →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge reveal"><span class="dot"></span> The Right Hand Program</div>
+    <h1 class="reveal reveal-delay-1">Stop Being the Most Tired Person in <span class="accent">Your Own Company</span></h1>
+    <p class="hero-sub reveal reveal-delay-2">
+      A full-time, AI-trained Executive Assistant from Latin America — hand-matched to you,
+      continuously developed by us, and backed by the only program that also trains
+      <strong style="color: var(--text-primary)">you</strong> how to lead her.
+    </p>
+    <div class="hero-cta-row reveal reveal-delay-3">
+      <a href="#apply" class="btn-primary">
+        Schedule Your Strategy Call
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+      </a>
+      <a href="#program" class="btn-ghost">See What's Included</a>
+    </div>
+    <p class="hero-micro reveal reveal-delay-4"><strong>No commitment required.</strong> In 20 minutes, we'll map your bottlenecks and build your plan.</p>
+
+    <!-- Wistia VSL -->
+    <div class="vsl-wrapper reveal-scale">
+      <wistia-player media-id="6fpq5v0k1l" aspect="1.7777777777777777"></wistia-player>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SOCIAL PROOF ══════════ -->
+<div class="proof-bar reveal">
+  <div class="container">
+    <p class="label">Trusted by 100+ founders like</p>
+    <div class="logo-row" style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+      <img src="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/5dfce0ab-391a-48b4-be8e-c22fd327b3e1.png" alt="Jon Vroman" style="width: 56px; height: 56px; border-radius: 50%; border: 2px solid transparent; transition: border-color 0.3s ease; cursor: pointer;" class="founder-avatar" title="Jon Vroman">
+      <img src="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/68dca2836218a44528b4ef00.png" alt="Joe Polish" style="width: 56px; height: 56px; border-radius: 50%; border: 2px solid transparent; transition: border-color 0.3s ease; cursor: pointer;" class="founder-avatar" title="Joe Polish">
+      <img src="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/68dca2833f9300b65febb7bc.png" alt="Justin Donald" style="width: 56px; height: 56px; border-radius: 50%; border: 2px solid transparent; transition: border-color 0.3s ease; cursor: pointer;" class="founder-avatar" title="Justin Donald">
+      <img src="https://storage.googleapis.com/msgsndr/uxr5K7Y88XGK4LRERRnV/media/68af97762c366701dbb60913.png" alt="Founder" style="width: 56px; height: 56px; border-radius: 50%; border: 2px solid transparent; transition: border-color 0.3s ease; cursor: pointer;" class="founder-avatar">
+      <img src="https://storage.googleapis.com/msgsndr/uxr5K7Y88XGK4LRERRnV/media/68af9776271602a1e0633093.png" alt="Founder" style="width: 56px; height: 56px; border-radius: 50%; border: 2px solid transparent; transition: border-color 0.3s ease; cursor: pointer;" class="founder-avatar">
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ STATS ══════════ -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid reveal-scale">
+      <div class="stat"><div class="stat-number">100+</div><div class="stat-label">Founders working<br>with Pareto today</div></div>
+      <div class="stat"><div class="stat-number">93%</div><div class="stat-label">EA retention<br>at 12 months</div></div>
+      <div class="stat"><div class="stat-number">650+</div><div class="stat-label">Candidates screened<br>per cohort</div></div>
+      <div class="stat"><div class="stat-number">24 hrs</div><div class="stat-label">To first candidate<br>profiles</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ PROBLEM ══════════ -->
+<section class="text-center section-gradient-1">
+  <div class="container">
+    <div class="section-badge reveal">Sound Familiar?</div>
+    <h2 class="section-title reveal reveal-delay-1">The Real Reason <span class="accent">You're Stuck</span></h2>
+    <p class="section-subtitle center reveal reveal-delay-2">
+      These aren't surface-level complaints. They're symptoms of a structural problem:
+      <strong style="color: var(--text-primary)">you've become the bottleneck of your own business.</strong>
+    </p>
+    <div class="problem-grid">
+      <div class="glass problem-card reveal reveal-delay-1">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8h20"/><path d="M7 4v4"/></svg>
+        </div>
+        <h3>Drowning in Admin</h3>
+        <p>Email, calendar, routine tasks — you're buried in low-value work while high-value decisions wait.</p>
+        <span class="problem-tag">80% of founders report this</span>
+      </div>
+      <div class="glass problem-card reveal reveal-delay-2">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>No Time, No Life</h3>
+        <p>Working nights and weekends. The business demands more hours than one person can give.</p>
+        <span class="problem-tag">70% of founders report this</span>
+      </div>
+      <div class="glass problem-card reveal reveal-delay-3">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Things Falling Through the Cracks</h3>
+        <p>Missed follow-ups, lost deals, forgotten commitments. No one is watching the open loops.</p>
+        <span class="problem-tag">40% of founders report this</span>
+      </div>
+      <div class="glass problem-card reveal reveal-delay-1">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-6.219-8.56"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <h3>Everything Runs From Memory</h3>
+        <p>No systems, no SOPs. Every process depends on you being present. Your business is fragile.</p>
+        <span class="problem-tag">50% of founders report this</span>
+      </div>
+      <div class="glass problem-card reveal reveal-delay-2">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <h3>Burned by a VA Before</h3>
+        <p>A previous hire created more management work than it saved. No vetting, no accountability.</p>
+        <span class="problem-tag">20%+ of founders report this</span>
+      </div>
+      <div class="glass problem-card reveal reveal-delay-3">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Wearing Too Many Hats</h3>
+        <p>You're the CEO, ops manager, scheduler, and firefighter — all at once. Growth feels like a trap.</p>
+        <span class="problem-tag">30% of founders report this</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BRIDGE ══════════ -->
+<section>
+  <div class="container">
+    <div class="glass bridge-card reveal-scale" style="position: relative; overflow: hidden; min-height: 420px;">
+      <style scoped>
+        .bridge-content-inner {
+          position: relative;
+          z-index: 10;
+        }
+        /* Falling matrix of task pills */
+        @keyframes fallThrough {
+          0% {
+            transform: translateY(-80px) rotate(0deg);
+            opacity: 0;
+          }
+          8% { opacity: var(--pill-opacity, 0.5); }
+          85% { opacity: var(--pill-opacity, 0.5); }
+          100% {
+            transform: translateY(500px) rotate(var(--pill-rotate, 4deg));
+            opacity: 0;
+          }
+        }
+        .falling-pill {
+          position: absolute;
+          font-size: var(--pill-size, 12px);
+          font-weight: 600;
+          color: var(--green-light);
+          background: rgba(16,185,129,0.06);
+          border: 1px solid rgba(16,185,129,0.12);
+          padding: 5px 14px;
+          border-radius: 20px;
+          pointer-events: none;
+          white-space: nowrap;
+          animation: fallThrough linear infinite;
+          filter: blur(var(--pill-blur, 0px));
+          z-index: var(--pill-z, 1);
+        }
+        /* Row 1 — foreground, subtle */
+        .falling-pill.fg { --pill-opacity: 0.22; --pill-blur: 0px; --pill-z: 3; --pill-size: 12px; }
+        /* Row 2 — midground, blurred */
+        .falling-pill.mg { --pill-opacity: 0.14; --pill-blur: 1.5px; --pill-z: 2; --pill-size: 11px; color: rgba(52,211,153,0.4); border-color: rgba(16,185,129,0.06); background: rgba(16,185,129,0.02); }
+        /* Row 3 — background, deep blur */
+        .falling-pill.bg { --pill-opacity: 0.08; --pill-blur: 3px; --pill-z: 1; --pill-size: 10px; color: rgba(52,211,153,0.25); border-color: rgba(16,185,129,0.03); background: rgba(16,185,129,0.01); }
+
+        /* Foreground pills */
+        .falling-pill:nth-child(1)  { left: 5%; animation-duration: 9s; animation-delay: 0s; --pill-rotate: 3deg; }
+        .falling-pill:nth-child(2)  { left: 25%; animation-duration: 10s; animation-delay: 2s; --pill-rotate: -2deg; }
+        .falling-pill:nth-child(3)  { left: 48%; animation-duration: 8.5s; animation-delay: 0.8s; --pill-rotate: 5deg; }
+        .falling-pill:nth-child(4)  { left: 72%; animation-duration: 9.5s; animation-delay: 3s; --pill-rotate: -3deg; }
+        .falling-pill:nth-child(5)  { left: 90%; animation-duration: 8s; animation-delay: 1.5s; --pill-rotate: 2deg; }
+        /* Midground pills */
+        .falling-pill:nth-child(6)  { left: 12%; animation-duration: 11s; animation-delay: 1s; --pill-rotate: -4deg; }
+        .falling-pill:nth-child(7)  { left: 35%; animation-duration: 12s; animation-delay: 3.5s; --pill-rotate: 2deg; }
+        .falling-pill:nth-child(8)  { left: 58%; animation-duration: 10.5s; animation-delay: 0.5s; --pill-rotate: -1deg; }
+        .falling-pill:nth-child(9)  { left: 80%; animation-duration: 11.5s; animation-delay: 2.5s; --pill-rotate: 3deg; }
+        /* Background pills */
+        .falling-pill:nth-child(10) { left: 3%;  animation-duration: 13s; animation-delay: 4s; --pill-rotate: -2deg; }
+        .falling-pill:nth-child(11) { left: 20%; animation-duration: 14s; animation-delay: 1.2s; --pill-rotate: 1deg; }
+        .falling-pill:nth-child(12) { left: 42%; animation-duration: 12.5s; animation-delay: 5s; --pill-rotate: -3deg; }
+        .falling-pill:nth-child(13) { left: 65%; animation-duration: 13.5s; animation-delay: 2.8s; --pill-rotate: 4deg; }
+        .falling-pill:nth-child(14) { left: 88%; animation-duration: 12s; animation-delay: 0.3s; --pill-rotate: -1deg; }
+        /* Extra midground stagger */
+        .falling-pill:nth-child(15) { left: 45%; animation-duration: 11.8s; animation-delay: 4.5s; --pill-rotate: 2deg; }
+      </style>
+
+      <!-- Foreground layer — subtle, won't fight text -->
+      <div class="falling-pill fg">Inbox zero</div>
+      <div class="falling-pill fg">Reschedule meeting</div>
+      <div class="falling-pill fg">Follow up with client</div>
+      <div class="falling-pill fg">Book flights</div>
+      <div class="falling-pill fg">Send invoice</div>
+      <!-- Midground layer — blurred -->
+      <div class="falling-pill mg">Vendor contracts</div>
+      <div class="falling-pill mg">Team check-in</div>
+      <div class="falling-pill mg">Expense reports</div>
+      <div class="falling-pill mg">Birthday gift</div>
+      <!-- Background layer — deep blur -->
+      <div class="falling-pill bg">Renew subscription</div>
+      <div class="falling-pill bg">Update CRM</div>
+      <div class="falling-pill bg">Quarterly review</div>
+      <div class="falling-pill bg">Proposal draft</div>
+      <div class="falling-pill bg">Doctor appt</div>
+      <!-- Extra stagger -->
+      <div class="falling-pill mg">Payroll</div>
+
+      <div class="bridge-content-inner">
+        <div class="section-badge">What You're Actually Buying</div>
+        <h2 class="section-title" style="max-width: 650px; margin: 0 auto 18px;">The Feeling That <span class="accent">Nothing Will Fall Through the Cracks</span></h2>
+        <p style="max-width: 560px; margin: 0 auto; font-size: 17px; color: var(--text-secondary); line-height: 1.75;">A second brain for your business and your life. The ability to end your workday without the weight of everything that didn't get done. Someone who thinks about your vision — even when you're not in the room.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ASSISTANT PHOTO SECTION ══════════ -->
+<section class="section-gradient-2">
+  <div class="container">
+    <div class="glass assistant-section">
+      <div class="assistant-photo reveal-left"></div>
+      <div class="assistant-content reveal-right">
+        <div class="section-eyebrow">Top 1% Talent</div>
+        <h3>Work With <span class="accent">AI-Trained</span> Executive Assistants</h3>
+        <p>Every Pareto EA goes through our proprietary 40+ hour training program. Less than 1% of applicants make it through. They arrive ready to operate — not learn on your time.</p>
+        <ul class="highlight-list">
+          <li>Fluent English, Latin America-based, your time zone</li>
+          <li>Trained on Claude, ChatGPT, Canva, CapCut, N8N, Lovable</li>
+          <li>Proactive operator mindset — not a task-taker</li>
+          <li>All AI tool subscriptions covered by Pareto</li>
+          <li>Full-time, exclusively dedicated to you</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ MATCHING METHODOLOGY ══════════ -->
+<section class="section-gradient-2">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-badge reveal">Our Process</div>
+      <h2 class="section-title reveal reveal-delay-1">How We <span class="accent">Match You</span></h2>
+      <p class="section-subtitle center reveal reveal-delay-2">A rigorous, 4-step process designed to eliminate guesswork and guarantee fit.</p>
+    </div>
+    
+    <div class="matching-pipeline" style="margin-top: 56px; position: relative;">
+      <style scoped>
+        .matching-pipeline {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+        }
+        .matching-pipeline::before {
+          content: '';
+          position: absolute;
+          top: 32px;
+          left: 12.5%;
+          right: 12.5%;
+          height: 2px;
+          background: linear-gradient(90deg, transparent, rgba(16,185,129,0.4), transparent);
+          z-index: 0;
+        }
+        .pipeline-step {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .step-icon {
+          width: 64px;
+          height: 64px;
+          background: linear-gradient(135deg, var(--green-muted), rgba(16,185,129,0.1));
+          border: 2px solid rgba(16,185,129,0.3);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 24px;
+          font-size: 32px;
+          box-shadow: 0 0 0 8px var(--green-subtle), 0 4px 16px rgba(16,185,129,0.15);
+          transition: all 0.4s ease;
+        }
+        .pipeline-step:hover .step-icon {
+          background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(16,185,129,0.08));
+          border-color: var(--green);
+          transform: scale(1.08);
+          box-shadow: 0 0 0 8px var(--green-subtle), 0 8px 24px rgba(16,185,129,0.25);
+        }
+        .step-label {
+          display: block;
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 12px;
+          font-weight: 700;
+          color: var(--text-muted);
+          letter-spacing: 0.05em;
+          margin-bottom: 12px;
+          text-transform: uppercase;
+        }
+        .pipeline-step h3 {
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 16px;
+          font-weight: 700;
+          margin-bottom: 12px;
+          color: var(--text-primary);
+        }
+        .pipeline-step p {
+          font-size: 14px;
+          color: var(--text-secondary);
+          line-height: 1.65;
+        }
+        @media (max-width: 768px) {
+          .matching-pipeline {
+            grid-template-columns: 1fr;
+            gap: 40px;
+          }
+          .matching-pipeline::before {
+            content: '';
+            position: absolute;
+            top: 32px;
+            left: 31px;
+            right: auto;
+            width: 2px;
+            height: calc(100% - 64px);
+            background: linear-gradient(180deg, transparent, rgba(16,185,129,0.4), transparent);
+          }
+        }
+      </style>
+
+      <div class="pipeline-step reveal reveal-delay-1">
+        <div class="step-icon">🧠</div>
+        <span class="step-label">Step 1</span>
+        <h3>PI Behavioral Assessment</h3>
+        <p>Personality profiling to ensure compatibility. We understand your work style and communication preferences from the start.</p>
+      </div>
+
+      <div class="pipeline-step reveal reveal-delay-2">
+        <div class="step-icon">✓</div>
+        <span class="step-label">Step 2</span>
+        <h3>Role Expectation Alignment</h3>
+        <p>We map your specific needs, work style, and communication preferences. No surprises on either side.</p>
+      </div>
+
+      <div class="pipeline-step reveal reveal-delay-3">
+        <div class="step-icon">🤝</div>
+        <span class="step-label">Step 3</span>
+        <h3>Compatibility Interview</h3>
+        <p>Your top candidates interview with you. We present 3+ matches. You choose the person you'll trust with your time.</p>
+      </div>
+
+      <div class="pipeline-step reveal reveal-delay-4">
+        <div class="step-icon">🚀</div>
+        <span class="step-label">Step 4</span>
+        <h3>30-Day Integration</h3>
+        <p>Structured onboarding with your dedicated Success Manager. Win in Week 1, compound from there.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TESTIMONIALS ══════════ -->
+<section id="testimonials" class="section-gradient-3">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-badge reveal">From Founders Like You</div>
+      <h2 class="section-title reveal reveal-delay-1">Don't Just Take Our Word for It — <span class="accent">See the Results</span></h2>
+    </div>
+
+    <div class="glass testimonial-video reveal-scale" style="margin-top: 48px;">
+      <div class="video-side" id="mitch-video-container">
+        <img src="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/68dda783df57378c8d4a4314.jpeg" alt="Mitch Barham" id="mitch-thumbnail">
+        <div class="play-btn-sm" id="mitch-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="quote-side">
+        <div class="stars" style="display: flex; gap: 2px; margin-bottom: 16px; color: var(--green); font-size: 14px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"I definitely can't recommend it enough to any entrepreneur who is struggling."</blockquote>
+        <div class="author-row">
+          <div class="author-info">
+            <div class="name" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 700;">Mitch Barham</div>
+            <div class="role" style="font-size: 12px; color: var(--text-muted);">Entrepreneur</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="glass testimonial-card reveal reveal-delay-1">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"I just can't even imagine not having my EA right now. I can't fathom a world where she's not a big part of it."</blockquote>
+        <div class="author-row">
+          <img src="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/5dfce0ab-391a-48b4-be8e-c22fd327b3e1.png" alt="Jon Vroman" class="avatar">
+          <div class="author-info"><div class="name">Jon Vroman</div><div class="role">Founder of Front Row Dads</div></div>
+        </div>
+      </div>
+      <div class="glass testimonial-card reveal reveal-delay-2">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"My executive assistant runs point on critical projects and keeps track of so many endless opportunities. I recommend them on a frequent basis."</blockquote>
+        <div class="author-row">
+          <img src="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/68dca2836218a44528b4ef00.png" alt="Joe Polish" class="avatar">
+          <div class="author-info"><div class="name">Joe Polish</div><div class="role">Founder of Genius Network</div></div>
+        </div>
+      </div>
+      <div class="glass testimonial-card reveal reveal-delay-3">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"My executive assistant Marina came from Pareto Talent and is just a world-beater. The best EA I have ever had."</blockquote>
+        <div class="author-row">
+          <img src="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/68dca2833f9300b65febb7bc.png" alt="Justin Donald" class="avatar">
+          <div class="author-info"><div class="name">Justin Donald</div><div class="role">Founder of Lifestyle Investor</div></div>
+        </div>
+      </div>
+      <div class="glass testimonial-card reveal reveal-delay-1">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"She's in my email, in my Slack. She sees something and says: do you want me to handle this? I never have to ask."</blockquote>
+        <div class="author-row">
+          <div class="author-info"><div class="name">Kasim Aslam</div><div class="role">Co-Founder</div></div>
+        </div>
+      </div>
+      <div class="glass testimonial-card reveal reveal-delay-2">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Life has changed dramatically. I can't articulate the magic she has brought to the chaos I was feeling."</blockquote>
+        <div class="author-row">
+          <div class="author-info"><div class="name">Kevin</div><div class="role">6 weeks in</div></div>
+        </div>
+      </div>
+      <div class="glass testimonial-card reveal reveal-delay-3">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"If I only had the EA without the training, I probably would have fired her. The training has been transformative."</blockquote>
+        <div class="author-row">
+          <div class="author-info"><div class="name">Kevin</div><div class="role">Delegation Mastermind, 6 weeks in</div></div>
+        </div>
+      </div>
+      <div class="glass testimonial-card reveal reveal-delay-1">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"I haven't worked a weekend in four months. My kids noticed before I did. That's when I knew this was real."</blockquote>
+        <div class="author-row">
+          <img src="placeholder-avatar-personal.jpg" alt="Founder" class="avatar" style="width:64px;height:64px;">
+          <div class="author-info"><div class="name">Placeholder Name</div><div class="role">Founder &amp; Parent</div></div>
+        </div>
+      </div>
+      <div class="glass testimonial-card reveal reveal-delay-2">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Placeholder testimonial — replace with real quote."</blockquote>
+        <div class="author-row">
+          <img src="placeholder-avatar-1.jpg" alt="Founder" class="avatar" style="width:64px;height:64px;">
+          <div class="author-info"><div class="name">Placeholder Name</div><div class="role">Placeholder Company</div></div>
+        </div>
+      </div>
+      <div class="glass testimonial-card reveal reveal-delay-3">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Placeholder testimonial — replace with real quote."</blockquote>
+        <div class="author-row">
+          <img src="placeholder-avatar-2.jpg" alt="Founder" class="avatar" style="width:64px;height:64px;">
+          <div class="author-info"><div class="name">Placeholder Name</div><div class="role">Placeholder Company</div></div>
+        </div>
+      </div>
+      <div class="glass testimonial-card reveal reveal-delay-1">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Placeholder testimonial — replace with real quote."</blockquote>
+        <div class="author-row">
+          <img src="placeholder-avatar-3.jpg" alt="Founder" class="avatar" style="width:64px;height:64px;">
+          <div class="author-info"><div class="name">Placeholder Name</div><div class="role">Placeholder Company</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PROGRAM ══════════ -->
+<section id="program" class="section-gradient-1">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-badge reveal">The Program</div>
+      <h2 class="section-title reveal reveal-delay-1">Everything Inside <span class="accent">The Right Hand Program</span></h2>
+      <p class="section-subtitle center reveal reveal-delay-2">Not an EA placement service. A complete system for building a second brain inside your business — and the only program that trains the entrepreneur, not just the assistant.</p>
+    </div>
+    <div class="solution-grid">
+      <div class="glass solution-card reveal reveal-delay-1">
+        <span class="tag">#1 — The Core</span>
+        <h3>Your Hand-Matched Right Hand EA</h3>
+        <p>Full-time, Latin America-based, fluent English. Top 1% of 650+ applicants per cohort. Works your hours, exclusively for you.</p>
+      </div>
+      <div class="glass solution-card reveal reveal-delay-2">
+        <span class="tag">#2</span><span class="value">$2,000 value</span>
+        <h3>Founder Liberation Plan — First 30 Days</h3>
+        <p>Structured onboarding: 10–20 hours of operational load eliminated from your week. Fast wins start Week 1.</p>
+      </div>
+      <div class="glass solution-card reveal reveal-delay-1">
+        <span class="tag">#3</span><span class="value">$4,800+/yr value</span>
+        <h3>AI-Powered EA — Full Stack Trained</h3>
+        <p>Prompt engineering, vibe coding, N8N automations, ad copy, data processing. All AI tool costs covered by Pareto.</p>
+      </div>
+      <div class="glass solution-card reveal reveal-delay-2">
+        <span class="tag">#4</span><span class="value">Exclusive</span>
+        <h3>Equipment Subsidy — 50% Setup Covered</h3>
+        <p>Pareto co-invests in your EA's professional equipment. No other staffing company does this.</p>
+      </div>
+      <div class="glass solution-card solution-card-brain reveal reveal-delay-1">
+        <span class="tag">#5</span><span class="value">$2,400/yr value</span>
+        <h3>Pareto Second Brain OS</h3>
+        <p>A structured knowledge system: decisions, SOPs, vendor relationships, meeting notes. Zero knowledge loss.</p>
+        <svg class="brain-mini" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="position:absolute;bottom:12px;right:12px;width:60px;height:60px;opacity:0.15;">
+          <circle cx="40" cy="25" r="4" fill="var(--green)"><animate attributeName="r" values="3;5;3" dur="3s" repeatCount="indefinite"/></circle>
+          <circle cx="22" cy="42" r="3" fill="var(--green-light)"><animate attributeName="r" values="2;4;2" dur="2.5s" repeatCount="indefinite"/></circle>
+          <circle cx="58" cy="40" r="3" fill="var(--green)"><animate attributeName="r" values="2;4;2" dur="2.8s" repeatCount="indefinite"/></circle>
+          <circle cx="35" cy="60" r="3" fill="var(--green-bright)"><animate attributeName="r" values="2;4;2" dur="3.2s" repeatCount="indefinite"/></circle>
+          <circle cx="55" cy="58" r="3" fill="var(--green-light)"><animate attributeName="r" values="2;4;2" dur="2.6s" repeatCount="indefinite"/></circle>
+          <line x1="40" y1="25" x2="22" y2="42" stroke="var(--green)" stroke-width="0.8" opacity="0.3"><animate attributeName="opacity" values="0.1;0.4;0.1" dur="2.5s" repeatCount="indefinite"/></line>
+          <line x1="40" y1="25" x2="58" y2="40" stroke="var(--green)" stroke-width="0.8" opacity="0.3"><animate attributeName="opacity" values="0.15;0.4;0.15" dur="3s" repeatCount="indefinite"/></line>
+          <line x1="22" y1="42" x2="35" y2="60" stroke="var(--green-light)" stroke-width="0.8" opacity="0.3"><animate attributeName="opacity" values="0.1;0.35;0.1" dur="2.8s" repeatCount="indefinite"/></line>
+          <line x1="58" y1="40" x2="55" y2="58" stroke="var(--green-light)" stroke-width="0.8" opacity="0.3"><animate attributeName="opacity" values="0.15;0.35;0.15" dur="3.3s" repeatCount="indefinite"/></line>
+          <line x1="35" y1="60" x2="55" y2="58" stroke="var(--green)" stroke-width="0.8" opacity="0.2"><animate attributeName="opacity" values="0.1;0.3;0.1" dur="3.5s" repeatCount="indefinite"/></line>
+        </svg>
+      </div>
+      <div class="glass solution-card reveal reveal-delay-2">
+        <span class="tag">#6</span><span class="value">$3,000/yr value</span>
+        <h3>Proactive Operator Training</h3>
+        <p>Your EA spots what needs to happen before you see it, owns follow-up without being asked.</p>
+      </div>
+      <div class="glass solution-card reveal reveal-delay-1">
+        <span class="tag">#7</span><span class="value">$5,000/yr value</span>
+        <h3>The Delegation Mastermind</h3>
+        <p>Weekly live training for YOU. The 7 Laws of Delegation. Frameworks from 100+ seven- and eight-figure founders.</p>
+      </div>
+      <div class="glass solution-card reveal reveal-delay-2">
+        <span class="tag">#8</span><span class="value">$3,600/yr value</span>
+        <h3>Ongoing EA Development Engine</h3>
+        <p>104+ training sessions, 36 courses, peer community of 250+ elite EAs. Your EA grows without you managing it.</p>
+      </div>
+      <div class="glass solution-card solution-full reveal-scale">
+        <span class="tag">#9–#13 — Full Coverage</span>
+        <h3>Dedicated Success Manager · Evolution Path · 24hr Matching · Matching Guarantee · Lifetime Replacement</h3>
+        <p style="max-width: 620px; margin: 12px auto 0;">A named success manager. An EA who grows into Chief of Staff. Profiles in 24 hours. No match, no charge. Lifetime free replacements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ EA OWNERSHIP EVOLUTION ══════════ -->
+<section class="section-gradient-2">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-badge reveal">The Evolution</div>
+      <h2 class="section-title reveal reveal-delay-1">What Your <span class="accent">EA Owns</span> Over Time</h2>
+      <p class="section-subtitle center reveal reveal-delay-2">Your Right Hand grows into strategic control. This is the trajectory every founder gets.</p>
+    </div>
+
+    <!-- Growth Chart -->
+    <svg class="growth-chart reveal reveal-delay-1" viewBox="0 0 840 280" style="margin: 48px 0 0 0; max-width: 100%; height: auto; display: block;">
+      <defs>
+        <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:rgba(16,185,129,0.15);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgba(16,185,129,0);stop-opacity:1" />
+        </linearGradient>
+        <style>
+          @keyframes drawLine {
+            from { stroke-dashoffset: 1000; }
+            to { stroke-dashoffset: 0; }
+          }
+          .chart-line {
+            animation: drawLine 2.5s ease-out forwards;
+            stroke-dasharray: 1000;
+          }
+        </style>
+      </defs>
+      <!-- Grid lines -->
+      <line x1="60" y1="20" x2="60" y2="240" stroke="rgba(16,185,129,0.1)" stroke-width="1"/>
+      <line x1="60" y1="240" x2="750" y2="240" stroke="rgba(16,185,129,0.1)" stroke-width="1"/>
+      <!-- Data line with gradient fill -->
+      <path d="M 60,200 Q 270,140 480,80 T 750,40" fill="none" stroke="url(#chartGradient)" stroke-width="3" class="chart-line"/>
+      <path d="M 60,200 Q 270,140 480,80 T 750,40 L 750,240 L 60,240 Z" fill="url(#chartGradient)" opacity="0.3"/>
+      <!-- Data point circles -->
+      <circle cx="60" cy="200" r="5" fill="var(--green)" opacity="0"/>
+      <circle cx="270" cy="140" r="6" fill="var(--green)" opacity="0.8" stroke="rgba(16,185,129,0.2)" stroke-width="2"/>
+      <circle cx="480" cy="80" r="6" fill="var(--green)" opacity="0.8" stroke="rgba(16,185,129,0.2)" stroke-width="2"/>
+      <circle cx="750" cy="40" r="6" fill="var(--green)" opacity="0.8" stroke="rgba(16,185,129,0.2)" stroke-width="2"/>
+      <!-- X-axis labels -->
+      <text x="60" y="265" text-anchor="middle" font-size="13" fill="var(--text-muted)" font-family="DM Sans">Month 1</text>
+      <text x="270" y="265" text-anchor="middle" font-size="13" fill="var(--text-muted)" font-family="DM Sans">Month 3</text>
+      <text x="480" y="265" text-anchor="middle" font-size="13" fill="var(--text-muted)" font-family="DM Sans">Month 6</text>
+      <text x="750" y="265" text-anchor="middle" font-size="13" fill="var(--text-muted)" font-family="DM Sans">Month 12</text>
+      <!-- Y-axis label -->
+      <text x="20" y="130" text-anchor="middle" font-size="12" fill="var(--text-muted)" font-family="DM Sans" transform="rotate(-90 20 130)">Impact / Hours Saved</text>
+    </svg>
+
+    <div class="ea-ownership-grid" style="margin-top: 64px;">
+      <div class="ea-timeline-card-redesigned reveal reveal-delay-1">
+        <h3>Month 1</h3>
+        <ul>
+          <li>Inbox zero</li>
+          <li>Calendar management</li>
+          <li>Follow-ups & tasks</li>
+          <li>Travel coordination</li>
+          <li>Personal errands</li>
+          <li>Meeting prep</li>
+        </ul>
+      </div>
+      <div class="ea-timeline-card-redesigned reveal reveal-delay-2">
+        <h3>Month 3</h3>
+        <ul>
+          <li>CRM ownership</li>
+          <li>Project coordination</li>
+          <li>Vendor relationships</li>
+          <li>SOP creation</li>
+          <li>Client communication</li>
+          <li>Revenue tracking</li>
+        </ul>
+      </div>
+      <div class="ea-timeline-card-redesigned reveal reveal-delay-3">
+        <h3>Month 6+</h3>
+        <ul>
+          <li>Cross-functional coordination</li>
+          <li>Strategic projects</li>
+          <li>Automation workflows</li>
+          <li>Team management</li>
+          <li>Chief of Staff trajectory</li>
+          <li>Autonomous decision-making</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ COMPARISON ══════════ -->
+<section>
+  <div class="container">
+    <div class="text-center">
+      <div class="section-badge reveal">The Difference</div>
+      <h2 class="section-title reveal reveal-delay-1">A Typical VA vs. <span class="accent">A Pareto EA</span></h2>
+      <p class="section-subtitle center reveal reveal-delay-2">Most assistants wait, ask, and complete. A Pareto EA is trained to operate differently.</p>
+    </div>
+    <div class="comparison-wrap reveal-scale">
+      <table class="comparison-table">
+        <thead><tr><th>A Typical VA Says…</th><th>A Pareto EA Says…</th></tr></thead>
+        <tbody>
+          <tr><td>"You asked me to send the email, so I sent it."</td><td>"I noticed the client hasn't responded in 7 days — want me to follow up? I've already drafted the message."</td></tr>
+          <tr><td>"You didn't tell me to check for that."</td><td>"I saw the invoice hadn't been paid. I've sent a reminder and flagged it for you."</td></tr>
+          <tr><td>"The task is done. What's next?"</td><td>"I've updated the tracker, blocked your time, and flagged a conflict on Thursday."</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ EVOLUTION ══════════ -->
+<section class="section-gradient-2">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-badge reveal">The Long Game</div>
+      <h2 class="section-title reveal reveal-delay-1">She <span class="accent">Grows</span> With You</h2>
+      <p class="section-subtitle center reveal reveal-delay-2">You're not hiring a task-doer. You're finding a partner who grows into Chief of Staff — without the salary.</p>
+    </div>
+    <!-- Staircase Evolution -->
+    <div class="evo-staircase" style="position: relative; margin-top: 48px;">
+      <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>
+            @keyframes drawArrow {
+              from { stroke-dashoffset: 800; }
+              to { stroke-dashoffset: 0; }
+            }
+            .evo-arrow {
+              animation: drawArrow 2s ease-out forwards;
+              stroke-dasharray: 800;
+            }
+          </style>
+        </defs>
+        <!-- Ascending diagonal line with arrow -->
+        <path d="M 100,340 L 1100,80" stroke="rgba(16,185,129,0.25)" stroke-width="2" fill="none" class="evo-arrow"/>
+        <!-- Arrow head -->
+        <polygon points="1100,80 1090,95 1105,105" fill="rgba(16,185,129,0.25)"/>
+      </svg>
+
+      <div class="evo-staircase-grid">
+        <div class="glass evo-staircase-card evo-stage-1 reveal reveal-delay-1">
+          <div class="stage-icon">👋</div>
+          <h3>Right Hand EA</h3>
+          <p>Owns execution. Inbox, calendar, follow-ups, admin, personal tasks, coordination. Proactive, not reactive.</p>
+          <div class="stage-metric">Saves 10+ hrs/week</div>
+        </div>
+
+        <div class="glass evo-staircase-card evo-stage-2 reveal reveal-delay-2">
+          <div class="stage-icon">⚙️</div>
+          <h3>Operator</h3>
+          <p>Begins owning outcomes. Manages projects, vendor relationships, systems, and key metrics.</p>
+          <div class="stage-metric">Owns 5+ projects</div>
+        </div>
+
+        <div class="glass evo-staircase-card evo-stage-3 reveal reveal-delay-3">
+          <div class="stage-icon">👑</div>
+          <h3>Chief of Staff</h3>
+          <p>Strategic partner. Leadership meetings, cross-functional coordination, protects your time at the highest level.</p>
+          <div class="stage-metric">Strategic lever arm</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ GUARANTEES ══════════ -->
+<section id="guarantees" class="section-gradient-3">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-badge reveal">Zero Risk</div>
+      <h2 class="section-title reveal reveal-delay-1">Our Three <span class="accent">Ironclad Guarantees</span></h2>
+      <p class="section-subtitle center reveal reveal-delay-2">There is no scenario where you're stuck with something that's not working.</p>
+    </div>
+    <div class="guarantees-grid">
+      <div class="glass guarantee-card reveal reveal-delay-1">
+        <div class="shield-icon">&#9889;</div>
+        <h3>The Freedom 40 Guarantee</h3>
+        <p>Meet with your EA 10 minutes daily. We guarantee 10+ hours saved per week within 30 days — or your next month is free.</p>
+      </div>
+      <div class="glass guarantee-card reveal reveal-delay-2">
+        <div class="shield-icon">&#9995;</div>
+        <h3>The Matching Guarantee</h3>
+        <p>If we don't find a match you're truly excited about, you owe nothing. No contracts until you find your person.</p>
+      </div>
+      <div class="glass guarantee-card reveal reveal-delay-3">
+        <div class="shield-icon">&#8734;</div>
+        <h3>Lifetime Replacement</h3>
+        <p>If the match is ever not right — for any reason — we replace your EA at no cost. No fees. No waiting. Forever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOUNDERS ══════════ -->
+<section>
+  <div class="container">
+    <div class="text-center">
+      <div class="section-badge reveal">The Origin Story</div>
+      <h2 class="section-title reveal reveal-delay-1">Built by Founders Who <span class="accent">Lived Both Sides</span></h2>
+      <p class="section-subtitle center reveal reveal-delay-2">One hired a dozen EAs over 15 years. The other started as one.</p>
+    </div>
+
+    <style scoped>
+      .founders-layout {
+        display: grid;
+        grid-template-columns: 380px 1fr;
+        gap: 0;
+        margin-top: 48px;
+        overflow: hidden;
+      }
+      .founders-photo-side {
+        position: relative;
+        min-height: 600px;
+      }
+      .founders-photo-side img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+      }
+      .founders-content-side {
+        padding: 48px 48px 48px 56px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .founders-names {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        color: var(--text-primary);
+        margin-bottom: 6px;
+      }
+      .founders-roles {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--green);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 24px;
+      }
+      .founders-intro {
+        font-size: 16px;
+        color: var(--text-secondary);
+        line-height: 1.75;
+        margin-bottom: 32px;
+      }
+      /* Timeline milestones */
+      .milestone-track {
+        position: relative;
+        padding-left: 28px;
+        margin-bottom: 32px;
+      }
+      .milestone-track::before {
+        content: '';
+        position: absolute;
+        left: 7px;
+        top: 8px;
+        bottom: 8px;
+        width: 2px;
+        background: linear-gradient(180deg, var(--green), rgba(16,185,129,0.15));
+      }
+      .milestone {
+        position: relative;
+        padding: 0 0 20px 0;
+      }
+      .milestone:last-child {
+        padding-bottom: 0;
+      }
+      .milestone::before {
+        content: '';
+        position: absolute;
+        left: -24px;
+        top: 8px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--green);
+        border: 2px solid var(--bg-deep);
+        box-shadow: 0 0 0 3px rgba(16,185,129,0.15);
+      }
+      .milestone-year {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--green-light);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 4px;
+      }
+      .milestone-text {
+        font-size: 15px;
+        color: var(--text-primary);
+        font-weight: 500;
+        line-height: 1.5;
+      }
+      .milestone-detail {
+        font-size: 13px;
+        color: var(--text-muted);
+        margin-top: 2px;
+      }
+      .founders-pull-quote {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        font-style: italic;
+        color: var(--green-light);
+        border-left: 3px solid var(--green);
+        padding-left: 20px;
+        margin: 8px 0 28px;
+        line-height: 1.6;
+      }
+      .founders-bottom-stats {
+        display: flex;
+        gap: 32px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border-glass);
+      }
+      .founders-bottom-stats .f-stat {
+        text-align: left;
+      }
+      .founders-bottom-stats .f-stat-val {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--green);
+      }
+      .founders-bottom-stats .f-stat-desc {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 2px;
+      }
+      @media (max-width: 900px) {
+        .founders-layout {
+          grid-template-columns: 1fr;
+        }
+        .founders-photo-side {
+          min-height: 320px;
+          max-height: 380px;
+        }
+        .founders-content-side {
+          padding: 36px 28px;
+        }
+        .founders-bottom-stats {
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+      }
+    </style>
+
+    <div class="glass founders-layout reveal-scale">
+      <!-- Tall photo on left -->
+      <div class="founders-photo-side">
+        <img src="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/68269830dcadfd145ee05544.jpeg" alt="Kasim Aslam and Ivan Bunin, co-founders of Pareto Talent">
+      </div>
+
+      <!-- Content on right -->
+      <div class="founders-content-side">
+        <div class="founders-names">Kasim Aslam & Ivan Bunin</div>
+        <div class="founders-roles">Co-Founders, Pareto Talent</div>
+        <p class="founders-intro">One spent 15 years hiring EAs and learning exactly what makes them fail. The other started as an EA at 18 and became CTO. Together, they built the system they wish had existed.</p>
+
+        <div class="milestone-track">
+          <div class="milestone">
+            <div class="milestone-year">2018</div>
+            <div class="milestone-text">Kasim hires Ivan as his Executive Assistant</div>
+            <div class="milestone-detail">Solutions 8 had just 6 employees</div>
+          </div>
+          <div class="milestone">
+            <div class="milestone-year">2018–2022</div>
+            <div class="milestone-text">Ivan rises from EA to CTO</div>
+            <div class="milestone-detail">Scaled to 200+ clients, #1 Google Ads agency worldwide</div>
+          </div>
+          <div class="milestone">
+            <div class="milestone-year">2022</div>
+            <div class="milestone-text">8-figure exit — Solutions 8 acquired</div>
+            <div class="milestone-detail">Proved the EA → strategic partner trajectory works</div>
+          </div>
+          <div class="milestone">
+            <div class="milestone-year">2023</div>
+            <div class="milestone-text">Pareto Talent is born</div>
+            <div class="milestone-detail">First 10 placements through referrals alone — $1M+ Year 1</div>
+          </div>
+          <div class="milestone">
+            <div class="milestone-year">Today</div>
+            <div class="milestone-text">100+ founders paired with AI-trained EAs</div>
+            <div class="milestone-detail">93% retention at 12 months. Zero ads. All word-of-mouth.</div>
+          </div>
+        </div>
+
+        <div class="founders-pull-quote">"We didn't build another VA placement service. We built the system we wish existed when we were scaling."</div>
+
+        <div class="founders-bottom-stats">
+          <div class="f-stat"><div class="f-stat-val">$1M+</div><div class="f-stat-desc">Year 1 Revenue</div></div>
+          <div class="f-stat"><div class="f-stat-val">8-Figure</div><div class="f-stat-desc">Previous Exit</div></div>
+          <div class="f-stat"><div class="f-stat-val">15+ yrs</div><div class="f-stat-desc">EA Experience</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section class="section-gradient-1">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-badge reveal">Common Questions</div>
+      <h2 class="section-title reveal reveal-delay-1">What <span class="accent">Skeptical Founders</span> Ask</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal"><div class="faq-q">"I've tried a VA before and it created more work."<span class="toggle">+</span></div><div class="faq-a">A generic VA placement fails for predictable reasons: no vetting, no onboarding, no delegation training, no accountability. The Pareto model addresses every failure point. The Proactive Operator Training, the Delegation Mastermind, and a 93% 12-month retention rate all exist because we've seen what happens without them.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">"Will their English be good enough for my clients?"<span class="toggle">+</span></div><div class="faq-a">All Pareto EAs are selected for the strength of their written and spoken English. Time zone alignment means they work your hours. The consistent feedback: within weeks, founders stopped thinking of their EA as remote.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">"I don't have time to train someone right now."<span class="toggle">+</span></div><div class="faq-a">The EA arrives trained. The Founder Liberation Plan structures the first 30 days so your time investment is minimal while the wins are immediate. One client started during a major project — by Week 2, her EA was handling the majority of her inbox without direction.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">"How is this different from hiring on my own?"<span class="toggle">+</span></div><div class="faq-a">When you hire on your own, you get a person. With Pareto, you get a person plus a system: 30-day onboarding, AI training, weekly coaching, a dedicated success manager, and a 250+ EA community. At month six, your Pareto EA is significantly more capable — and you didn't manage any of it.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">"What happens on the call?"<span class="toggle">+</span></div><div class="faq-a">A 20-minute conversation. We map where your time goes, identify your costliest bottlenecks, and show you what a Right Hand implementation looks like for your situation. No pressure — just clarity on fit.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BOOKING ══════════ -->
+<section class="form-section" id="apply">
+  <div class="container">
+    <div class="booking-outer">
+      <div class="section-badge reveal">Book Your Call</div>
+      <h2 class="section-title reveal reveal-delay-1">Schedule Your <span class="accent">Strategy Call</span></h2>
+      <p class="section-subtitle reveal reveal-delay-2" style="text-align: center; margin: 0 auto;">Pick a time that works for you. In 20 minutes, we\'ll map your bottlenecks and show you exactly how The Right Hand Program works for your situation.</p>
+      <p class="urgency-badge reveal reveal-delay-1" style="font-family: \'Plus Jakarta Sans\', sans-serif; font-size: 13px; font-weight: 700; color: var(--green); background: var(--green-muted); border: 1px solid rgba(16,185,129,0.2); border-radius: var(--radius-md); padding: 12px 20px; display: inline-block; margin-top: 16px;">Spring 2026 cohort matching closes March 28 — only 7 spots remaining.</p>
+      <p class="pricing-anchor reveal" style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text-secondary); text-align: center; margin-bottom: 32px; font-style: italic;">Investment starts at a fraction of a US hire — details on the call.</p>
+      <div class="booking-widget reveal reveal-delay-3">
+        <iframe src="https://api.leadconnectorhq.com/widget/booking/rQyCvpHI6UxvQ0Rab1ZX" style="width: 100%; min-height: 700px; border: none; overflow: hidden; border-radius: var(--radius-lg);" scrolling="no" id="rQyCvpHI6UxvQ0Rab1ZX_1773594841639"></iframe>
+        <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+      </div>
+      <p class="form-fine">No commitment. No credit card. Just a conversation about whether we're the right fit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FINAL CTA ══════════ -->
+<!-- ══════════ SECONDARY RESOURCES CTA ══════════ -->
+<section>
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 48px;">
+      <div class="section-badge reveal">Not Ready Yet?</div>
+      <h2 class="section-title reveal reveal-delay-1">Build Your <span class="accent">Delegation Strategy</span></h2>
+      <p class="section-subtitle center reveal reveal-delay-2">Start with education. Free resources to help you think through delegation before you commit.</p>
+    </div>
+
+    <div class="cta-resources reveal reveal-delay-1">
+      <div class="glass resource-card">
+        <h3>Watch Our 11-Minute Customer Deep Dive</h3>
+        <p>A concise video walkthrough of how Pareto EAs work, what they own, and the 3 biggest mistakes founders make when delegating.</p>
+        <div class="video-embed-container" style="margin-top: 24px;">
+          <iframe src="https://www.youtube.com/embed/2PkgO_1CxjM" title="Customer Deep Dive — Pareto Talent" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 12px;"></iframe>
+        </div>
+      </div>
+
+      <div class="glass resource-card">
+        <h3>Download the Free Delegation Playbook</h3>
+        <p>A founder's guide to identifying what to delegate, when to delegate it, and how to set your EA up for ownership—not just tasks.</p>
+        <a href="#playbook-placeholder" class="btn-ghost">Download PDF →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <div class="glass final-inner reveal-scale">
+      <div class="section-badge" style="display: block; margin-bottom: 14px;">The Cost of Waiting</div>
+      <h2>Every Week You Handle Admin Is a Week You're Not Doing the Work <span class="accent">Only You Can Do</span></h2>
+      <p>Calculate your hourly rate. Multiply it by the hours you spent this week on work your EA should own. That's the cost of waiting one more week.</p>
+      <a href="#apply" class="btn-primary" style="position: relative;">
+        Book Your Strategy Call — Limited Spots
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Pareto Talent LLC · <a href="https://paretotalent.com">paretotalent.com</a> · <a href="mailto:ivan@paretoassistants.com">ivan@paretoassistants.com</a></p>
+  </div>
+</footer>
+
+<!-- ══════════ JS ══════════ -->
+<script>
+// Scroll reveal
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right').forEach(el => {
+  revealObserver.observe(el);
+});
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!open) item.classList.add('open');
+  });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// Nav scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Parallax on ambient orbs
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  document.querySelectorAll('.ambient .orb').forEach((orb, i) => {
+    const speed = 0.02 + (i * 0.01);
+    orb.style.transform = `translateY(${y * speed}px)`;
+  });
+});
+
+// Animated counter for stats
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const nums = entry.target.querySelectorAll('.stat-number');
+      nums.forEach(num => {
+        if (num.dataset.counted) return;
+        num.dataset.counted = 'true';
+        const text = num.textContent.trim();
+        const match = text.match(/^(\d+)/);
+        if (!match) return;
+        const target = parseInt(match[1]);
+        const suffix = text.replace(/^\d+/, '');
+        let current = 0;
+        const step = Math.max(1, Math.floor(target / 40));
+        const interval = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            current = target;
+            clearInterval(interval);
+          }
+          num.textContent = current + suffix;
+        }, 30);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+const statsGrid = document.querySelector('.stats-grid');
+if (statsGrid) counterObserver.observe(statsGrid);
+
+// Mitch Barham click-to-play video testimonial
+document.getElementById('mitch-video-container').addEventListener('click', function() {
+  const container = this;
+  const thumb = document.getElementById('mitch-thumbnail');
+  const playBtn = document.getElementById('mitch-play-btn');
+  // Hide thumbnail and play button
+  if (thumb) thumb.style.display = 'none';
+  if (playBtn) playBtn.style.display = 'none';
+  // Create and insert Wistia player
+  const player = document.createElement('wistia-player');
+  player.setAttribute('media-id', 'sw5w2b28uk');
+  player.setAttribute('aspect', '0.5625');
+  player.setAttribute('autoplay', '');
+  player.style.width = '100%';
+  player.style.height = '100%';
+  player.style.position = 'absolute';
+  player.style.top = '0';
+  player.style.left = '0';
+  container.style.position = 'relative';
+  container.appendChild(player);
+});
+
+// Sticky/Floating CTA Button
+const applySection = document.getElementById('apply');
+const floatingCta = document.createElement('a');
+floatingCta.className = 'floating-cta btn-primary';
+floatingCta.href = '#apply';
+floatingCta.textContent = 'Book Your Call';
+document.body.appendChild(floatingCta);
+
+window.addEventListener('scroll', () => {
+  if (!applySection) return;
+  const applyRect = applySection.getBoundingClientRect();
+  const scrolled = window.scrollY > 600;
+  const nearApply = applyRect.top < 200;
+  
+  if (scrolled && !nearApply) {
+    floatingCta.classList.add('show');
+  } else {
+    floatingCta.classList.remove('show');
+  }
+});
+
+// Video Testimonial Click Handlers
+document.querySelectorAll('.video-testimonial-card').forEach(card => {
+  card.addEventListener('click', function() {
+    // Placeholder functionality - can be extended to show modal or Wistia embed
+    console.log('Video testimonial clicked - implement Wistia integration');
+  });
+});
+
+// Add scroll reveal to new sections
+document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right').forEach(el => {
+  if (!el.classList.contains('visible')) {
+    revealObserver.observe(el);
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "pareto-right-hand",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "mkdir -p dist/css dist/js && cp index.html dist/ && npx lightningcss --minify css/styles.css -o dist/css/styles.css && npx terser js/main.js -o dist/js/main.js --compress --mangle",
+    "dev": "npx serve ."
+  },
+  "devDependencies": {
+    "lightningcss-cli": "^1.29.0",
+    "terser": "^5.37.0"
+  }
+}
