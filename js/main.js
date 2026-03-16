@@ -33,6 +33,18 @@ function trackEvent(name, params) {
   }
 })();
 
+// --- Lenis smooth scroll ---
+var lenis = new Lenis({
+  duration: 1.2,
+  easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+  smoothWheel: true,
+});
+function lenisRaf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(lenisRaf);
+}
+requestAnimationFrame(lenisRaf);
+
 // --- Scroll reveal ---
 var revealObserver = new IntersectionObserver(function (entries) {
   entries.forEach(function (entry) {
@@ -40,7 +52,7 @@ var revealObserver = new IntersectionObserver(function (entries) {
       entry.target.classList.add('visible');
     }
   });
-}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+}, { threshold: 0.05, rootMargin: '0px 0px -60px 0px' });
 
 document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right').forEach(function (el) {
   revealObserver.observe(el);
@@ -57,12 +69,12 @@ document.querySelectorAll('.faq-q').forEach(function (q) {
   });
 });
 
-// --- Smooth scroll ---
+// --- Smooth scroll via Lenis ---
 document.querySelectorAll('a[href^="#"]').forEach(function (a) {
   a.addEventListener('click', function (e) {
     e.preventDefault();
     var target = document.querySelector(a.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (target) lenis.scrollTo(target);
   });
 });
 
