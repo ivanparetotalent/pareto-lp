@@ -745,27 +745,31 @@ section { padding: 120px 0; position: relative; }
 /* ═══════════════════════════════════
    SOLUTION / PROGRAM
    ═══════════════════════════════════ */
-/* Masonry program grid */
-.masonry-grid {
-  columns: 2;
-  column-gap: 16px;
+/* ═══════════════════════════════════
+   PROGRAM GRID — Cadence-style CSS Grid
+   ═══════════════════════════════════ */
+.pgrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  gap: 16px;
   margin-top: 48px;
 }
-.masonry-card {
-  break-inside: avoid;
-  margin-bottom: 16px;
+
+/* Card base */
+.pgrid-card {
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
-.masonry-body { padding: 28px 28px 32px; }
-.masonry-body .tag {
+.pgrid-text { padding: 24px 28px 28px; }
+.pgrid-text .tag {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 11px; font-weight: 700;
   letter-spacing: 0.04em; color: var(--green);
   margin-bottom: 10px; display: block;
 }
-.masonry-body .value {
+.pgrid-text .value {
   display: inline-block;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 11px; font-weight: 700;
@@ -775,15 +779,15 @@ section { padding: 120px 0; position: relative; }
   padding: 3px 10px; border-radius: 6px;
   margin-bottom: 12px;
 }
-.masonry-body h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
-.masonry-body p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+.pgrid-text h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+.pgrid-text p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
 
-/* Masonry image area */
-.masonry-img {
+/* Visual / image area */
+.pgrid-visual {
   position: relative;
   overflow: hidden;
 }
-.masonry-img-placeholder {
+.pgrid-ph {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -797,13 +801,53 @@ section { padding: 120px 0; position: relative; }
   text-transform: uppercase;
   min-height: 180px;
 }
-.masonry-img-placeholder svg {
+.pgrid-ph svg {
   width: 48px;
   height: 48px;
   color: rgba(16,185,129,0.3);
 }
-.masonry-img-dark {
+.pgrid-dark {
   background: linear-gradient(135deg, rgba(5,10,14,0.8), rgba(16,185,129,0.03));
+}
+.pgrid-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Grid placement ── */
+/* Row 1-2: EA spans 2 rows left, 30day + equip stacked right */
+.pgrid-ea        { grid-column: 1; grid-row: 1 / 3; }
+.pgrid-ea .pgrid-visual { flex: 1; min-height: 200px; }
+.pgrid-30day     { grid-column: 2; grid-row: 1; }
+.pgrid-equip     { grid-column: 2; grid-row: 2; }
+
+/* Row 3: AI wide left, Second Brain right */
+.pgrid-ai        { grid-column: 1; grid-row: 3; }
+.pgrid-brain     { grid-column: 2; grid-row: 3; }
+
+/* Row 4-5: Proactive + Dev stacked left, Mastermind spans 2 rows right */
+.pgrid-proactive { grid-column: 1; grid-row: 4; }
+.pgrid-dev       { grid-column: 1; grid-row: 5; }
+.pgrid-mastermind { grid-column: 2; grid-row: 4 / 6; }
+.pgrid-mastermind .pgrid-visual { flex: 1; min-height: 200px; }
+
+/* Row 6: Full width coverage */
+.pgrid-full      { grid-column: 1 / -1; grid-row: 6; }
+.pgrid-full-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.pgrid-visual-side {
+  width: 220px;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+.pgrid-visual-side .pgrid-ph {
+  height: 100%;
+  min-height: 100%;
 }
 
 /* Floating tool icons for AI card */
@@ -835,33 +879,6 @@ section { padding: 120px 0; position: relative; }
 @keyframes floatIcon {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
-}
-
-/* Wide masonry card */
-.masonry-wide {
-  column-span: all;
-}
-.masonry-wide-inner {
-  display: flex;
-  align-items: center;
-  gap: 0;
-}
-.masonry-img-side {
-  width: 220px;
-  min-height: 100%;
-  flex-shrink: 0;
-}
-.masonry-img-side .masonry-img-placeholder {
-  min-height: 100%;
-  height: 100%;
-}
-
-/* When real images are added */
-.masonry-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 /* Program value summary */
@@ -1568,9 +1585,17 @@ section { padding: 120px 0; position: relative; }
 @media (max-width: 900px) {
   section { padding: 80px 0; }
   .problem-grid { grid-template-columns: 1fr 1fr; }
-  .masonry-grid { columns: 1; }
-  .masonry-wide-inner { flex-direction: column; }
-  .masonry-img-side { width: 100%; min-height: 160px; }
+  .pgrid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .pgrid-ea, .pgrid-30day, .pgrid-equip, .pgrid-ai, .pgrid-brain,
+  .pgrid-proactive, .pgrid-dev, .pgrid-mastermind, .pgrid-full {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+  .pgrid-full-inner { flex-direction: column; }
+  .pgrid-visual-side { width: 100%; min-height: 160px; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .video-testimonials-grid { grid-template-columns: repeat(2, 1fr); }
   .founders-section { grid-template-columns: 1fr; }
