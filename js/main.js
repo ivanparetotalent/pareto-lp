@@ -142,6 +142,39 @@ document.querySelectorAll('.video-testimonial-card wistia-player').forEach(funct
   });
 });
 
+// --- Founders video modal ---
+(function () {
+  var trigger = document.getElementById('founders-video-trigger');
+  var modal = document.getElementById('video-modal');
+  var player = document.getElementById('video-modal-player');
+  var closeBtn = document.getElementById('video-modal-close');
+  if (!trigger || !modal) return;
+
+  var youtubeId = 'CgcUq1e6P3I';
+
+  function openModal() {
+    player.innerHTML = '<iframe src="https://www.youtube.com/embed/' + youtubeId + '?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    trackEvent('founders_video_open');
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    player.innerHTML = '';
+    document.body.style.overflow = '';
+  }
+
+  trigger.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+  });
+})();
+
 // --- CTA click tracking ---
 document.querySelectorAll('.btn-primary, .nav-cta').forEach(function (btn) {
   btn.addEventListener('click', function () {
