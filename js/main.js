@@ -78,15 +78,10 @@ document.querySelectorAll('a[href^="#"]').forEach(function (a) {
   });
 });
 
-// --- Consolidated scroll handler (nav, parallax, floating CTA) ---
+// --- Consolidated scroll handler (nav, parallax) ---
 var nav = document.getElementById('nav');
 var applySection = document.getElementById('apply');
 var orbs = document.querySelectorAll('.ambient .orb');
-var floatingCta = document.createElement('a');
-floatingCta.className = 'floating-cta btn-primary';
-floatingCta.href = '#apply';
-floatingCta.textContent = 'Book Your Call';
-document.body.appendChild(floatingCta);
 
 var ticking = false;
 window.addEventListener('scroll', function () {
@@ -102,18 +97,6 @@ window.addEventListener('scroll', function () {
         var speed = 0.02 + (i * 0.01);
         orb.style.transform = 'translate3d(0,' + (y * speed) + 'px,0)';
       });
-
-      // Floating CTA visibility
-      if (applySection) {
-        var applyRect = applySection.getBoundingClientRect();
-        var scrolled = y > 600;
-        var nearApply = applyRect.top < 200;
-        if (scrolled && !nearApply) {
-          floatingCta.classList.add('show');
-        } else {
-          floatingCta.classList.remove('show');
-        }
-      }
 
       ticking = false;
     });
@@ -172,7 +155,7 @@ if (mitchContainer) {
 }
 
 // --- CTA click tracking ---
-document.querySelectorAll('.btn-primary, .nav-cta, .floating-cta').forEach(function (btn) {
+document.querySelectorAll('.btn-primary, .nav-cta').forEach(function (btn) {
   btn.addEventListener('click', function () {
     trackEvent('cta_click', { text: btn.textContent.trim().substring(0, 50) });
   });
