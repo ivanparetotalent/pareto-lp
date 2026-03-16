@@ -437,6 +437,7 @@ h1, h2, h3, .headline-font {
 }
 .hero-micro { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
 .hero-micro strong { color: var(--text-secondary); }
+.hero-result-claim { color: var(--green-light); font-weight: 600; margin-top: 4px; }
 
 /* Hero social proof banner */
 .hero-social-proof {
@@ -769,6 +770,12 @@ section { padding: 120px 0; position: relative; }
 .solution-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
 .solution-full { grid-column: 1 / -1; text-align: center; padding: 44px; }
 .solution-full p { max-width: 620px; margin: 12px auto 0; }
+
+/* Highlight treatment for First 30 Days card */
+.solution-card-highlight {
+  border-left: 3px solid var(--green) !important;
+  background: linear-gradient(135deg, rgba(16,185,129,0.06), rgba(16,185,129,0.02), transparent) !important;
+}
 
 /* Neural network background for Second Brain OS card */
 .solution-card-brain {
