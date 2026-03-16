@@ -185,7 +185,7 @@ h1, h2, h3, .headline-font {
    NAVIGATION
    ═══════════════════════════════════ */
 .nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  position: sticky; top: 0; left: 0; right: 0; z-index: 100;
   padding: 14px 0;
   background: rgba(5,10,14,0.6);
   backdrop-filter: blur(24px) saturate(180%);
@@ -345,7 +345,7 @@ h1, h2, h3, .headline-font {
 /* ═══════════════════════════════════
    HERO
    ═══════════════════════════════════ */
-.hero { padding: 100px 0 40px; text-align: center; }
+.hero { padding: 60px 0 40px; text-align: center; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 10px;
   padding: 8px 20px 8px 12px;
@@ -731,6 +731,7 @@ section { padding: 80px 0; position: relative; }
   gap: 32px;
   min-height: 500px;
   position: relative;
+  overflow: hidden;
 }
 .evo-staircase-grid {
   display: grid;
@@ -1309,6 +1310,8 @@ section { padding: 80px 0; position: relative; }
   padding: 10px 16px;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 13px; font-weight: 700;
+  position: relative;
+  z-index: 101;
 }
 
 /* ═══════════════════════════════════
@@ -1459,7 +1462,7 @@ section { padding: 80px 0; position: relative; }
   .evo-grid { grid-template-columns: 1fr; }
   .evo-grid::before { display: none; }
   .guarantees-grid { grid-template-columns: 1fr; }
-  .hero { padding: 90px 0 36px; }
+  .hero { padding: 48px 0 36px; }
   section { padding: 60px 0; }
   .bridge-card { padding: 40px 24px; }
   .nav-links { display: none; }
