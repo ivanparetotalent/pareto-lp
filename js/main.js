@@ -135,24 +135,12 @@ var counterObserver = new IntersectionObserver(function (entries) {
 var statsGrid = document.querySelector('.stats-grid');
 if (statsGrid) counterObserver.observe(statsGrid);
 
-// --- Mitch Barham click-to-play video testimonial ---
-var mitchContainer = document.getElementById('mitch-video-container');
-if (mitchContainer) {
-  mitchContainer.addEventListener('click', function () {
-    var thumb = document.getElementById('mitch-thumbnail');
-    var playBtn = document.getElementById('mitch-play-btn');
-    if (thumb) thumb.style.display = 'none';
-    if (playBtn) playBtn.style.display = 'none';
-    var player = document.createElement('wistia-player');
-    player.setAttribute('media-id', 'sw5w2b28uk');
-    player.setAttribute('aspect', '0.5625');
-    player.setAttribute('autoplay', '');
-    player.style.cssText = 'width:100%;height:100%;position:absolute;top:0;left:0;';
-    mitchContainer.style.position = 'relative';
-    mitchContainer.appendChild(player);
-    trackEvent('video_play', { video: 'mitch_barham_testimonial' });
+// --- Video testimonial play tracking ---
+document.querySelectorAll('.video-testimonial-card wistia-player').forEach(function (player) {
+  player.addEventListener('play', function () {
+    trackEvent('video_play', { video: 'testimonial_' + (player.getAttribute('media-id') || 'unknown') });
   });
-}
+});
 
 // --- CTA click tracking ---
 document.querySelectorAll('.btn-primary, .nav-cta').forEach(function (btn) {

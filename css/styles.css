@@ -954,63 +954,54 @@ section { padding: 120px 0; position: relative; }
 .testimonial-card .author-info .role,
 .testimonial-card .role { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
 
-/* Video testimonial */
-.testimonial-video {
-  grid-column: 1 / -1;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 0; overflow: hidden;
+/* Video testimonial grid — 4 vertical videos */
+.video-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 16px;
 }
-.testimonial-video .video-side {
-  position: relative; min-height: 280px; aspect-ratio: 16/9;
-  background: var(--bg-surface); cursor: pointer; overflow: hidden;
+.video-testimonial-card {
+  padding: 0 !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
-.testimonial-video .video-side::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(to right, rgba(5,10,14,0.4), transparent);
-  pointer-events: none; z-index: 1;
+.video-portrait {
+  aspect-ratio: 9/16;
+  overflow: hidden;
+  background: var(--bg-surface);
 }
-.testimonial-video .video-side img {
-  width: 100%; height: 100%; object-fit: cover;
-  opacity: 0.8; transition: opacity 0.6s ease;
+.video-portrait wistia-player {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
-.testimonial-video:hover .video-side img { opacity: 0.95; }
-.testimonial-video .video-side .play-btn-sm {
-  position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%); z-index: 2;
-  width: 60px; height: 60px;
-  background: linear-gradient(180deg, var(--green-light), var(--green));
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 0 0 8px rgba(16,185,129,0.15), 0 4px 20px rgba(16,185,129,0.25);
-  transition: all 0.3s;
+.video-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
-.testimonial-video .play-btn-sm {
-  animation: playPulse 2.5s ease-in-out infinite;
+.placeholder-text {
+  font-size: 13px;
+  color: var(--text-dim);
+  letter-spacing: 0.02em;
 }
-.testimonial-video:hover .play-btn-sm { transform: translate(-50%, -50%) scale(1.06); }
-@keyframes playPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0.3); }
-  50% { box-shadow: 0 0 0 14px rgba(16,185,129,0); }
+.video-card-info {
+  padding: 16px 20px;
 }
-.play-btn-sm svg { width: 22px; height: 22px; fill: #050A0E; margin-left: 2px; }
-.testimonial-video .quote-side {
-  padding: 40px 36px;
-  display: flex; flex-direction: column; justify-content: center;
-}
-.testimonial-video .quote-side blockquote {
-  font-size: 20px;
+.video-card-info .name {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 600; font-style: normal;
-  line-height: 1.5; color: var(--text-primary);
-  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
 }
-.testimonial-video .quote-side .stars { display: flex; gap: 2px; margin-bottom: 16px; color: var(--green); font-size: 14px; }
-.testimonial-video .quote-side .name {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 14px; font-weight: 700;
+.video-card-info .role {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
 }
-.testimonial-video .quote-side .role { font-size: 12px; color: var(--text-muted); }
 
 /* ═══════════════════════════════════
    GUARANTEES
@@ -1452,8 +1443,7 @@ section { padding: 120px 0; position: relative; }
   .problem-grid { grid-template-columns: 1fr 1fr; }
   .solution-grid { grid-template-columns: 1fr; }
   .testimonials-grid { grid-template-columns: 1fr; }
-  .testimonial-video { grid-template-columns: 1fr; }
-  .testimonial-video .video-side { min-height: 220px; }
+  .video-testimonials-grid { grid-template-columns: repeat(2, 1fr); }
   .founders-section { grid-template-columns: 1fr; }
   .founders-photo { min-height: 300px; }
   .assistant-section { grid-template-columns: 1fr; }
