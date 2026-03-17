@@ -1536,7 +1536,7 @@ section { padding: 120px 0; position: relative; }
 .step-icon {
   width: 64px;
   height: 64px;
-  background: var(--bg-base);
+  background: var(--bg-deep);
   border: 2px solid rgba(16,185,129,0.3);
   border-radius: 50%;
   display: flex;
@@ -1544,7 +1544,7 @@ section { padding: 120px 0; position: relative; }
   justify-content: center;
   margin-bottom: 24px;
   font-size: 32px;
-  box-shadow: 0 0 0 8px var(--bg-base), 0 0 0 10px rgba(16,185,129,0.2), 0 4px 16px rgba(16,185,129,0.15);
+  box-shadow: 0 0 0 8px var(--bg-deep), 0 0 0 10px rgba(16,185,129,0.2), 0 4px 16px rgba(16,185,129,0.15);
   transition: all 0.4s ease;
 }
 .pipeline-step:hover .step-icon {
