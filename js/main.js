@@ -142,21 +142,18 @@ document.querySelectorAll('.video-testimonial-card wistia-player').forEach(funct
   });
 });
 
-// --- Founders video modal ---
+// --- Video modal (founders + DM) ---
 (function () {
-  var trigger = document.getElementById('founders-video-trigger');
   var modal = document.getElementById('video-modal');
   var player = document.getElementById('video-modal-player');
   var closeBtn = document.getElementById('video-modal-close');
-  if (!trigger || !modal) return;
+  if (!modal) return;
 
-  var youtubeId = 'CgcUq1e6P3I';
-
-  function openModal() {
-    player.innerHTML = '<iframe src="https://www.youtube.com/embed/' + youtubeId + '?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+  function openModal(html, eventName) {
+    player.innerHTML = html;
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
-    trackEvent('founders_video_open');
+    if (eventName) trackEvent(eventName);
   }
 
   function closeModal() {
@@ -165,7 +162,22 @@ document.querySelectorAll('.video-testimonial-card wistia-player').forEach(funct
     document.body.style.overflow = '';
   }
 
-  trigger.addEventListener('click', openModal);
+  // Founders video (YouTube)
+  var foundersTrigger = document.getElementById('founders-video-trigger');
+  if (foundersTrigger) {
+    foundersTrigger.addEventListener('click', function () {
+      openModal('<iframe src="https://www.youtube.com/embed/CgcUq1e6P3I?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>', 'founders_video_open');
+    });
+  }
+
+  // Delegation Mastermind video (Wistia)
+  var dmTrigger = document.querySelector('.dm-video-trigger');
+  if (dmTrigger) {
+    dmTrigger.addEventListener('click', function () {
+      openModal('<iframe src="https://fast.wistia.com/embed/iframe/2vsk3vtwgi?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>', 'dm_video_open');
+    });
+  }
+
   closeBtn.addEventListener('click', closeModal);
   modal.addEventListener('click', function (e) {
     if (e.target === modal) closeModal();
