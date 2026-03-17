@@ -501,16 +501,17 @@ h1, h2, h3, .headline-font {
 }
 .vsl-glow {
   position: absolute;
-  inset: -60px;
-  background: radial-gradient(50% 50% at 50% 50%, rgba(16,185,129,0.12) 0%, rgba(16,185,129,0.04) 40%, transparent 70%);
+  inset: -140px;
+  background:
+    radial-gradient(60% 60% at 50% 50%, rgba(16,185,129,0.25) 0%, rgba(16,185,129,0.12) 30%, rgba(16,185,129,0.04) 55%, transparent 80%);
   z-index: -1;
-  filter: blur(40px);
+  filter: blur(60px);
   pointer-events: none;
   animation: vslGlowPulse 4s ease-in-out infinite;
 }
 @keyframes vslGlowPulse {
-  0%, 100% { opacity: 0.7; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
 }
 .vsl-wrapper wistia-player { display: block; width: 100%; }
 
