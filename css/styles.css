@@ -780,7 +780,7 @@ section { padding: 120px 0; position: relative; }
 .assistant-content {
   padding: 48px 44px;
   display: flex; flex-direction: column; justify-content: center;
-  background: linear-gradient(135deg, rgba(16,185,129,0.03), transparent);
+  background: linear-gradient(135deg, rgba(16,185,129,0.03), var(--bg-deep));
 }
 .assistant-content h3 { font-size: 28px; font-weight: 800; margin-bottom: 18px; line-height: 1.15; }
 .assistant-content p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 14px; }
