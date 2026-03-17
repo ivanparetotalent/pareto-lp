@@ -452,6 +452,42 @@ h1, h2, h3, .headline-font {
   opacity: 0.85;
 }
 
+/* AI + EA Equation */
+.ai-equation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 32px auto 0;
+  max-width: 780px;
+  flex-wrap: wrap;
+}
+.ai-eq-term {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+.ai-eq-icon {
+  font-size: 1.3rem;
+}
+.ai-eq-op {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--green);
+}
+.ai-eq-result {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--green-bright);
+  white-space: nowrap;
+}
+
 /* VSL */
 .vsl-wrapper {
   max-width: 780px;
@@ -1697,6 +1733,9 @@ section { padding: 120px 0; position: relative; }
    ═══════════════════════════════════ */
 @media (max-width: 900px) {
   section { padding: 80px 0; }
+  .ai-equation { gap: 10px; }
+  .ai-eq-term { padding: 10px 14px; font-size: 0.85rem; }
+  .ai-eq-result { font-size: 0.95rem; }
   .problem-grid { grid-template-columns: 1fr 1fr; }
   .pgrid {
     grid-template-columns: 1fr;
