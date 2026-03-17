@@ -58,42 +58,6 @@ document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right')
   revealObserver.observe(el);
 });
 
-// --- Bridge → Solution scroll overlap ---
-(function () {
-  var problem = document.querySelector('.bridge-stack-problem');
-  var solution = document.querySelector('.bridge-stack-solution');
-  if (!problem || !solution || window.innerWidth < 900) return;
-
-  var ticking = false;
-  function onScroll() {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(function () {
-      var pRect = problem.getBoundingClientRect();
-      var vh = window.innerHeight;
-      var center = vh / 2;
-
-      // progress 0 → problem bottom at viewport bottom
-      // progress 1 → problem bottom at viewport center
-      var progress = (vh - pRect.bottom) / center;
-      progress = Math.max(0, Math.min(1, progress));
-
-      // Max overlap = full problem card height + gap
-      var maxOverlap = problem.offsetHeight + 48;
-      solution.style.transform = 'translateY(-' + (progress * maxOverlap) + 'px)';
-
-      // Problem card fades and scales as it's covered
-      problem.style.opacity = 1 - (progress * 0.35);
-      problem.style.transform = 'scale(' + (1 - progress * 0.03) + ')';
-
-      ticking = false;
-    });
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
-
 // --- FAQ accordion ---
 document.querySelectorAll('.faq-q').forEach(function (q) {
   q.addEventListener('click', function () {
