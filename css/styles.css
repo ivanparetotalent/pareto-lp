@@ -443,7 +443,7 @@ h1, h2, h3, .headline-font {
 .hero-social-proof {
   display: flex;
   justify-content: center;
-  margin: 20px auto 0;
+  margin: 0 auto 24px;
 }
 .hero-social-proof img {
   max-width: 380px;
