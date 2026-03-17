@@ -489,9 +489,12 @@ h1, h2, h3, .headline-font {
 }
 
 /* VSL */
-.vsl-wrapper {
+.vsl-outer {
+  position: relative;
   max-width: 780px;
   margin: 32px auto 0;
+}
+.vsl-wrapper {
   border-radius: var(--radius-xl);
   overflow: hidden;
   border: 1px solid var(--border-glass-strong);
@@ -504,7 +507,7 @@ h1, h2, h3, .headline-font {
   inset: -140px;
   background:
     radial-gradient(60% 60% at 50% 50%, rgba(16,185,129,0.25) 0%, rgba(16,185,129,0.12) 30%, rgba(16,185,129,0.04) 55%, transparent 80%);
-  z-index: -1;
+  z-index: 0;
   filter: blur(60px);
   pointer-events: none;
   animation: vslGlowPulse 4s ease-in-out infinite;
