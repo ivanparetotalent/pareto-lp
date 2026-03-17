@@ -671,8 +671,28 @@ section { padding: 120px 0; position: relative; }
 .problem-card strong { color: var(--text-primary); }
 
 /* ═══════════════════════════════════
-   BRIDGE / REFRAME
+   BRIDGE / REFRAME — STICKY OVERLAP
    ═══════════════════════════════════ */
+.bridge-solution-section {
+  padding: 80px 0 0;
+}
+.bridge-stack {
+  position: relative;
+}
+.bridge-stack-problem {
+  position: sticky;
+  top: 100px;
+  z-index: 1;
+}
+.bridge-stack-solution {
+  position: relative;
+  z-index: 2;
+  margin-top: -80px;
+}
+.bridge-stack-solution .assistant-section {
+  box-shadow: 0 -20px 60px rgba(5,10,14,0.8), 0 8px 40px rgba(0,0,0,0.4);
+  border: 1px solid var(--border-glass-strong);
+}
 .bridge-card {
   padding: 80px 48px; text-align: center;
   background: linear-gradient(135deg, rgba(16,185,129,0.05), rgba(99,102,241,0.03), rgba(20,184,166,0.03));
@@ -680,6 +700,7 @@ section { padding: 120px 0; position: relative; }
   position: relative;
   overflow: hidden;
   min-height: 500px;
+  border-radius: var(--radius-xl);
 }
 .bridge-content-inner {
   position: relative;
@@ -745,8 +766,10 @@ section { padding: 120px 0; position: relative; }
    ═══════════════════════════════════ */
 .assistant-section {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 0; overflow: hidden; margin-top: 48px;
+  gap: 0; overflow: hidden;
   min-height: 560px;
+  background: var(--bg-deep);
+  border-radius: var(--radius-xl);
 }
 .assistant-photo {
   background-image: url('https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/6826971455ccf4d45a709bbd.jpeg');
@@ -1804,6 +1827,8 @@ section { padding: 120px 0; position: relative; }
   .founders-photo { min-height: 300px; }
   .assistant-section { grid-template-columns: 1fr; }
   .assistant-photo { min-height: 360px; }
+  .bridge-stack-problem { position: relative; top: auto; }
+  .bridge-stack-solution { margin-top: 32px; }
   .evo-staircase {
     flex-direction: column;
     align-items: stretch;
