@@ -2222,8 +2222,17 @@ section { padding: 120px 0; position: relative; }
   height: calc(100vh - 120px);
   overflow: hidden;
   border-radius: 20px;
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
+}
+.scroll-canvas-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, transparent 0%, var(--bg-deep) 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 .scroll-canvas-wrap canvas {
   display: block;
