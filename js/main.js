@@ -213,3 +213,78 @@ if (calendarIframe) {
     trackEvent('calendar_widget_load');
   });
 }
+
+// --- Scroll-driven frame animation ---
+(function () {
+  var canvas = document.getElementById('scroll-canvas');
+  if (!canvas) return;
+
+  var ctx = canvas.getContext('2d');
+  var container = document.getElementById('scroll-animation');
+  var TOTAL_FRAMES = 73;
+  var frames = [];
+  var loaded = 0;
+  var currentFrame = -1;
+  var rafPending = false;
+
+  // Retina support
+  function sizeCanvas() {
+    var dpr = window.devicePixelRatio || 1;
+    canvas.width = canvas.parentElement.offsetWidth * dpr;
+    canvas.height = canvas.parentElement.offsetHeight * dpr;
+    canvas.style.width = canvas.parentElement.offsetWidth + 'px';
+    canvas.style.height = canvas.parentElement.offsetHeight + 'px';
+  }
+  sizeCanvas();
+  window.addEventListener('resize', function () { sizeCanvas(); drawFrame(currentFrame); });
+
+  // Preload frames
+  for (var i = 1; i <= TOTAL_FRAMES; i++) {
+    var img = new Image();
+    img.src = 'img/scroll-frames/frame_' + String(i).padStart(4, '0') + '.jpg';
+    img.onload = function () {
+      loaded++;
+      if (loaded === TOTAL_FRAMES) drawFrame(0);
+    };
+    frames.push(img);
+  }
+
+  function drawFrame(index) {
+    if (index < 0) index = 0;
+    if (index >= TOTAL_FRAMES) index = TOTAL_FRAMES - 1;
+    if (currentFrame === index) return;
+    currentFrame = index;
+
+    var img = frames[index];
+    if (!img || !img.complete) return;
+
+    var cw = canvas.width;
+    var ch = canvas.height;
+    ctx.clearRect(0, 0, cw, ch);
+
+    // Cover-fit drawing
+    var iw = img.naturalWidth;
+    var ih = img.naturalHeight;
+    var scale = Math.max(cw / iw, ch / ih);
+    var sw = iw * scale;
+    var sh = ih * scale;
+    var sx = (cw - sw) / 2;
+    var sy = (ch - sh) / 2;
+    ctx.drawImage(img, sx, sy, sw, sh);
+  }
+
+  window.addEventListener('scroll', function () {
+    if (rafPending) return;
+    rafPending = true;
+    requestAnimationFrame(function () {
+      rafPending = false;
+      var rect = container.getBoundingClientRect();
+      var scrollTop = -rect.top;
+      var scrollHeight = container.offsetHeight - window.innerHeight;
+      if (scrollHeight <= 0) return;
+      var progress = Math.max(0, Math.min(1, scrollTop / scrollHeight));
+      var frameIndex = Math.floor(progress * (TOTAL_FRAMES - 1));
+      drawFrame(frameIndex);
+    });
+  }, { passive: true });
+})();

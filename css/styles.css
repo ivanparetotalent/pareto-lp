@@ -2206,6 +2206,24 @@ section { padding: 120px 0; position: relative; }
 
 /* V4 reframe section */
 .reframe-section { padding: 100px 0; }
+
+/* Scroll-stop animation */
+.scroll-animation {
+  height: 350vh;
+  position: relative;
+}
+.scroll-canvas-wrap {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.scroll-canvas-wrap canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .reframe-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2269,5 +2287,5 @@ section { padding: 120px 0; position: relative; }
   .reframe-grid { grid-template-columns: 1fr; }
   .three-pillars { grid-template-columns: 1fr; }
   .problem-masonry { grid-template-columns: 1fr !important; }
-  .problem-masonry { grid-template-columns: 1fr !important; }
+  .scroll-animation { height: 250vh; }
 }
