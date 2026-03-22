@@ -2146,7 +2146,69 @@ section { padding: 120px 0; position: relative; }
   .growth-chart { min-width: 0; }
 }
 
+/* ═══════════════════════════════════
+   V4 PRICING TIERS
+   ═══════════════════════════════════ */
+.pricing-tiers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 800px;
+  margin: 24px auto 24px;
+}
+.pricing-card {
+  padding: 36px 28px;
+  text-align: center;
+  border-radius: var(--radius-xl);
+}
+.pricing-card-featured {
+  border: 2px solid var(--green);
+  box-shadow: 0 0 40px rgba(16,185,129,0.08);
+}
+.pricing-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+.pricing-card h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.pricing-amount {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+.pricing-amount span {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.pricing-period {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.pricing-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+/* V4 reframe section */
+.reframe-section { padding: 100px 0; }
+
 /* Disable noise texture on mobile for performance */
 @media (max-width: 768px) {
   body::after { display: none; }
+  .pricing-tiers { grid-template-columns: 1fr; }
 }
