@@ -2222,6 +2222,8 @@ section { padding: 120px 0; position: relative; }
   height: calc(100vh - 120px);
   overflow: hidden;
   border-radius: 20px;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
 }
 .scroll-canvas-wrap canvas {
   display: block;
