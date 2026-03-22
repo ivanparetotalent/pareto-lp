@@ -2280,12 +2280,163 @@ section { padding: 120px 0; position: relative; }
   line-height: 1.65;
 }
 
+/* ═══════════════════════════════════
+   V4 REDESIGN ENHANCEMENTS
+   ═══════════════════════════════════ */
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--green), var(--green-light));
+  z-index: 102;
+  transition: none;
+}
+
+/* Solid accent (no gradient text) — scoped to v4r body */
+.v4r .section-title .accent {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: var(--green-light);
+  background-clip: unset;
+  color: var(--green-light);
+}
+/* Keep gradient ONLY on hero H1 */
+.v4r .hero h1 .accent {
+  background: linear-gradient(135deg, var(--green), var(--green-light), var(--teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Solid stat numbers (no animated gradient) */
+.v4r .stat-number {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: var(--green-light) !important;
+  background-clip: unset !important;
+  animation: none !important;
+}
+
+/* Liquid glass refraction enhancement */
+.v4r .glass {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 16px 48px rgba(0,0,0,0.2);
+}
+.v4r .glass:hover {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 32px 80px rgba(0,0,0,0.35), 0 0 60px rgba(16,185,129,0.04);
+}
+
+/* Tactile active state for glass cards */
+.v4r .glass:active {
+  transform: translateY(-2px) scale(0.99);
+  transition: transform 0.1s ease;
+}
+
+/* Asymmetric three-pillar grid */
+.v4r .three-pillars {
+  grid-template-columns: 1.3fr 1fr 1fr;
+}
+
+/* Testimonials zig-zag: first card full width */
+.v4r .testimonials-grid {
+  grid-template-columns: 1fr;
+}
+.v4r .testimonials-grid .testimonial-card:first-child {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: center;
+  text-align: left;
+  padding: 36px 40px;
+}
+.v4r .testimonials-grid .testimonial-card:first-child ~ .testimonial-card {
+  display: inline;
+}
+.v4r .testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+.v4r .testimonials-grid .testimonial-card:nth-child(2),
+.v4r .testimonials-grid .testimonial-card:nth-child(3) {
+  display: inline;
+}
+/* 2+3 sit side by side */
+@media (min-width: 769px) {
+  .v4r .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .v4r .testimonials-grid .testimonial-card:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* CTA button directional hover fill */
+.v4r .btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+.v4r .btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.1);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+  border-radius: inherit;
+}
+.v4r .btn-primary:hover::after {
+  transform: scaleX(1);
+}
+.v4r .btn-primary > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* SVG icon sizing inside icon containers */
+.v4r .icon-wrap svg,
+.v4r .dm-icon svg,
+.v4r .shield-icon svg,
+.v4r .pillar-icon svg,
+.v4r .ai-eq-icon svg {
+  width: 100%;
+  height: 100%;
+  max-width: 28px;
+  max-height: 28px;
+}
+.v4r .pillar-icon svg {
+  max-width: 40px;
+  max-height: 40px;
+}
+.v4r .shield-icon svg {
+  max-width: 32px;
+  max-height: 32px;
+  color: var(--green);
+}
+.v4r .icon-wrap svg {
+  color: var(--green);
+}
+.v4r .dm-icon svg {
+  color: var(--green);
+}
+.v4r .ai-eq-icon svg {
+  max-width: 20px;
+  max-height: 20px;
+}
+
 /* Disable noise texture on mobile for performance */
 @media (max-width: 768px) {
   body::after { display: none; }
   .pricing-tiers { grid-template-columns: 1fr; }
   .reframe-grid { grid-template-columns: 1fr; }
   .three-pillars { grid-template-columns: 1fr; }
+  .v4r .three-pillars { grid-template-columns: 1fr; }
   .problem-masonry { grid-template-columns: 1fr !important; }
   .scroll-animation { height: 250vh; }
 }

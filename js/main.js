@@ -92,6 +92,13 @@ window.addEventListener('scroll', function () {
       // Nav scroll state
       if (nav) nav.classList.toggle('scrolled', y > 60);
 
+      // Scroll progress bar
+      var progressBar = document.getElementById('scroll-progress');
+      if (progressBar) {
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (y / docHeight * 100) + '%';
+      }
+
       // Parallax on ambient orbs (GPU-composited)
       orbs.forEach(function (orb, i) {
         var speed = 0.02 + (i * 0.01);
