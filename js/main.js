@@ -269,10 +269,10 @@ if (calendarIframe) {
     var ch = canvas.height;
     ctx.clearRect(0, 0, cw, ch);
 
-    // Cover-fit drawing
+    // Contain-fit drawing (centered, no crop)
     var iw = img.naturalWidth;
     var ih = img.naturalHeight;
-    var scale = Math.max(cw / iw, ch / ih);
+    var scale = Math.min(cw / iw, ch / ih);
     var sw = iw * scale;
     var sh = ih * scale;
     var sx = (cw - sw) / 2;
