@@ -6,10 +6,10 @@
 <title>How We Find & Train Your Right Hand — Pareto Talent</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta name="description" content="650+ applicants per cohort. Less than 1% make it through. 40+ hours of AI and operational training. A real-world final project. This is why Pareto EAs arrive ready to operate.">
+<meta name="description" content="It takes 1,000+ applicants to produce one Right Hand. 40+ hours of AI and operational training. A real-world final project. Predictive Index matching. This is why Pareto EAs arrive ready to operate.">
 
 <meta property="og:title" content="How We Find & Train Your Right Hand — Pareto Talent">
-<meta property="og:description" content="It takes 650+ applicants to produce one Right Hand. Here's exactly how.">
+<meta property="og:description" content="It takes 1,000+ applicants to produce one Right Hand. Here's exactly how.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -24,6 +24,26 @@
 .ea-hero h1 { font-size: clamp(32px, 4.5vw, 56px); font-weight: 800; line-height: 1.1; margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto; }
 .ea-hero .hero-sub { max-width: 680px; margin: 0 auto; font-size: 17px; color: var(--text-secondary); line-height: 1.75; }
 
+/* EA Avatar + Logo Cloud */
+.ea-cloud-wrap { position: relative; width: 320px; height: 320px; margin: 48px auto 0; }
+.ea-avatar-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 3px solid rgba(16,185,129,0.3); box-shadow: 0 0 40px rgba(16,185,129,0.15); z-index: 2; }
+.ea-avatar-center img { width: 100%; height: 100%; object-fit: cover; }
+.app-logo-orbit { position: absolute; width: 40px; height: 40px; border-radius: 10px; background: var(--bg-card); border: 1px solid var(--border-glass); padding: 6px; display: flex; align-items: center; justify-content: center; animation: floatOrbit 6s ease-in-out infinite; box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+.app-logo-orbit img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0.9); }
+.app-logo-orbit:nth-child(2) { top: 5%; left: 50%; transform: translateX(-50%); animation-delay: 0s; }
+.app-logo-orbit:nth-child(3) { top: 15%; right: 8%; animation-delay: 0.4s; }
+.app-logo-orbit:nth-child(4) { top: 45%; right: 0; animation-delay: 0.8s; }
+.app-logo-orbit:nth-child(5) { bottom: 15%; right: 8%; animation-delay: 1.2s; }
+.app-logo-orbit:nth-child(6) { bottom: 5%; left: 50%; transform: translateX(-50%); animation-delay: 1.6s; }
+.app-logo-orbit:nth-child(7) { bottom: 15%; left: 8%; animation-delay: 2s; }
+.app-logo-orbit:nth-child(8) { top: 45%; left: 0; animation-delay: 2.4s; }
+.app-logo-orbit:nth-child(9) { top: 15%; left: 8%; animation-delay: 2.8s; }
+.app-logo-orbit:nth-child(10) { top: 30%; right: 2%; animation-delay: 0.6s; }
+.app-logo-orbit:nth-child(11) { bottom: 30%; right: 2%; animation-delay: 1.8s; }
+.app-logo-orbit:nth-child(12) { bottom: 30%; left: 2%; animation-delay: 3s; }
+.app-logo-orbit:nth-child(13) { top: 30%; left: 2%; animation-delay: 3.4s; }
+@keyframes floatOrbit { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
 /* Comparison cards */
 .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 860px; margin: 0 auto; }
 .compare-bad { border-color: rgba(239,68,68,0.2); }
@@ -37,15 +57,18 @@
 .compare-bad .compare-list li::before { background: rgba(239,68,68,0.4); }
 .compare-good .compare-list li::before { background: var(--green); }
 
-/* Funnel */
-.funnel { display: flex; flex-direction: column; align-items: center; gap: 0; }
-.funnel-stage { display: grid; grid-template-columns: 80px 1fr; gap: 20px; align-items: start; padding: 28px 32px; width: 100%; max-width: 720px; transition: transform .3s ease; }
-.funnel-stage:hover { transform: translateX(8px); }
-.funnel-num { font-size: clamp(28px, 3.5vw, 42px); font-weight: 800; color: var(--green); line-height: 1; }
-.funnel-title { font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
-.funnel-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
-.funnel-dropout { font-size: 12px; color: var(--text-muted); margin-top: 4px; font-style: italic; }
-.funnel-arrow { width: 2px; height: 24px; background: linear-gradient(to bottom, var(--green), transparent); opacity: .3; margin-left: 40px; }
+/* Scroll funnel */
+.scroll-funnel { position: relative; height: 400vh; }
+.scroll-funnel-sticky { position: sticky; top: 80px; height: calc(100vh - 160px); display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; }
+.funnel-display { text-align: center; }
+.funnel-big-num { font-size: clamp(80px, 15vw, 200px); font-weight: 800; color: var(--green); line-height: 1; font-family: 'Plus Jakarta Sans', sans-serif; transition: all .4s cubic-bezier(0.16, 1, 0.3, 1); }
+.funnel-big-label { font-size: clamp(16px, 2vw, 24px); color: var(--text-secondary); margin-top: 8px; font-weight: 500; transition: all .4s ease; }
+.funnel-big-sublabel { font-size: 14px; color: var(--text-muted); margin-top: 4px; transition: all .4s ease; }
+.funnel-final .funnel-big-num { color: var(--green-bright); text-shadow: 0 0 60px rgba(16,185,129,0.4); }
+.funnel-final .funnel-big-label { color: var(--text-primary); font-weight: 700; }
+.funnel-progress { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
+.funnel-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border-glass-strong); transition: background .3s, transform .3s; }
+.funnel-dot.active { background: var(--green); transform: scale(1.3); }
 
 /* Boot camp grid */
 .bootcamp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -55,11 +78,19 @@
 .bootcamp-card li { font-size: 14px; color: var(--text-secondary); padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,.04); display: flex; align-items: center; gap: 10px; line-height: 1.5; }
 .bootcamp-card li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
 .bootcamp-hours { font-size: 12px; color: var(--text-muted); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 12px; }
+.bootcamp-gif { max-width: 720px; margin: 0 auto 40px; border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-glass-strong); }
+.bootcamp-gif img { width: 100%; display: block; }
 
 /* Final project bullets */
 .fp-list { max-width: 640px; margin: 32px auto 0; text-align: left; }
 .fp-list li { font-size: 15px; color: var(--text-secondary); padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.04); display: flex; align-items: flex-start; gap: 12px; line-height: 1.65; }
 .fp-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 8px; }
+
+/* PI Deep Dive */
+.pi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 860px; margin: 0 auto; }
+.pi-card { padding: 32px 28px; }
+.pi-card h3 { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+.pi-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
 
 /* Matching steps */
 .matching-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -73,6 +104,8 @@
 .ongoing-card { text-align: center; padding: 32px 16px; }
 .ongoing-num { font-size: clamp(28px, 3vw, 40px); font-weight: 800; color: var(--green); margin-bottom: 6px; }
 .ongoing-label { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+.tsm-team-photo { max-width: 720px; margin: 40px auto 0; border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-glass-strong); }
+.tsm-team-photo img { width: 100%; display: block; }
 
 /* EA testimonial placeholders */
 .ea-voice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -92,11 +125,15 @@
 
 @media (max-width: 768px) {
   .ea-hero { padding: 100px 0 48px; }
-  .compare-grid, .bootcamp-grid, .matching-flow { grid-template-columns: 1fr; }
+  .ea-cloud-wrap { width: 260px; height: 260px; }
+  .ea-avatar-center { width: 100px; height: 100px; }
+  .app-logo-orbit { width: 32px; height: 32px; padding: 5px; }
+  .compare-grid, .bootcamp-grid, .matching-flow, .pi-grid { grid-template-columns: 1fr; }
   .ongoing-grid { grid-template-columns: repeat(2, 1fr); }
   .latam-grid { grid-template-columns: repeat(2, 1fr); }
   .ea-voice-grid { grid-template-columns: 1fr; }
-  .funnel-stage { grid-template-columns: 60px 1fr; padding: 20px 16px; }
+  .scroll-funnel { height: 300vh; }
+  .scroll-funnel-sticky { top: 60px; }
 }
 </style>
 </head>
@@ -124,12 +161,31 @@
   </div>
 </nav>
 
-<!-- ══════════ 1. HERO ══════════ -->
+<!-- ══════════ 1. HERO + EA CLOUD ══════════ -->
 <section class="ea-hero">
   <div class="container">
     <div class="section-badge reveal">Why Our EAs Are Different</div>
-    <h1 class="reveal reveal-delay-1">It Takes 650+ Applicants to Produce <span class="accent">One Right Hand</span></h1>
+    <h1 class="reveal reveal-delay-1">It Takes 1,000+ Applicants to Produce <span class="accent">One Right Hand</span></h1>
     <p class="hero-sub reveal reveal-delay-2">Most staffing agencies send you a resume and wish you luck. We put every candidate through a multi-week filtration, 40+ hours of training, a real-world final project, and continuous development — before they ever touch your business.</p>
+
+    <!-- EA Avatar + App Logo Cloud -->
+    <div class="ea-cloud-wrap reveal reveal-delay-3">
+      <div class="ea-avatar-center">
+        <img src="img/ea-avatar.png" alt="Pareto EA" loading="lazy">
+      </div>
+      <div class="app-logo-orbit"><img src="img/apps logos/68d5891014d8cf2bec93c71e.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit"><img src="img/apps logos/68d589104cbd203b400645d6.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit"><img src="img/apps logos/68d5891071c31e4c779065c8.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit"><img src="img/apps logos/68d5891096ca2062b926dcac.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit"><img src="img/apps logos/68d5891096ca207ac826dcad.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit"><img src="img/apps logos/68d58910c80edf0714cdc208.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit"><img src="img/apps logos/68d58910c80edf7f30cdc1fc.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit"><img src="img/apps logos/68d58910caea765990948906.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit"><img src="img/apps logos/68d58910caea76909f9488fa.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit"><img src="img/apps logos/68d58910f2acc707d70b2296.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit"><img src="img/apps logos/68d58910f2acc758870b2301.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit"><img src="img/apps logos/68d58910f2acc782cf0b22a1.png" alt="App" loading="lazy"></div>
+    </div>
   </div>
 </section>
 
@@ -137,8 +193,8 @@
 <div class="stats-bar">
   <div class="container">
     <div class="stats-grid reveal-scale" style="grid-template-columns: repeat(4, 1fr);">
-      <div class="stat"><div class="stat-number">650+</div><div class="stat-label">Applicants<br>Per Cohort</div></div>
-      <div class="stat"><div class="stat-number">&lt;1%</div><div class="stat-label">Acceptance<br>Rate</div></div>
+      <div class="stat"><div class="stat-number">1000+</div><div class="stat-label">Applicants<br>Per Cohort</div></div>
+      <div class="stat"><div class="stat-number">&lt;0.1%</div><div class="stat-label">Acceptance<br>Rate</div></div>
       <div class="stat"><div class="stat-number">40+</div><div class="stat-label">Hours of<br>Training</div></div>
       <div class="stat"><div class="stat-number">93%</div><div class="stat-label">Retention<br>at 12 Months</div></div>
     </div>
@@ -152,7 +208,6 @@
       <div class="section-badge reveal">The Difference</div>
       <h2 class="section-title reveal reveal-delay-1">Why Most EA Placements <span class="accent">Fail</span> — And Ours Don't</h2>
     </div>
-
     <div class="compare-grid">
       <div class="glass compare-bad reveal reveal-delay-1" style="padding: 32px 28px;">
         <div class="compare-label">What a Typical Agency Does</div>
@@ -180,84 +235,28 @@
   </div>
 </section>
 
-<!-- ══════════ 3. SELECTION FUNNEL ══════════ -->
-<section class="section-gradient-2">
+<!-- ══════════ 3. SCROLL FUNNEL — 1,000 → 1 ══════════ -->
+<section class="section-gradient-2" style="padding: 0;">
   <div class="container">
-    <div class="text-center" style="margin-bottom: 48px;">
+    <div class="text-center" style="padding: 80px 0 0;">
       <div class="section-badge reveal">The Selection Funnel</div>
-      <h2 class="section-title reveal reveal-delay-1">From 650+ Applicants to <span class="accent">Your Right Hand</span></h2>
-      <p class="section-subtitle center reveal reveal-delay-2">Seven stages. Only the top 1% make it through.</p>
+      <h2 class="section-title reveal reveal-delay-1">From 1,000+ Applicants to <span class="accent">Your Right Hand</span></h2>
+      <p class="section-subtitle center reveal reveal-delay-2">Scroll to see how the numbers drop — until only one remains.</p>
     </div>
-
-    <div class="funnel">
-      <div class="glass funnel-stage reveal">
-        <div class="funnel-num">650+</div>
-        <div>
-          <div class="funnel-title">Sourcing</div>
-          <div class="funnel-desc">Applicants per cohort from across Latin America. Facebook ads + referrals from existing EAs.</div>
-        </div>
+  </div>
+  <div class="scroll-funnel" id="scroll-funnel">
+    <div class="scroll-funnel-sticky">
+      <div class="funnel-display" id="funnel-display">
+        <div class="funnel-big-num" id="funnel-num">1,000+</div>
+        <div class="funnel-big-label" id="funnel-label">Applications Received</div>
+        <div class="funnel-big-sublabel" id="funnel-sub">Per cohort from across Latin America</div>
       </div>
-      <div class="funnel-arrow reveal"></div>
-
-      <div class="glass funnel-stage reveal reveal-delay-1">
-        <div class="funnel-num">~100</div>
-        <div>
-          <div class="funnel-title">Initial Screening</div>
-          <div class="funnel-desc">English fluency assessment (written + spoken). Resume review. Timezone alignment. Experience verification.</div>
-          <div class="funnel-dropout">~85% screened out</div>
-        </div>
-      </div>
-      <div class="funnel-arrow reveal"></div>
-
-      <div class="glass funnel-stage reveal reveal-delay-1">
-        <div class="funnel-num">~50</div>
-        <div>
-          <div class="funnel-title">3-Day Live Challenge</div>
-          <div class="funnel-desc">1 hour/day live sessions. Tests learning speed, communication clarity, and consistency. If you can't show up for 3 days, you can't show up for a founder.</div>
-          <div class="funnel-dropout">~50% don't complete</div>
-        </div>
-      </div>
-      <div class="funnel-arrow reveal"></div>
-
-      <div class="glass funnel-stage reveal reveal-delay-2">
-        <div class="funnel-num">~30</div>
-        <div>
-          <div class="funnel-title">PI Behavioral Assessment</div>
-          <div class="funnel-desc">Predictive Index profiling. Maps personality traits, work style, and communication preferences. This data is used later for founder-EA matching.</div>
-        </div>
-      </div>
-      <div class="funnel-arrow reveal"></div>
-
-      <div class="glass funnel-stage reveal reveal-delay-2">
-        <div class="funnel-num">10 days</div>
-        <div>
-          <div class="funnel-title">Full Boot Camp — 40+ Hours</div>
-          <div class="funnel-desc">2.5 hours/day for 10 days. AI tools, operational frameworks, delegation systems, communication standards. The most intensive EA training program in the industry.</div>
-        </div>
-      </div>
-      <div class="funnel-arrow reveal"></div>
-
-      <div class="glass funnel-stage reveal reveal-delay-3">
-        <div class="funnel-num">Pass/Fail</div>
-        <div>
-          <div class="funnel-title">Real-World Final Project</div>
-          <div class="funnel-desc">Multi-day autonomous simulation. Real inbox scenarios, competing priorities, AI-powered tasks. Only those who demonstrate proactive ownership graduate.</div>
-        </div>
-      </div>
-      <div class="funnel-arrow reveal"></div>
-
-      <div class="glass funnel-stage reveal reveal-delay-3" style="border: 1px solid rgba(16,185,129,0.2);">
-        <div class="funnel-num" style="color: var(--green-bright);">Top 1%</div>
-        <div>
-          <div class="funnel-title">Hand-Matched to a Founder</div>
-          <div class="funnel-desc">AI + human matching. PI profiles cross-referenced. 3+ candidates presented. The founder interviews and chooses their Right Hand.</div>
-        </div>
-      </div>
+      <div class="funnel-progress" id="funnel-dots"></div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ 4. BOOT CAMP BREAKDOWN ══════════ -->
+<!-- ══════════ 4. BOOT CAMP ══════════ -->
 <section class="section-gradient-1">
   <div class="container">
     <div class="text-center" style="margin-bottom: 48px;">
@@ -266,9 +265,9 @@
       <p class="section-subtitle center reveal reveal-delay-2">Not a webinar. Not a PDF. Ten days of live instruction, hands-on practice, and real-world application.</p>
     </div>
 
-    <!-- PLACEHOLDER: Boot camp screenshot -->
-    <div class="glass reveal" style="max-width: 720px; margin: 0 auto 40px; padding: 48px; text-align: center; border: 1px dashed rgba(16,185,129,0.15);">
-      <p style="color: var(--text-muted); font-size: 14px;">&#128247; Boot camp Zoom screenshot / training session photo goes here<br><small>Add to: <code>img/bootcamp-session.jpg</code></small></p>
+    <!-- Boot camp GIF -->
+    <div class="bootcamp-gif reveal reveal-delay-1">
+      <img src="img/bootcamp-process.gif" alt="Pareto Talent boot camp training montage" loading="lazy">
     </div>
 
     <div class="bootcamp-grid">
@@ -284,7 +283,6 @@
           <li>Operator AI (web automation, data extraction)</li>
         </ul>
       </div>
-
       <div class="glass bootcamp-card reveal reveal-delay-2">
         <div class="bootcamp-hours">10+ Hours</div>
         <h3>Operational Excellence</h3>
@@ -297,7 +295,6 @@
           <li>Weekly sync protocols (stand-ups, EOD reports)</li>
         </ul>
       </div>
-
       <div class="glass bootcamp-card reveal reveal-delay-1">
         <div class="bootcamp-hours">10+ Hours</div>
         <h3>Delegation Frameworks</h3>
@@ -310,7 +307,6 @@
           <li>Second Brain OS implementation</li>
         </ul>
       </div>
-
       <div class="glass bootcamp-card reveal reveal-delay-2">
         <div class="bootcamp-hours">10+ Hours</div>
         <h3>Soft Skills &amp; Communication</h3>
@@ -335,7 +331,6 @@
       <h2 class="section-title reveal reveal-delay-1">The Final Project: Not a Test. <span class="accent">A Simulation.</span></h2>
       <p class="section-subtitle center reveal reveal-delay-2">Before any EA is placed with a founder, they must prove they can operate autonomously in real-world conditions.</p>
     </div>
-
     <ul class="fp-list reveal reveal-delay-2" style="list-style: none; padding: 0;">
       <li>Multi-day autonomous workflow management with no hand-holding</li>
       <li>Real inbox scenarios with competing priorities and tight deadlines</li>
@@ -344,54 +339,67 @@
       <li>Proactive problem identification — find issues before being told</li>
       <li>Quality of autonomous decisions — not just task completion, but judgment</li>
     </ul>
-
-    <!-- PLACEHOLDER: Final project screenshot -->
-    <div class="glass reveal" style="max-width: 600px; margin: 32px auto 0; padding: 40px; text-align: center; border: 1px dashed rgba(16,185,129,0.15);">
-      <p style="color: var(--text-muted); font-size: 14px;">&#128196; Final project output example goes here<br><small>Add to: <code>img/final-project-example.jpg</code></small></p>
-    </div>
-
     <div class="glass reveal reveal-delay-3" style="max-width: 640px; margin: 32px auto 0; padding: 24px 32px; text-align: center; border: 1px solid rgba(16,185,129,0.15);">
       <p style="color: var(--text-primary); font-size: 1rem; font-weight: 600; font-style: italic;">Only those who demonstrate ownership graduate. Not completion — ownership.</p>
     </div>
   </div>
 </section>
 
-<!-- ══════════ 6. THE MATCHING ══════════ -->
+<!-- ══════════ 6. PI + MATCHING (EXPANDED) ══════════ -->
 <section class="section-gradient-1">
   <div class="container">
     <div class="text-center" style="margin-bottom: 48px;">
-      <div class="section-badge reveal">The Match</div>
-      <h2 class="section-title reveal reveal-delay-1">AI + Human Judgment = <span class="accent">Your Perfect Match</span></h2>
-      <p class="section-subtitle center reveal reveal-delay-2">We don't guess. We use data, behavioral science, and experienced human judgment.</p>
+      <div class="section-badge reveal">The Science of Matching</div>
+      <h2 class="section-title reveal reveal-delay-1">Why <span class="accent">Predictive Index</span> Changes Everything</h2>
+      <p class="section-subtitle center reveal reveal-delay-2">Most agencies match on skills and availability. We match on behavioral DNA — the invisible layer that determines whether a founder and EA actually click.</p>
     </div>
 
-    <div class="matching-flow">
+    <div class="pi-grid">
+      <div class="glass pi-card reveal reveal-delay-1">
+        <h3>What PI Measures</h3>
+        <p>Predictive Index maps four behavioral drives: Dominance (assertiveness vs. accommodation), Extraversion (social energy), Patience (pace of work), and Formality (structure vs. flexibility). These aren't personality tests — they're predictive models of how someone will naturally behave under pressure.</p>
+      </div>
+      <div class="glass pi-card reveal reveal-delay-2">
+        <h3>Why It Matters for EA Matching</h3>
+        <p>A fast-paced, direct founder paired with a slow, process-heavy EA will fail — even if both are talented. PI eliminates this blind spot. We cross-reference your behavioral profile against every graduated EA to find the person whose natural operating rhythm complements yours.</p>
+      </div>
+      <div class="glass pi-card reveal reveal-delay-1">
+        <h3>The Matching Algorithm</h3>
+        <p>We built a proprietary app that combines PI data with your intake answers, industry needs, schedule requirements, and communication style. AI generates initial match recommendations. Your Talent Success Manager reviews them with human context and presents your top 3+ candidates.</p>
+      </div>
+      <div class="glass pi-card reveal reveal-delay-2">
+        <h3>The Result: 93% Retention</h3>
+        <p>When the behavioral match is right, everything else compounds. The EA anticipates your needs. Communication feels effortless. The relationship deepens over months, not weeks. That's why our 12-month retention is 93% — behavioral alignment is the foundation.</p>
+      </div>
+    </div>
+
+    <div class="matching-flow" style="margin-top: 48px;">
       <div class="glass matching-step reveal reveal-delay-1">
         <div class="matching-step-num">&#129504;</div>
         <h3>PI Cross-Reference</h3>
-        <p>Your personality profile is matched against every graduated EA. Work style, communication preferences, and energy levels are all factored in.</p>
+        <p>Your personality profile matched against every graduated EA. Work style, communication, and energy levels factored in.</p>
       </div>
       <div class="glass matching-step reveal reveal-delay-2">
         <div class="matching-step-num">&#129302;</div>
-        <h3>AI Analysis</h3>
-        <p>Our proprietary matching app analyzes your intake data against 650+ candidate profiles. Industry alignment, skill requirements, and schedule compatibility.</p>
+        <h3>AI + Data Analysis</h3>
+        <p>Our proprietary app analyzes intake data against 1,000+ candidate profiles. Industry, skills, schedule, personality.</p>
       </div>
       <div class="glass matching-step reveal reveal-delay-3">
         <div class="matching-step-num">&#129309;</div>
         <h3>Human Curation</h3>
-        <p>Your Talent Success Manager reviews AI recommendations and hand-selects your top 3+ candidates. You interview them and choose your Right Hand.</p>
+        <p>Your Success Manager hand-selects top 3+ candidates. You interview them and choose your Right Hand.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ 7. ONGOING DEVELOPMENT ══════════ -->
+<!-- ══════════ 7. ONGOING DEVELOPMENT + TSM TEAM ══════════ -->
 <section class="section-gradient-2">
   <div class="container">
     <div class="text-center" style="margin-bottom: 48px;">
       <div class="section-badge reveal">After Placement</div>
       <h2 class="section-title reveal reveal-delay-1">Placement Is the <span class="accent">Beginning</span> — Not the End</h2>
-      <p class="section-subtitle center reveal reveal-delay-2">Your EA never stops growing. We invest in their development continuously.</p>
+      <p class="section-subtitle center reveal reveal-delay-2">Your EA never stops growing. And our team never stops supporting you.</p>
     </div>
 
     <div class="ongoing-grid">
@@ -413,10 +421,14 @@
       </div>
     </div>
 
-    <div style="max-width: 680px; margin: 40px auto 0;">
-      <div class="glass reveal" style="padding: 28px 32px;">
-        <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.75; text-align: center;">
-          Every EA has access to a dedicated Slack community of 250+ peers, weekly live skill sessions, monthly founder-EA alignment workshops, and a personal Talent Success Manager for ongoing performance coaching and career development.
+    <!-- TSM Team Photo -->
+    <div class="tsm-team-photo reveal-scale" style="margin-top: 48px;">
+      <img src="img/tsm-team.jpg" alt="The Pareto Talent internal support team" loading="lazy">
+    </div>
+    <div style="max-width: 680px; margin: 24px auto 0;">
+      <div class="glass reveal" style="padding: 24px 32px; text-align: center;">
+        <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.75;">
+          This is the team behind every placement. Dedicated Talent Success Managers, weekly live training, 250+ EA peer community on Slack, monthly founder-EA alignment workshops, and ongoing performance coaching. Your EA is never on their own — and neither are you.
         </p>
       </div>
     </div>
@@ -430,20 +442,17 @@
       <div class="section-badge reveal">From the EAs Themselves</div>
       <h2 class="section-title reveal reveal-delay-1">What It's Like to Be <span class="accent">a Right Hand</span></h2>
     </div>
-
     <div class="ea-voice-grid">
       <div class="glass ea-voice-card reveal reveal-delay-1">
-        <div class="ea-voice-placeholder">&#127775;<br>EA testimonial quote + photo<br><small>Provide quote and image</small></div>
+        <div class="ea-voice-placeholder">EA testimonial + photo<br><small>Provide quote and image</small></div>
       </div>
       <div class="glass ea-voice-card reveal reveal-delay-2">
-        <div class="ea-voice-placeholder">&#127775;<br>EA testimonial quote + photo<br><small>Provide quote and image</small></div>
+        <div class="ea-voice-placeholder">EA testimonial + photo<br><small>Provide quote and image</small></div>
       </div>
       <div class="glass ea-voice-card reveal reveal-delay-3">
-        <div class="ea-voice-placeholder">&#127775;<br>EA testimonial quote + photo<br><small>Provide quote and image</small></div>
+        <div class="ea-voice-placeholder">EA testimonial + photo<br><small>Provide quote and image</small></div>
       </div>
     </div>
-
-    <!-- Case study: Albano -->
     <div class="glass reveal" style="max-width: 640px; margin: 32px auto 0; padding: 28px 36px; text-align: center; border: 1px solid rgba(16,185,129,0.15);">
       <p style="color: var(--text-primary); font-size: 1rem; line-height: 1.7; font-style: italic;">
         "Our very first EA, Albano, was placed with Tim Bratton — the founder behind what became Napster and Spotify. Today, Albano's name is on patents alongside Tim. That's what a Right Hand can become."
@@ -459,7 +468,6 @@
       <div class="section-badge reveal">Why Latin America</div>
       <h2 class="section-title reveal reveal-delay-1">Five Reasons We Source <span class="accent">Exclusively from LATAM</span></h2>
     </div>
-
     <div class="latam-grid">
       <div class="glass latam-card reveal reveal-delay-1">
         <div class="latam-icon">&#9200;</div>
@@ -504,12 +512,79 @@
   </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <p>&copy; 2026 Pareto Talent LLC &middot; <a href="https://paretotalent.com">paretotalent.com</a></p>
   </div>
 </footer>
+
+<!-- Scroll Funnel JS -->
+<script>
+(function () {
+  var container = document.getElementById('scroll-funnel');
+  var numEl = document.getElementById('funnel-num');
+  var labelEl = document.getElementById('funnel-label');
+  var subEl = document.getElementById('funnel-sub');
+  var display = document.getElementById('funnel-display');
+  var dotsWrap = document.getElementById('funnel-dots');
+  if (!container || !numEl) return;
+
+  var stages = [
+    { num: '1,000+', label: 'Applications Received', sub: 'Per cohort from across Latin America' },
+    { num: '~200', label: 'Pass Initial Screening', sub: 'English fluency, experience, timezone verified' },
+    { num: '~100', label: 'Complete 3-Day Challenge', sub: 'Live sessions testing speed, consistency, communication' },
+    { num: '~50', label: 'PI Behavioral Assessment', sub: 'Personality profiling for founder-EA matching' },
+    { num: '~30', label: 'Enter Full Boot Camp', sub: '10 days, 2.5 hrs/day — 40+ hours of intensive training' },
+    { num: 'Pass/Fail', label: 'Real-World Final Project', sub: 'Multi-day autonomous simulation' },
+    { num: '1', label: 'Your Right Hand', sub: 'Hand-matched to you. Trained. Ready.' }
+  ];
+
+  // Build dots
+  stages.forEach(function (_, i) {
+    var dot = document.createElement('div');
+    dot.className = 'funnel-dot';
+    dotsWrap.appendChild(dot);
+  });
+  var dots = dotsWrap.querySelectorAll('.funnel-dot');
+
+  var currentStage = -1;
+  var rafPending = false;
+
+  window.addEventListener('scroll', function () {
+    if (rafPending) return;
+    rafPending = true;
+    requestAnimationFrame(function () {
+      rafPending = false;
+      var rect = container.getBoundingClientRect();
+      var scrollTop = -rect.top;
+      var scrollHeight = container.offsetHeight - window.innerHeight;
+      if (scrollHeight <= 0) return;
+      var progress = Math.max(0, Math.min(1, scrollTop / scrollHeight));
+      var stageIndex = Math.min(stages.length - 1, Math.floor(progress * stages.length));
+
+      if (stageIndex !== currentStage) {
+        currentStage = stageIndex;
+        var s = stages[stageIndex];
+        numEl.textContent = s.num;
+        labelEl.textContent = s.label;
+        subEl.textContent = s.sub;
+
+        // Final stage highlight
+        if (stageIndex === stages.length - 1) {
+          display.classList.add('funnel-final');
+        } else {
+          display.classList.remove('funnel-final');
+        }
+
+        // Update dots
+        dots.forEach(function (d, i) {
+          d.classList.toggle('active', i === stageIndex);
+        });
+      }
+    });
+  }, { passive: true });
+})();
+</script>
 
 <script src="js/main.js" defer></script>
 </body>
