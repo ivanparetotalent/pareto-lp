@@ -6,90 +6,98 @@
 <title>How We Find & Train Your Right Hand — Pareto Talent</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta name="description" content="A multi-stage filtration, 40+ hour training program, and continuous development system. This is why our EAs arrive ready to operate.">
+<meta name="description" content="650+ applicants per cohort. Less than 1% make it through. 40+ hours of AI and operational training. A real-world final project. This is why Pareto EAs arrive ready to operate.">
 
-<!-- Open Graph -->
 <meta property="og:title" content="How We Find & Train Your Right Hand — Pareto Talent">
-<meta property="og:description" content="A multi-stage filtration, 40+ hour training program, and continuous development system.">
+<meta property="og:description" content="It takes 650+ applicants to produce one Right Hand. Here's exactly how.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/68269830dcadfd145ee05544.jpeg">
-
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How We Find & Train Your Right Hand — Pareto Talent">
-<meta name="twitter:description" content="A multi-stage filtration, 40+ hour training program, and continuous development system.">
 
-<!-- Fonts (trimmed to used weights only) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
-
-<!-- Lenis smooth scroll -->
 <script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
-
-<!-- Styles -->
 <link rel="stylesheet" href="css/styles.css">
 
 <style>
-  /* Page-specific styles */
-  .ea-hero { padding: 120px 0 60px; text-align: center; }
-  .ea-hero h1 { font-size: clamp(32px, 4.5vw, 56px); font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
-  .ea-hero .hero-sub { max-width: 640px; margin: 0 auto; font-size: 17px; color: var(--text-secondary); line-height: 1.7; }
+.ea-hero { padding: 120px 0 60px; text-align: center; }
+.ea-hero h1 { font-size: clamp(32px, 4.5vw, 56px); font-weight: 800; line-height: 1.1; margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto; }
+.ea-hero .hero-sub { max-width: 680px; margin: 0 auto; font-size: 17px; color: var(--text-secondary); line-height: 1.75; }
 
-  /* Funnel */
-  .funnel { display: flex; flex-direction: column; align-items: center; gap: 24px; }
-  .funnel-step { text-align: center; padding: 28px 32px; transition: transform .3s ease; }
-  .funnel-step:hover { transform: translateY(-4px); }
-  .funnel-number { font-size: clamp(36px, 5vw, 56px); font-weight: 800; color: var(--green); line-height: 1; margin-bottom: 6px; }
-  .funnel-label { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
-  .funnel-desc { font-size: 14px; color: var(--text-secondary); }
-  .funnel-step:nth-child(1) { max-width: 600px; width: 100%; }
-  .funnel-step:nth-child(2) { max-width: 500px; width: 100%; }
-  .funnel-step:nth-child(3) { max-width: 400px; width: 100%; }
-  .funnel-step:nth-child(4) { max-width: 320px; width: 100%; }
+/* Comparison cards */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 860px; margin: 0 auto; }
+.compare-bad { border-color: rgba(239,68,68,0.2); }
+.compare-good { border-color: rgba(16,185,129,0.2); }
+.compare-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+.compare-bad .compare-label { color: #ef4444; }
+.compare-good .compare-label { color: var(--green); }
+.compare-list { list-style: none; padding: 0; margin: 0; }
+.compare-list li { font-size: 14px; color: var(--text-secondary); padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.04); display: flex; align-items: flex-start; gap: 10px; line-height: 1.6; }
+.compare-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+.compare-bad .compare-list li::before { background: rgba(239,68,68,0.4); }
+.compare-good .compare-list li::before { background: var(--green); }
 
-  /* Connector lines between funnel steps */
-  .funnel-connector { width: 2px; height: 32px; background: linear-gradient(to bottom, var(--green), transparent); opacity: .4; }
+/* Funnel */
+.funnel { display: flex; flex-direction: column; align-items: center; gap: 0; }
+.funnel-stage { display: grid; grid-template-columns: 80px 1fr; gap: 20px; align-items: start; padding: 28px 32px; width: 100%; max-width: 720px; transition: transform .3s ease; }
+.funnel-stage:hover { transform: translateX(8px); }
+.funnel-num { font-size: clamp(28px, 3.5vw, 42px); font-weight: 800; color: var(--green); line-height: 1; }
+.funnel-title { font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.funnel-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+.funnel-dropout { font-size: 12px; color: var(--text-muted); margin-top: 4px; font-style: italic; }
+.funnel-arrow { width: 2px; height: 24px; background: linear-gradient(to bottom, var(--green), transparent); opacity: .3; margin-left: 40px; }
 
-  /* Criteria grid */
-  .criteria-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .criteria-card { padding: 32px; }
-  .criteria-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
-  .criteria-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.65; }
-  .criteria-icon { font-size: 28px; margin-bottom: 12px; }
+/* Boot camp grid */
+.bootcamp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.bootcamp-card { padding: 32px 28px; }
+.bootcamp-card h3 { font-size: 1rem; font-weight: 700; color: var(--green); margin-bottom: 16px; font-family: 'Plus Jakarta Sans', sans-serif; }
+.bootcamp-card ul { list-style: none; padding: 0; margin: 0; }
+.bootcamp-card li { font-size: 14px; color: var(--text-secondary); padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,.04); display: flex; align-items: center; gap: 10px; line-height: 1.5; }
+.bootcamp-card li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+.bootcamp-hours { font-size: 12px; color: var(--text-muted); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 12px; }
 
-  /* Training columns */
-  .training-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 40px; }
-  .training-col h3 { font-size: 18px; font-weight: 700; margin-bottom: 16px; color: var(--green); }
-  .training-col ul { list-style: none; padding: 0; margin: 0; }
-  .training-col li { font-size: 15px; color: var(--text-secondary); padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.06); display: flex; align-items: center; gap: 10px; }
-  .training-col li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+/* Final project bullets */
+.fp-list { max-width: 640px; margin: 32px auto 0; text-align: left; }
+.fp-list li { font-size: 15px; color: var(--text-secondary); padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.04); display: flex; align-items: flex-start; gap: 12px; line-height: 1.65; }
+.fp-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 8px; }
 
-  /* Final project */
-  .final-project { text-align: center; max-width: 640px; margin: 0 auto; }
-  .final-project p { font-size: 16px; color: var(--text-secondary); line-height: 1.75; }
+/* Matching steps */
+.matching-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.matching-step { padding: 28px 24px; text-align: center; }
+.matching-step-num { font-size: 2rem; margin-bottom: 10px; }
+.matching-step h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
+.matching-step p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
 
-  /* Stats grid */
-  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-  .stat-card { text-align: center; padding: 32px 20px; }
-  .stat-number { font-size: clamp(28px, 3vw, 40px); font-weight: 800; color: var(--green); margin-bottom: 6px; }
-  .stat-label { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+/* Ongoing stats */
+.ongoing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.ongoing-card { text-align: center; padding: 32px 16px; }
+.ongoing-num { font-size: clamp(28px, 3vw, 40px); font-weight: 800; color: var(--green); margin-bottom: 6px; }
+.ongoing-label { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
 
-  /* Back link in nav */
-  .nav-back { display: flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color .2s; }
-  .nav-back:hover { color: var(--green); }
-  .nav-back svg { width: 16px; height: 16px; }
+/* EA testimonial placeholders */
+.ea-voice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.ea-voice-card { padding: 28px 24px; border: 1px dashed rgba(16,185,129,0.2); }
+.ea-voice-placeholder { font-size: 14px; color: var(--text-muted); font-style: italic; text-align: center; padding: 20px 0; }
 
-  @media (max-width: 768px) {
-    .ea-hero { padding: 100px 0 48px; }
-    .criteria-grid { grid-template-columns: 1fr; }
-    .training-columns { grid-template-columns: 1fr; gap: 24px; padding: 28px; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .funnel-step:nth-child(1),
-    .funnel-step:nth-child(2),
-    .funnel-step:nth-child(3),
-    .funnel-step:nth-child(4) { max-width: 100%; }
-  }
+/* Why LATAM */
+.latam-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.latam-card { padding: 24px 16px; text-align: center; }
+.latam-icon { font-size: 1.8rem; margin-bottom: 10px; }
+.latam-card h3 { font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--text-primary); }
+.latam-card p { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+
+.nav-back { display: flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color .2s; }
+.nav-back:hover { color: var(--green); }
+.nav-back svg { width: 16px; height: 16px; }
+
+@media (max-width: 768px) {
+  .ea-hero { padding: 100px 0 48px; }
+  .compare-grid, .bootcamp-grid, .matching-flow { grid-template-columns: 1fr; }
+  .ongoing-grid { grid-template-columns: repeat(2, 1fr); }
+  .latam-grid { grid-template-columns: repeat(2, 1fr); }
+  .ea-voice-grid { grid-template-columns: 1fr; }
+  .funnel-stage { grid-template-columns: 60px 1fr; padding: 20px 16px; }
+}
 </style>
 </head>
 <body>
@@ -98,7 +106,6 @@
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="orb orb-3"></div>
-  <div class="orb orb-4"></div>
 </div>
 
 <!-- Nav -->
@@ -117,170 +124,378 @@
   </div>
 </nav>
 
-<!-- ══════════ HERO ══════════ -->
+<!-- ══════════ 1. HERO ══════════ -->
 <section class="ea-hero">
   <div class="container">
-    <div class="section-badge reveal">Inside the Training Program</div>
-    <h1 class="reveal reveal-delay-1">How We Turn 650+ Applicants Into <span class="accent">Your Right Hand</span></h1>
-    <p class="hero-sub reveal reveal-delay-2">A multi-stage filtration, 40+ hour training program, and continuous development system. This is why our EAs arrive ready to operate — not learn on your time.</p>
+    <div class="section-badge reveal">Why Our EAs Are Different</div>
+    <h1 class="reveal reveal-delay-1">It Takes 650+ Applicants to Produce <span class="accent">One Right Hand</span></h1>
+    <p class="hero-sub reveal reveal-delay-2">Most staffing agencies send you a resume and wish you luck. We put every candidate through a multi-week filtration, 40+ hours of training, a real-world final project, and continuous development — before they ever touch your business.</p>
   </div>
 </section>
 
-<!-- ══════════ THE FUNNEL ══════════ -->
-<section class="section-gradient-1" style="position: relative; padding: 80px 0;">
+<!-- Trust stats -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid reveal-scale" style="grid-template-columns: repeat(4, 1fr);">
+      <div class="stat"><div class="stat-number">650+</div><div class="stat-label">Applicants<br>Per Cohort</div></div>
+      <div class="stat"><div class="stat-number">&lt;1%</div><div class="stat-label">Acceptance<br>Rate</div></div>
+      <div class="stat"><div class="stat-number">40+</div><div class="stat-label">Hours of<br>Training</div></div>
+      <div class="stat"><div class="stat-number">93%</div><div class="stat-label">Retention<br>at 12 Months</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ 2. THE PROBLEM ══════════ -->
+<section class="section-gradient-1">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 48px;">
+      <div class="section-badge reveal">The Difference</div>
+      <h2 class="section-title reveal reveal-delay-1">Why Most EA Placements <span class="accent">Fail</span> — And Ours Don't</h2>
+    </div>
+
+    <div class="compare-grid">
+      <div class="glass compare-bad reveal reveal-delay-1" style="padding: 32px 28px;">
+        <div class="compare-label">What a Typical Agency Does</div>
+        <ul class="compare-list">
+          <li>Post a job listing, skim resumes</li>
+          <li>One 30-minute interview</li>
+          <li>No training before placement</li>
+          <li>No behavioral profiling or matching</li>
+          <li>No ongoing support after placement</li>
+          <li>No accountability if it doesn't work</li>
+        </ul>
+      </div>
+      <div class="glass compare-good reveal reveal-delay-2" style="padding: 32px 28px;">
+        <div class="compare-label">What Pareto Does</div>
+        <ul class="compare-list">
+          <li>Multi-week boot camp (40+ hours)</li>
+          <li>PI behavioral profiling for founder-EA match</li>
+          <li>AI tool training before placement</li>
+          <li>Real-world simulation final project</li>
+          <li>Weekly ongoing training + 250+ EA community</li>
+          <li>Dedicated Success Manager + lifetime replacement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 3. SELECTION FUNNEL ══════════ -->
+<section class="section-gradient-2">
   <div class="container">
     <div class="text-center" style="margin-bottom: 48px;">
       <div class="section-badge reveal">The Selection Funnel</div>
-      <h2 class="section-title reveal reveal-delay-1">From 650+ to the <span class="accent">Top 1%</span></h2>
-      <p class="section-subtitle center reveal reveal-delay-2">Every cohort starts with hundreds of applicants. Only the best make it through.</p>
+      <h2 class="section-title reveal reveal-delay-1">From 650+ Applicants to <span class="accent">Your Right Hand</span></h2>
+      <p class="section-subtitle center reveal reveal-delay-2">Seven stages. Only the top 1% make it through.</p>
     </div>
 
     <div class="funnel">
-      <div class="glass funnel-step reveal">
-        <div class="funnel-number">650+</div>
-        <div class="funnel-label">Applications Received</div>
-        <div class="funnel-desc">Per cohort from across Latin America</div>
-      </div>
-      <div class="funnel-connector reveal"></div>
-      <div class="glass funnel-step reveal reveal-delay-1">
-        <div class="funnel-number">100</div>
-        <div class="funnel-label">Pass Initial Screening</div>
-        <div class="funnel-desc">English fluency, relevant experience, timezone alignment</div>
-      </div>
-      <div class="funnel-connector reveal"></div>
-      <div class="glass funnel-step reveal reveal-delay-2">
-        <div class="funnel-number">30</div>
-        <div class="funnel-label">Complete Full Assessment</div>
-        <div class="funnel-desc">PI behavioral profiling, technical evaluation, culture fit</div>
-      </div>
-      <div class="funnel-connector reveal"></div>
-      <div class="glass funnel-step reveal reveal-delay-3">
-        <div class="funnel-number">Top 1%</div>
-        <div class="funnel-label">Placed with Founders</div>
-        <div class="funnel-desc">Hand-matched based on work style and business needs</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ SELECTION CRITERIA ══════════ -->
-<section class="section-gradient-2" style="position: relative; padding: 80px 0;">
-  <div class="container">
-    <div class="text-center" style="margin-bottom: 48px;">
-      <div class="section-badge reveal">What We Screen For</div>
-      <h2 class="section-title reveal reveal-delay-1">Selection <span class="accent">Criteria</span></h2>
-      <p class="section-subtitle center reveal reveal-delay-2">Four dimensions that separate operators from task-takers.</p>
-    </div>
-
-    <div class="criteria-grid">
-      <div class="glass criteria-card reveal">
-        <div class="criteria-icon">&#128172;</div>
-        <h3>English Fluency Assessment</h3>
-        <p>Written and spoken evaluation. Client-facing communication standards.</p>
-      </div>
-      <div class="glass criteria-card reveal reveal-delay-1">
-        <div class="criteria-icon">&#129504;</div>
-        <h3>PI Behavioral Profiling</h3>
-        <p>Personality and work-style compatibility. Ensures founder-EA fit from day one.</p>
-      </div>
-      <div class="glass criteria-card reveal reveal-delay-2">
-        <div class="criteria-icon">&#9881;&#65039;</div>
-        <h3>Technical Skills Test</h3>
-        <p>AI tools (Claude, ChatGPT, N8N, Canva), project management, CRM proficiency.</p>
-      </div>
-      <div class="glass criteria-card reveal reveal-delay-3">
-        <div class="criteria-icon">&#129309;</div>
-        <h3>Culture Fit Interview</h3>
-        <p>Proactive mindset screening. We select for operators, not task-takers.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ TRAINING PROGRAM ══════════ -->
-<section class="section-gradient-1" style="position: relative; padding: 80px 0;">
-  <div class="container">
-    <div class="text-center" style="margin-bottom: 48px;">
-      <div class="section-badge reveal">40+ Hours of Training</div>
-      <h2 class="section-title reveal reveal-delay-1">The <span class="accent">Training Program</span></h2>
-      <p class="section-subtitle center reveal reveal-delay-2">What every EA completes before they ever touch your business.</p>
-    </div>
-
-    <div class="glass reveal reveal-delay-1">
-      <div class="training-columns">
-        <div class="training-col">
-          <h3>AI &amp; Technical</h3>
-          <ul>
-            <li>Claude &amp; ChatGPT mastery</li>
-            <li>N8N automation workflows</li>
-            <li>Canva &amp; CapCut content creation</li>
-            <li>Lovable vibe coding</li>
-            <li>Data processing &amp; analysis</li>
-          </ul>
+      <div class="glass funnel-stage reveal">
+        <div class="funnel-num">650+</div>
+        <div>
+          <div class="funnel-title">Sourcing</div>
+          <div class="funnel-desc">Applicants per cohort from across Latin America. Facebook ads + referrals from existing EAs.</div>
         </div>
-        <div class="training-col">
-          <h3>Operational</h3>
-          <ul>
-            <li>Proactive operator frameworks</li>
-            <li>Delegation system training</li>
-            <li>Communication standards</li>
-            <li>SOP creation methodology</li>
-            <li>Weekly sync protocols</li>
-          </ul>
+      </div>
+      <div class="funnel-arrow reveal"></div>
+
+      <div class="glass funnel-stage reveal reveal-delay-1">
+        <div class="funnel-num">~100</div>
+        <div>
+          <div class="funnel-title">Initial Screening</div>
+          <div class="funnel-desc">English fluency assessment (written + spoken). Resume review. Timezone alignment. Experience verification.</div>
+          <div class="funnel-dropout">~85% screened out</div>
+        </div>
+      </div>
+      <div class="funnel-arrow reveal"></div>
+
+      <div class="glass funnel-stage reveal reveal-delay-1">
+        <div class="funnel-num">~50</div>
+        <div>
+          <div class="funnel-title">3-Day Live Challenge</div>
+          <div class="funnel-desc">1 hour/day live sessions. Tests learning speed, communication clarity, and consistency. If you can't show up for 3 days, you can't show up for a founder.</div>
+          <div class="funnel-dropout">~50% don't complete</div>
+        </div>
+      </div>
+      <div class="funnel-arrow reveal"></div>
+
+      <div class="glass funnel-stage reveal reveal-delay-2">
+        <div class="funnel-num">~30</div>
+        <div>
+          <div class="funnel-title">PI Behavioral Assessment</div>
+          <div class="funnel-desc">Predictive Index profiling. Maps personality traits, work style, and communication preferences. This data is used later for founder-EA matching.</div>
+        </div>
+      </div>
+      <div class="funnel-arrow reveal"></div>
+
+      <div class="glass funnel-stage reveal reveal-delay-2">
+        <div class="funnel-num">10 days</div>
+        <div>
+          <div class="funnel-title">Full Boot Camp — 40+ Hours</div>
+          <div class="funnel-desc">2.5 hours/day for 10 days. AI tools, operational frameworks, delegation systems, communication standards. The most intensive EA training program in the industry.</div>
+        </div>
+      </div>
+      <div class="funnel-arrow reveal"></div>
+
+      <div class="glass funnel-stage reveal reveal-delay-3">
+        <div class="funnel-num">Pass/Fail</div>
+        <div>
+          <div class="funnel-title">Real-World Final Project</div>
+          <div class="funnel-desc">Multi-day autonomous simulation. Real inbox scenarios, competing priorities, AI-powered tasks. Only those who demonstrate proactive ownership graduate.</div>
+        </div>
+      </div>
+      <div class="funnel-arrow reveal"></div>
+
+      <div class="glass funnel-stage reveal reveal-delay-3" style="border: 1px solid rgba(16,185,129,0.2);">
+        <div class="funnel-num" style="color: var(--green-bright);">Top 1%</div>
+        <div>
+          <div class="funnel-title">Hand-Matched to a Founder</div>
+          <div class="funnel-desc">AI + human matching. PI profiles cross-referenced. 3+ candidates presented. The founder interviews and chooses their Right Hand.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ FINAL PROJECT ══════════ -->
-<section class="section-gradient-2" style="position: relative; padding: 80px 0;">
+<!-- ══════════ 4. BOOT CAMP BREAKDOWN ══════════ -->
+<section class="section-gradient-1">
   <div class="container">
-    <div class="final-project">
+    <div class="text-center" style="margin-bottom: 48px;">
+      <div class="section-badge reveal">The Boot Camp</div>
+      <h2 class="section-title reveal reveal-delay-1">What <span class="accent">40+ Hours</span> of Training Actually Covers</h2>
+      <p class="section-subtitle center reveal reveal-delay-2">Not a webinar. Not a PDF. Ten days of live instruction, hands-on practice, and real-world application.</p>
+    </div>
+
+    <!-- PLACEHOLDER: Boot camp screenshot -->
+    <div class="glass reveal" style="max-width: 720px; margin: 0 auto 40px; padding: 48px; text-align: center; border: 1px dashed rgba(16,185,129,0.15);">
+      <p style="color: var(--text-muted); font-size: 14px;">&#128247; Boot camp Zoom screenshot / training session photo goes here<br><small>Add to: <code>img/bootcamp-session.jpg</code></small></p>
+    </div>
+
+    <div class="bootcamp-grid">
+      <div class="glass bootcamp-card reveal reveal-delay-1">
+        <div class="bootcamp-hours">10+ Hours</div>
+        <h3>AI &amp; Technology</h3>
+        <ul>
+          <li>ChatGPT &amp; Claude prompt engineering</li>
+          <li>N8N automation workflows</li>
+          <li>Canva design (templates, brand kits)</li>
+          <li>CapCut video editing (short-form, hooks)</li>
+          <li>Lovable / vibe coding</li>
+          <li>Operator AI (web automation, data extraction)</li>
+        </ul>
+      </div>
+
+      <div class="glass bootcamp-card reveal reveal-delay-2">
+        <div class="bootcamp-hours">10+ Hours</div>
+        <h3>Operational Excellence</h3>
+        <ul>
+          <li>Inbox zero methodology</li>
+          <li>Calendar &amp; schedule optimization</li>
+          <li>CRM management (HubSpot, HighLevel)</li>
+          <li>Project management (ClickUp, Asana)</li>
+          <li>SOP creation (build systems, not just follow them)</li>
+          <li>Weekly sync protocols (stand-ups, EOD reports)</li>
+        </ul>
+      </div>
+
+      <div class="glass bootcamp-card reveal reveal-delay-1">
+        <div class="bootcamp-hours">10+ Hours</div>
+        <h3>Delegation Frameworks</h3>
+        <ul>
+          <li>The 7 Laws of Delegation (proprietary)</li>
+          <li>Proactive operator mindset</li>
+          <li>Founder communication standards</li>
+          <li>Priority matrix &amp; time-value auditing</li>
+          <li>Escalation protocols (act vs. ask)</li>
+          <li>Second Brain OS implementation</li>
+        </ul>
+      </div>
+
+      <div class="glass bootcamp-card reveal reveal-delay-2">
+        <div class="bootcamp-hours">10+ Hours</div>
+        <h3>Soft Skills &amp; Communication</h3>
+        <ul>
+          <li>Professional English (email, Slack, verbal)</li>
+          <li>Cross-cultural workplace dynamics</li>
+          <li>Conflict resolution &amp; feedback loops</li>
+          <li>Client-facing communication standards</li>
+          <li>Presentation &amp; reporting skills</li>
+          <li>Active listening &amp; context capture</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 5. FINAL PROJECT ══════════ -->
+<section class="section-gradient-2">
+  <div class="container">
+    <div class="text-center">
       <div class="section-badge reveal">The Proving Ground</div>
-      <h2 class="section-title reveal reveal-delay-1" style="margin-bottom: 20px;">Every EA Completes a <span class="accent">Real-World Simulation</span></h2>
-      <p class="reveal reveal-delay-2">Before placement, each EA completes a multi-day simulation of real founder workflows — inbox management, project coordination, AI-assisted content creation, and autonomous decision-making. Only those who demonstrate proactive ownership graduate to placement.</p>
+      <h2 class="section-title reveal reveal-delay-1">The Final Project: Not a Test. <span class="accent">A Simulation.</span></h2>
+      <p class="section-subtitle center reveal reveal-delay-2">Before any EA is placed with a founder, they must prove they can operate autonomously in real-world conditions.</p>
+    </div>
+
+    <ul class="fp-list reveal reveal-delay-2" style="list-style: none; padding: 0;">
+      <li>Multi-day autonomous workflow management with no hand-holding</li>
+      <li>Real inbox scenarios with competing priorities and tight deadlines</li>
+      <li>AI-powered content creation tasks (prompting, editing, publishing)</li>
+      <li>Project coordination across simulated teams and stakeholders</li>
+      <li>Proactive problem identification — find issues before being told</li>
+      <li>Quality of autonomous decisions — not just task completion, but judgment</li>
+    </ul>
+
+    <!-- PLACEHOLDER: Final project screenshot -->
+    <div class="glass reveal" style="max-width: 600px; margin: 32px auto 0; padding: 40px; text-align: center; border: 1px dashed rgba(16,185,129,0.15);">
+      <p style="color: var(--text-muted); font-size: 14px;">&#128196; Final project output example goes here<br><small>Add to: <code>img/final-project-example.jpg</code></small></p>
+    </div>
+
+    <div class="glass reveal reveal-delay-3" style="max-width: 640px; margin: 32px auto 0; padding: 24px 32px; text-align: center; border: 1px solid rgba(16,185,129,0.15);">
+      <p style="color: var(--text-primary); font-size: 1rem; font-weight: 600; font-style: italic;">Only those who demonstrate ownership graduate. Not completion — ownership.</p>
     </div>
   </div>
 </section>
 
-<!-- ══════════ ONGOING DEVELOPMENT ══════════ -->
-<section class="section-gradient-1" style="position: relative; padding: 80px 0;">
+<!-- ══════════ 6. THE MATCHING ══════════ -->
+<section class="section-gradient-1">
   <div class="container">
     <div class="text-center" style="margin-bottom: 48px;">
-      <div class="section-badge reveal">Continuous Growth</div>
-      <h2 class="section-title reveal reveal-delay-1">Ongoing <span class="accent">Development</span></h2>
-      <p class="section-subtitle center reveal reveal-delay-2">Placement is just the beginning. Our EAs keep getting better.</p>
+      <div class="section-badge reveal">The Match</div>
+      <h2 class="section-title reveal reveal-delay-1">AI + Human Judgment = <span class="accent">Your Perfect Match</span></h2>
+      <p class="section-subtitle center reveal reveal-delay-2">We don't guess. We use data, behavioral science, and experienced human judgment.</p>
     </div>
 
-    <div class="stats-grid">
-      <div class="glass stat-card reveal">
-        <div class="stat-number">104+</div>
-        <div class="stat-label">Training sessions completed</div>
+    <div class="matching-flow">
+      <div class="glass matching-step reveal reveal-delay-1">
+        <div class="matching-step-num">&#129504;</div>
+        <h3>PI Cross-Reference</h3>
+        <p>Your personality profile is matched against every graduated EA. Work style, communication preferences, and energy levels are all factored in.</p>
       </div>
-      <div class="glass stat-card reveal reveal-delay-1">
-        <div class="stat-number">36</div>
-        <div class="stat-label">Structured courses available</div>
+      <div class="glass matching-step reveal reveal-delay-2">
+        <div class="matching-step-num">&#129302;</div>
+        <h3>AI Analysis</h3>
+        <p>Our proprietary matching app analyzes your intake data against 650+ candidate profiles. Industry alignment, skill requirements, and schedule compatibility.</p>
       </div>
-      <div class="glass stat-card reveal reveal-delay-2">
-        <div class="stat-number">Weekly</div>
-        <div class="stat-label">Live skill sessions</div>
-      </div>
-      <div class="glass stat-card reveal reveal-delay-3">
-        <div class="stat-number">250+</div>
-        <div class="stat-label">EA peer community</div>
+      <div class="glass matching-step reveal reveal-delay-3">
+        <div class="matching-step-num">&#129309;</div>
+        <h3>Human Curation</h3>
+        <p>Your Talent Success Manager reviews AI recommendations and hand-selects your top 3+ candidates. You interview them and choose your Right Hand.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ CTA ══════════ -->
+<!-- ══════════ 7. ONGOING DEVELOPMENT ══════════ -->
+<section class="section-gradient-2">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 48px;">
+      <div class="section-badge reveal">After Placement</div>
+      <h2 class="section-title reveal reveal-delay-1">Placement Is the <span class="accent">Beginning</span> — Not the End</h2>
+      <p class="section-subtitle center reveal reveal-delay-2">Your EA never stops growing. We invest in their development continuously.</p>
+    </div>
+
+    <div class="ongoing-grid">
+      <div class="glass ongoing-card reveal reveal-delay-1">
+        <div class="ongoing-num">104+</div>
+        <div class="ongoing-label">Training Sessions<br>in Library</div>
+      </div>
+      <div class="glass ongoing-card reveal reveal-delay-2">
+        <div class="ongoing-num">36</div>
+        <div class="ongoing-label">Advanced<br>Courses</div>
+      </div>
+      <div class="glass ongoing-card reveal reveal-delay-3">
+        <div class="ongoing-num">Weekly</div>
+        <div class="ongoing-label">Live Training<br>Every Monday</div>
+      </div>
+      <div class="glass ongoing-card reveal reveal-delay-4">
+        <div class="ongoing-num">250+</div>
+        <div class="ongoing-label">EA Peer<br>Community</div>
+      </div>
+    </div>
+
+    <div style="max-width: 680px; margin: 40px auto 0;">
+      <div class="glass reveal" style="padding: 28px 32px;">
+        <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.75; text-align: center;">
+          Every EA has access to a dedicated Slack community of 250+ peers, weekly live skill sessions, monthly founder-EA alignment workshops, and a personal Talent Success Manager for ongoing performance coaching and career development.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 8. EA VOICES (PLACEHOLDER) ══════════ -->
+<section class="section-gradient-1">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 48px;">
+      <div class="section-badge reveal">From the EAs Themselves</div>
+      <h2 class="section-title reveal reveal-delay-1">What It's Like to Be <span class="accent">a Right Hand</span></h2>
+    </div>
+
+    <div class="ea-voice-grid">
+      <div class="glass ea-voice-card reveal reveal-delay-1">
+        <div class="ea-voice-placeholder">&#127775;<br>EA testimonial quote + photo<br><small>Provide quote and image</small></div>
+      </div>
+      <div class="glass ea-voice-card reveal reveal-delay-2">
+        <div class="ea-voice-placeholder">&#127775;<br>EA testimonial quote + photo<br><small>Provide quote and image</small></div>
+      </div>
+      <div class="glass ea-voice-card reveal reveal-delay-3">
+        <div class="ea-voice-placeholder">&#127775;<br>EA testimonial quote + photo<br><small>Provide quote and image</small></div>
+      </div>
+    </div>
+
+    <!-- Case study: Albano -->
+    <div class="glass reveal" style="max-width: 640px; margin: 32px auto 0; padding: 28px 36px; text-align: center; border: 1px solid rgba(16,185,129,0.15);">
+      <p style="color: var(--text-primary); font-size: 1rem; line-height: 1.7; font-style: italic;">
+        "Our very first EA, Albano, was placed with Tim Bratton — the founder behind what became Napster and Spotify. Today, Albano's name is on patents alongside Tim. That's what a Right Hand can become."
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 9. WHY LATIN AMERICA ══════════ -->
+<section class="section-gradient-2">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 48px;">
+      <div class="section-badge reveal">Why Latin America</div>
+      <h2 class="section-title reveal reveal-delay-1">Five Reasons We Source <span class="accent">Exclusively from LATAM</span></h2>
+    </div>
+
+    <div class="latam-grid">
+      <div class="glass latam-card reveal reveal-delay-1">
+        <div class="latam-icon">&#9200;</div>
+        <h3>Timezone Match</h3>
+        <p>Same working hours as US clients. No overnight shifts.</p>
+      </div>
+      <div class="glass latam-card reveal reveal-delay-2">
+        <div class="latam-icon">&#127758;</div>
+        <h3>Cultural Alignment</h3>
+        <p>Shared values, aligned holidays, similar work ethic.</p>
+      </div>
+      <div class="glass latam-card reveal reveal-delay-3">
+        <div class="latam-icon">&#128172;</div>
+        <h3>English Fluency</h3>
+        <p>Neutral accent. Strong written communication.</p>
+      </div>
+      <div class="glass latam-card reveal reveal-delay-1">
+        <div class="latam-icon">&#127467;&#127479;</div>
+        <h3>Bilingual Edge</h3>
+        <p>Spanish fluency for US service industries.</p>
+      </div>
+      <div class="glass latam-card reveal reveal-delay-2">
+        <div class="latam-icon">&#127891;</div>
+        <h3>Talent Depth</h3>
+        <p>University-educated professionals seeking meaningful work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 10. FINAL CTA ══════════ -->
 <section class="final-cta">
   <div class="container">
     <div class="glass final-inner reveal-scale">
-      <div class="section-badge">Your Right Hand Is Ready</div>
-      <h2>Ready to Meet <span class="accent">Your Right Hand</span>?</h2>
-      <p>Schedule a strategy call and we'll show you what a trained, AI-enabled Right Hand looks like for your specific situation.</p>
+      <h2>Your Right Hand Is Already <span class="accent">Trained and Waiting</span></h2>
+      <p>See who we'd match you with. No commitment, no credit card.</p>
       <a href="v2-2.html#apply" class="btn-primary">
         Schedule Your Strategy Call
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
@@ -296,8 +511,6 @@
   </div>
 </footer>
 
-<!-- Main JS (deferred) -->
 <script src="js/main.js" defer></script>
-
 </body>
 </html>
