@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How We Find & Train Your Right Hand — Pareto Talent</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="A multi-stage filtration, 40+ hour training program, and continuous development system. This is why our EAs arrive ready to operate.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="How We Find & Train Your Right Hand — Pareto Talent">
+<meta property="og:description" content="A multi-stage filtration, 40+ hour training program, and continuous development system.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/68269830dcadfd145ee05544.jpeg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How We Find & Train Your Right Hand — Pareto Talent">
+<meta name="twitter:description" content="A multi-stage filtration, 40+ hour training program, and continuous development system.">
+
+<!-- Fonts (trimmed to used weights only) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+
+<!-- Lenis smooth scroll -->
+<script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/styles.css">
+
+<style>
+  /* Page-specific styles */
+  .ea-hero { padding: 120px 0 60px; text-align: center; }
+  .ea-hero h1 { font-size: clamp(32px, 4.5vw, 56px); font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
+  .ea-hero .hero-sub { max-width: 640px; margin: 0 auto; font-size: 17px; color: var(--text-secondary); line-height: 1.7; }
+
+  /* Funnel */
+  .funnel { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+  .funnel-step { text-align: center; padding: 28px 32px; transition: transform .3s ease; }
+  .funnel-step:hover { transform: translateY(-4px); }
+  .funnel-number { font-size: clamp(36px, 5vw, 56px); font-weight: 800; color: var(--green); line-height: 1; margin-bottom: 6px; }
+  .funnel-label { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .funnel-desc { font-size: 14px; color: var(--text-secondary); }
+  .funnel-step:nth-child(1) { max-width: 600px; width: 100%; }
+  .funnel-step:nth-child(2) { max-width: 500px; width: 100%; }
+  .funnel-step:nth-child(3) { max-width: 400px; width: 100%; }
+  .funnel-step:nth-child(4) { max-width: 320px; width: 100%; }
+
+  /* Connector lines between funnel steps */
+  .funnel-connector { width: 2px; height: 32px; background: linear-gradient(to bottom, var(--green), transparent); opacity: .4; }
+
+  /* Criteria grid */
+  .criteria-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .criteria-card { padding: 32px; }
+  .criteria-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
+  .criteria-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.65; }
+  .criteria-icon { font-size: 28px; margin-bottom: 12px; }
+
+  /* Training columns */
+  .training-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 40px; }
+  .training-col h3 { font-size: 18px; font-weight: 700; margin-bottom: 16px; color: var(--green); }
+  .training-col ul { list-style: none; padding: 0; margin: 0; }
+  .training-col li { font-size: 15px; color: var(--text-secondary); padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.06); display: flex; align-items: center; gap: 10px; }
+  .training-col li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+
+  /* Final project */
+  .final-project { text-align: center; max-width: 640px; margin: 0 auto; }
+  .final-project p { font-size: 16px; color: var(--text-secondary); line-height: 1.75; }
+
+  /* Stats grid */
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .stat-card { text-align: center; padding: 32px 20px; }
+  .stat-number { font-size: clamp(28px, 3vw, 40px); font-weight: 800; color: var(--green); margin-bottom: 6px; }
+  .stat-label { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+
+  /* Back link in nav */
+  .nav-back { display: flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color .2s; }
+  .nav-back:hover { color: var(--green); }
+  .nav-back svg { width: 16px; height: 16px; }
+
+  @media (max-width: 768px) {
+    .ea-hero { padding: 100px 0 48px; }
+    .criteria-grid { grid-template-columns: 1fr; }
+    .training-columns { grid-template-columns: 1fr; gap: 24px; padding: 28px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .funnel-step:nth-child(1),
+    .funnel-step:nth-child(2),
+    .funnel-step:nth-child(3),
+    .funnel-step:nth-child(4) { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ambient">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+</div>
+
+<!-- Nav -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <a href="v2-2.html" class="nav-logo">
+      <img src="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/65d4092400a2ec10ef5c1bef.png" alt="Pareto Talent">
+    </a>
+    <div class="nav-links">
+      <a href="v2-2.html" class="nav-back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd"/></svg>
+        Back to Main Page
+      </a>
+      <a href="v2-2.html#apply" class="nav-cta">Book Your Call &rarr;</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="ea-hero">
+  <div class="container">
+    <div class="section-badge reveal">Inside the Training Program</div>
+    <h1 class="reveal reveal-delay-1">How We Turn 650+ Applicants Into <span class="accent">Your Right Hand</span></h1>
+    <p class="hero-sub reveal reveal-delay-2">A multi-stage filtration, 40+ hour training program, and continuous development system. This is why our EAs arrive ready to operate — not learn on your time.</p>
+  </div>
+</section>
+
+<!-- ══════════ THE FUNNEL ══════════ -->
+<section class="section-gradient-1" style="position: relative; padding: 80px 0;">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 48px;">
+      <div class="section-badge reveal">The Selection Funnel</div>
+      <h2 class="section-title reveal reveal-delay-1">From 650+ to the <span class="accent">Top 1%</span></h2>
+      <p class="section-subtitle center reveal reveal-delay-2">Every cohort starts with hundreds of applicants. Only the best make it through.</p>
+    </div>
+
+    <div class="funnel">
+      <div class="glass funnel-step reveal">
+        <div class="funnel-number">650+</div>
+        <div class="funnel-label">Applications Received</div>
+        <div class="funnel-desc">Per cohort from across Latin America</div>
+      </div>
+      <div class="funnel-connector reveal"></div>
+      <div class="glass funnel-step reveal reveal-delay-1">
+        <div class="funnel-number">100</div>
+        <div class="funnel-label">Pass Initial Screening</div>
+        <div class="funnel-desc">English fluency, relevant experience, timezone alignment</div>
+      </div>
+      <div class="funnel-connector reveal"></div>
+      <div class="glass funnel-step reveal reveal-delay-2">
+        <div class="funnel-number">30</div>
+        <div class="funnel-label">Complete Full Assessment</div>
+        <div class="funnel-desc">PI behavioral profiling, technical evaluation, culture fit</div>
+      </div>
+      <div class="funnel-connector reveal"></div>
+      <div class="glass funnel-step reveal reveal-delay-3">
+        <div class="funnel-number">Top 1%</div>
+        <div class="funnel-label">Placed with Founders</div>
+        <div class="funnel-desc">Hand-matched based on work style and business needs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SELECTION CRITERIA ══════════ -->
+<section class="section-gradient-2" style="position: relative; padding: 80px 0;">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 48px;">
+      <div class="section-badge reveal">What We Screen For</div>
+      <h2 class="section-title reveal reveal-delay-1">Selection <span class="accent">Criteria</span></h2>
+      <p class="section-subtitle center reveal reveal-delay-2">Four dimensions that separate operators from task-takers.</p>
+    </div>
+
+    <div class="criteria-grid">
+      <div class="glass criteria-card reveal">
+        <div class="criteria-icon">&#128172;</div>
+        <h3>English Fluency Assessment</h3>
+        <p>Written and spoken evaluation. Client-facing communication standards.</p>
+      </div>
+      <div class="glass criteria-card reveal reveal-delay-1">
+        <div class="criteria-icon">&#129504;</div>
+        <h3>PI Behavioral Profiling</h3>
+        <p>Personality and work-style compatibility. Ensures founder-EA fit from day one.</p>
+      </div>
+      <div class="glass criteria-card reveal reveal-delay-2">
+        <div class="criteria-icon">&#9881;&#65039;</div>
+        <h3>Technical Skills Test</h3>
+        <p>AI tools (Claude, ChatGPT, N8N, Canva), project management, CRM proficiency.</p>
+      </div>
+      <div class="glass criteria-card reveal reveal-delay-3">
+        <div class="criteria-icon">&#129309;</div>
+        <h3>Culture Fit Interview</h3>
+        <p>Proactive mindset screening. We select for operators, not task-takers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TRAINING PROGRAM ══════════ -->
+<section class="section-gradient-1" style="position: relative; padding: 80px 0;">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 48px;">
+      <div class="section-badge reveal">40+ Hours of Training</div>
+      <h2 class="section-title reveal reveal-delay-1">The <span class="accent">Training Program</span></h2>
+      <p class="section-subtitle center reveal reveal-delay-2">What every EA completes before they ever touch your business.</p>
+    </div>
+
+    <div class="glass reveal reveal-delay-1">
+      <div class="training-columns">
+        <div class="training-col">
+          <h3>AI &amp; Technical</h3>
+          <ul>
+            <li>Claude &amp; ChatGPT mastery</li>
+            <li>N8N automation workflows</li>
+            <li>Canva &amp; CapCut content creation</li>
+            <li>Lovable vibe coding</li>
+            <li>Data processing &amp; analysis</li>
+          </ul>
+        </div>
+        <div class="training-col">
+          <h3>Operational</h3>
+          <ul>
+            <li>Proactive operator frameworks</li>
+            <li>Delegation system training</li>
+            <li>Communication standards</li>
+            <li>SOP creation methodology</li>
+            <li>Weekly sync protocols</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FINAL PROJECT ══════════ -->
+<section class="section-gradient-2" style="position: relative; padding: 80px 0;">
+  <div class="container">
+    <div class="final-project">
+      <div class="section-badge reveal">The Proving Ground</div>
+      <h2 class="section-title reveal reveal-delay-1" style="margin-bottom: 20px;">Every EA Completes a <span class="accent">Real-World Simulation</span></h2>
+      <p class="reveal reveal-delay-2">Before placement, each EA completes a multi-day simulation of real founder workflows — inbox management, project coordination, AI-assisted content creation, and autonomous decision-making. Only those who demonstrate proactive ownership graduate to placement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ONGOING DEVELOPMENT ══════════ -->
+<section class="section-gradient-1" style="position: relative; padding: 80px 0;">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 48px;">
+      <div class="section-badge reveal">Continuous Growth</div>
+      <h2 class="section-title reveal reveal-delay-1">Ongoing <span class="accent">Development</span></h2>
+      <p class="section-subtitle center reveal reveal-delay-2">Placement is just the beginning. Our EAs keep getting better.</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="glass stat-card reveal">
+        <div class="stat-number">104+</div>
+        <div class="stat-label">Training sessions completed</div>
+      </div>
+      <div class="glass stat-card reveal reveal-delay-1">
+        <div class="stat-number">36</div>
+        <div class="stat-label">Structured courses available</div>
+      </div>
+      <div class="glass stat-card reveal reveal-delay-2">
+        <div class="stat-number">Weekly</div>
+        <div class="stat-label">Live skill sessions</div>
+      </div>
+      <div class="glass stat-card reveal reveal-delay-3">
+        <div class="stat-number">250+</div>
+        <div class="stat-label">EA peer community</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CTA ══════════ -->
+<section class="final-cta">
+  <div class="container">
+    <div class="glass final-inner reveal-scale">
+      <div class="section-badge">Your Right Hand Is Ready</div>
+      <h2>Ready to Meet <span class="accent">Your Right Hand</span>?</h2>
+      <p>Schedule a strategy call and we'll show you what a trained, AI-enabled Right Hand looks like for your specific situation.</p>
+      <a href="v2-2.html#apply" class="btn-primary">
+        Schedule Your Strategy Call
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Pareto Talent LLC &middot; <a href="https://paretotalent.com">paretotalent.com</a></p>
+  </div>
+</footer>
+
+<!-- Main JS (deferred) -->
+<script src="js/main.js" defer></script>
+
+</body>
+</html>

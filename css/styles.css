@@ -2391,6 +2391,148 @@ section { padding: 120px 0; position: relative; }
   .wall-of-love { grid-template-columns: 1fr; }
 }
 
+/* ═══════════════════════════════════
+   PRICING GRID
+   ═══════════════════════════════════ */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 0;
+}
+.pricing-card {
+  padding: 32px 24px;
+  text-align: center;
+  border-radius: var(--radius-xl);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pricing-card-featured {
+  border-color: var(--green) !important;
+  box-shadow: 0 0 30px rgba(16,185,129,0.08);
+}
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--green);
+  color: #050A0E;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 16px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.pricing-plan {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+.pricing-amount {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  line-height: 1;
+}
+.pricing-card-featured .pricing-amount {
+  color: var(--green-light);
+}
+.pricing-period {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+.pricing-detail {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  flex: 1;
+}
+@media (max-width: 768px) {
+  .pricing-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+}
+
+/* ═══════════════════════════════════
+   MASONRY GRID (Wall of Love page)
+   ═══════════════════════════════════ */
+.masonry-grid {
+  columns: 3;
+  column-gap: 16px;
+  margin-top: 48px;
+}
+.masonry-card {
+  break-inside: avoid;
+  margin-bottom: 16px;
+}
+@media (max-width: 900px) {
+  .masonry-grid { columns: 2; }
+}
+@media (max-width: 768px) {
+  .masonry-grid { columns: 1; }
+}
+
+/* ═══════════════════════════════════
+   SUBPAGE SHARED STYLES
+   ═══════════════════════════════════ */
+.subpage-hero {
+  padding: 100px 0 60px;
+  text-align: center;
+  position: relative;
+}
+.subpage-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(16,185,129,0.12) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+.subpage-hero > .container { position: relative; z-index: 1; }
+
+/* Funnel steps (EA training page) */
+.funnel-step {
+  max-width: 100%;
+  margin: 0 auto 12px;
+  padding: 20px 28px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.funnel-step:hover { transform: translateY(-2px); }
+.funnel-number {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--green);
+  flex-shrink: 0;
+  min-width: 60px;
+  text-align: center;
+}
+.funnel-text h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.funnel-text p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
 /* Solid stat numbers (no animated gradient) */
 .v4r .stat-number {
   background: none !important;
@@ -2509,6 +2651,11 @@ section { padding: 120px 0; position: relative; }
   max-height: 20px;
 }
 
+/* Masonry testimonial grid — Wall of Love page */
+.masonry-grid { columns: 3; column-gap: 16px; margin-top: 48px; }
+.masonry-card { break-inside: avoid; margin-bottom: 16px; }
+@media (max-width: 900px) { .masonry-grid { columns: 2; } }
+
 /* Disable noise texture on mobile for performance */
 @media (max-width: 768px) {
   body::after { display: none; }
@@ -2517,5 +2664,6 @@ section { padding: 120px 0; position: relative; }
   .three-pillars { grid-template-columns: 1fr; }
   .v4r .three-pillars { grid-template-columns: 1fr; }
   .problem-masonry { grid-template-columns: 1fr !important; }
+  .masonry-grid { columns: 1; }
   .scroll-animation { height: 250vh; }
 }
