@@ -2327,6 +2327,70 @@ section { padding: 120px 0; position: relative; }
   background-clip: text;
 }
 
+/* ═══════════════════════════════════
+   V2-2 — THREE PILLARS + WALL OF LOVE
+   ═══════════════════════════════════ */
+.three-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 780px;
+  margin: 28px auto 0;
+}
+.pillar-card {
+  padding: 20px 16px;
+  text-align: center;
+  border-radius: var(--radius-lg);
+}
+.pillar-icon { font-size: 1.6rem; margin-bottom: 8px; }
+.pillar-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+.pillar-sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Wall of Love — dense testimonial grid */
+.wall-of-love {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 36px;
+}
+.wall-of-love .testimonial-card { padding: 20px; }
+.wall-of-love .testimonial-card blockquote { font-size: 13px; line-height: 1.6; }
+.wall-of-love .author-row { margin-top: 12px; }
+.wall-of-love .avatar { width: 32px; height: 32px; }
+.wall-of-love .name { font-size: 13px; }
+.wall-of-love .role { font-size: 11px; }
+
+/* Pillar labels in program grid */
+.pgrid-pillar-label {
+  grid-column: 1 / -1;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green);
+  margin-top: 24px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(16,185,129,0.15);
+}
+
+@media (max-width: 900px) {
+  .wall-of-love { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .three-pillars { grid-template-columns: 1fr; max-width: 360px; }
+  .wall-of-love { grid-template-columns: 1fr; }
+}
+
 /* Solid stat numbers (no animated gradient) */
 .v4r .stat-number {
   background: none !important;
