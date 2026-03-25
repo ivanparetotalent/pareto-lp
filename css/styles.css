@@ -555,6 +555,31 @@ h1, h2, h3, .headline-font {
 }
 .vsl-wrapper wistia-player { display: block; width: 100%; }
 
+/* VSL scroll-grow: starts at 70% width, grows to 100% as user scrolls */
+.vsl-scroll-grow {
+  max-width: 780px;
+  transform: scale(0.75);
+  transition: transform 0.1s linear;
+  transform-origin: center top;
+}
+
+/* Deep-dive links (prominent cards) */
+.deep-dive-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  border: 1px solid var(--border-glass);
+  transition: all 0.3s ease;
+}
+.deep-dive-link:hover {
+  border-color: rgba(16,185,129,0.25);
+  background: rgba(16,185,129,0.04);
+  transform: translateX(4px);
+}
+
 /* ═══════════════════════════════════
    SOCIAL PROOF
    ═══════════════════════════════════ */

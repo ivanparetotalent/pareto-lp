@@ -295,3 +295,26 @@ if (calendarIframe) {
     });
   }, { passive: true });
 })();
+
+// --- VSL scroll-grow effect ---
+(function () {
+  var vsl = document.querySelector('.vsl-scroll-grow');
+  if (!vsl || window.innerWidth < 768) return;
+
+  var rafP = false;
+  window.addEventListener('scroll', function () {
+    if (rafP) return;
+    rafP = true;
+    requestAnimationFrame(function () {
+      rafP = false;
+      var rect = vsl.getBoundingClientRect();
+      var vh = window.innerHeight;
+      // progress 0 when VSL top is at viewport bottom, 1 when top reaches viewport top
+      var progress = 1 - (rect.top / vh);
+      progress = Math.max(0, Math.min(1, progress));
+      // Scale from 0.75 to 1.0
+      var scale = 0.75 + (progress * 0.25);
+      vsl.style.transform = 'scale(' + scale + ')';
+    });
+  }, { passive: true });
+})();
