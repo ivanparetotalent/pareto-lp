@@ -296,10 +296,11 @@ if (calendarIframe) {
   }, { passive: true });
 })();
 
-// --- VSL scroll-grow effect ---
+// --- VSL scroll-grow effect (sticky + scale) ---
 (function () {
-  var vsl = document.querySelector('.vsl-scroll-grow');
-  if (!vsl || window.innerWidth < 768) return;
+  var section = document.getElementById('vsl-scroll-section');
+  var vsl = document.getElementById('vsl-grow');
+  if (!section || !vsl || window.innerWidth < 768) return;
 
   var rafP = false;
   window.addEventListener('scroll', function () {
@@ -307,13 +308,14 @@ if (calendarIframe) {
     rafP = true;
     requestAnimationFrame(function () {
       rafP = false;
-      var rect = vsl.getBoundingClientRect();
-      var vh = window.innerHeight;
-      // progress 0 when VSL top is at viewport bottom, 1 when top reaches viewport top
-      var progress = 1 - (rect.top / vh);
-      progress = Math.max(0, Math.min(1, progress));
-      // Scale from 0.75 to 1.0
-      var scale = 0.75 + (progress * 0.25);
+      var rect = section.getBoundingClientRect();
+      var scrollTop = -rect.top;
+      var scrollHeight = section.offsetHeight - window.innerHeight;
+      if (scrollHeight <= 0) return;
+      var progress = Math.max(0, Math.min(1, scrollTop / scrollHeight));
+      // Scale from 0.6 to 1.0 in first 40% of scroll, then hold at 1.0
+      var scaleProgress = Math.min(1, progress / 0.4);
+      var scale = 0.6 + (scaleProgress * 0.4);
       vsl.style.transform = 'scale(' + scale + ')';
     });
   }, { passive: true });
