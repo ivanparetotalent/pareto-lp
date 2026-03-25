@@ -20,29 +20,49 @@
 <link rel="stylesheet" href="css/styles.css">
 
 <style>
-.ea-hero { padding: 120px 0 60px; text-align: center; }
+.ea-hero { padding: 120px 0 60px; text-align: center; position: relative; overflow: hidden; }
 .ea-hero h1 { font-size: clamp(32px, 4.5vw, 56px); font-weight: 800; line-height: 1.1; margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto; }
 .ea-hero .hero-sub { max-width: 680px; margin: 0 auto; font-size: 17px; color: var(--text-secondary); line-height: 1.75; }
 
-/* EA Avatar + Logo Cloud */
-.ea-cloud-wrap { position: relative; width: 320px; height: 320px; margin: 48px auto 0; }
-.ea-avatar-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 3px solid rgba(16,185,129,0.3); box-shadow: 0 0 40px rgba(16,185,129,0.15); z-index: 2; }
+/* EA Avatar + Logo Cloud — enhanced with depth */
+.ea-cloud-wrap { position: relative; width: 400px; height: 400px; margin: 48px auto 0; }
+.ea-cloud-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(16,185,129,0.25) 0%, rgba(16,185,129,0.08) 50%, transparent 70%); filter: blur(30px); z-index: 0; animation: glowPulse 4s ease-in-out infinite; }
+.ea-avatar-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 160px; height: 160px; border-radius: 50%; overflow: hidden; border: 3px solid rgba(16,185,129,0.35); box-shadow: 0 0 50px rgba(16,185,129,0.2), 0 0 100px rgba(16,185,129,0.08); z-index: 2; }
 .ea-avatar-center img { width: 100%; height: 100%; object-fit: cover; }
-.app-logo-orbit { position: absolute; width: 40px; height: 40px; border-radius: 10px; background: var(--bg-card); border: 1px solid var(--border-glass); padding: 6px; display: flex; align-items: center; justify-content: center; animation: floatOrbit 6s ease-in-out infinite; box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
-.app-logo-orbit img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0.9); }
-.app-logo-orbit:nth-child(2) { top: 5%; left: 50%; transform: translateX(-50%); animation-delay: 0s; }
-.app-logo-orbit:nth-child(3) { top: 15%; right: 8%; animation-delay: 0.4s; }
-.app-logo-orbit:nth-child(4) { top: 45%; right: 0; animation-delay: 0.8s; }
-.app-logo-orbit:nth-child(5) { bottom: 15%; right: 8%; animation-delay: 1.2s; }
-.app-logo-orbit:nth-child(6) { bottom: 5%; left: 50%; transform: translateX(-50%); animation-delay: 1.6s; }
-.app-logo-orbit:nth-child(7) { bottom: 15%; left: 8%; animation-delay: 2s; }
-.app-logo-orbit:nth-child(8) { top: 45%; left: 0; animation-delay: 2.4s; }
-.app-logo-orbit:nth-child(9) { top: 15%; left: 8%; animation-delay: 2.8s; }
-.app-logo-orbit:nth-child(10) { top: 30%; right: 2%; animation-delay: 0.6s; }
-.app-logo-orbit:nth-child(11) { bottom: 30%; right: 2%; animation-delay: 1.8s; }
-.app-logo-orbit:nth-child(12) { bottom: 30%; left: 2%; animation-delay: 3s; }
-.app-logo-orbit:nth-child(13) { top: 30%; left: 2%; animation-delay: 3.4s; }
-@keyframes floatOrbit { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+/* Varied logo sizes for depth */
+.app-logo-orbit { position: absolute; border-radius: 12px; background: rgba(11,17,25,0.8); border: 1px solid rgba(255,255,255,0.08); padding: 7px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.4); z-index: 1; }
+.app-logo-orbit img { width: 100%; height: 100%; object-fit: contain; }
+/* Large logos — foreground */
+.logo-lg { width: 52px; height: 52px; animation: floatLg 5s ease-in-out infinite; }
+/* Medium logos */
+.logo-md { width: 42px; height: 42px; animation: floatMd 6s ease-in-out infinite; opacity: 0.85; }
+/* Small logos — background depth */
+.logo-sm { width: 32px; height: 32px; animation: floatSm 7s ease-in-out infinite; opacity: 0.55; filter: blur(1px); }
+
+/* Positions — scattered organically */
+.logo-pos-1  { top: 2%; left: 48%; animation-delay: 0s; }
+.logo-pos-2  { top: 12%; right: 5%; animation-delay: 0.5s; }
+.logo-pos-3  { top: 40%; right: -2%; animation-delay: 1s; }
+.logo-pos-4  { bottom: 18%; right: 6%; animation-delay: 1.5s; }
+.logo-pos-5  { bottom: 0%; left: 45%; animation-delay: 2s; }
+.logo-pos-6  { bottom: 18%; left: 4%; animation-delay: 2.5s; }
+.logo-pos-7  { top: 40%; left: -2%; animation-delay: 3s; }
+.logo-pos-8  { top: 12%; left: 6%; animation-delay: 0.3s; }
+.logo-pos-9  { top: 25%; right: 10%; animation-delay: 0.8s; }
+.logo-pos-10 { bottom: 28%; right: 10%; animation-delay: 1.3s; }
+.logo-pos-11 { bottom: 8%; left: 18%; animation-delay: 2.3s; }
+.logo-pos-12 { top: 8%; left: 20%; animation-delay: 3.2s; }
+
+@keyframes floatLg { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes floatMd { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-7px) scale(1.03); } }
+@keyframes floatSm { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+/* Available pool banner */
+.pool-banner { max-width: 420px; margin: 32px auto 0; padding: 14px 24px; border-radius: 100px; border: 1px solid rgba(16,185,129,0.2); background: rgba(16,185,129,0.04); display: flex; align-items: center; justify-content: center; gap: 10px; }
+.pool-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: breathe 2.5s ease-in-out infinite; }
+.pool-text { font-size: 14px; color: var(--text-secondary); }
+.pool-text strong { color: var(--green-light); }
 
 /* Comparison cards */
 .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 860px; margin: 0 auto; }
@@ -70,7 +90,7 @@
 .funnel-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border-glass-strong); transition: background .3s, transform .3s; }
 .funnel-dot.active { background: var(--green); transform: scale(1.3); }
 
-/* Boot camp grid */
+/* Boot camp */
 .bootcamp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .bootcamp-card { padding: 32px 28px; }
 .bootcamp-card h3 { font-size: 1rem; font-weight: 700; color: var(--green); margin-bottom: 16px; font-family: 'Plus Jakarta Sans', sans-serif; }
@@ -78,19 +98,23 @@
 .bootcamp-card li { font-size: 14px; color: var(--text-secondary); padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,.04); display: flex; align-items: center; gap: 10px; line-height: 1.5; }
 .bootcamp-card li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
 .bootcamp-hours { font-size: 12px; color: var(--text-muted); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 12px; }
-.bootcamp-gif { max-width: 720px; margin: 0 auto 40px; border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-glass-strong); }
-.bootcamp-gif img { width: 100%; display: block; }
+.media-embed { max-width: 720px; margin: 0 auto 40px; border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-glass-strong); }
+.media-embed img { width: 100%; display: block; }
 
 /* Final project bullets */
 .fp-list { max-width: 640px; margin: 32px auto 0; text-align: left; }
 .fp-list li { font-size: 15px; color: var(--text-secondary); padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.04); display: flex; align-items: flex-start; gap: 12px; line-height: 1.65; }
 .fp-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 8px; }
 
-/* PI Deep Dive */
-.pi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 860px; margin: 0 auto; }
-.pi-card { padding: 32px 28px; }
-.pi-card h3 { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
-.pi-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+/* PI section — visual layout */
+.pi-hero-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; max-width: 920px; margin: 0 auto; }
+.pi-visual { position: relative; text-align: center; }
+.pi-visual-num { font-size: clamp(60px, 10vw, 120px); font-weight: 800; color: var(--green); line-height: 1; opacity: 0.15; }
+.pi-visual-label { font-size: 14px; color: var(--green-light); font-weight: 600; margin-top: 8px; }
+.pi-points { display: flex; flex-direction: column; gap: 20px; }
+.pi-point { padding: 20px 24px; }
+.pi-point h3 { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+.pi-point p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
 
 /* Matching steps */
 .matching-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -99,13 +123,24 @@
 .matching-step h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
 .matching-step p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
 
+/* Slack community */
+.slack-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; max-width: 920px; margin: 0 auto; }
+.slack-gif { border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-glass-strong); }
+.slack-gif img { width: 100%; display: block; }
+.slack-content h3 { font-size: clamp(20px, 2.5vw, 28px); font-weight: 800; margin-bottom: 16px; }
+.slack-content p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 16px; }
+.slack-stats { display: flex; gap: 24px; margin-top: 16px; }
+.slack-stat { text-align: center; }
+.slack-stat-num { font-size: 24px; font-weight: 800; color: var(--green); }
+.slack-stat-label { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
 /* Ongoing stats */
 .ongoing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .ongoing-card { text-align: center; padding: 32px 16px; }
 .ongoing-num { font-size: clamp(28px, 3vw, 40px); font-weight: 800; color: var(--green); margin-bottom: 6px; }
 .ongoing-label { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
-.tsm-team-photo { max-width: 720px; margin: 40px auto 0; border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-glass-strong); }
-.tsm-team-photo img { width: 100%; display: block; }
+.team-photo { max-width: 720px; margin: 40px auto 0; border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-glass-strong); }
+.team-photo img { width: 100%; display: block; }
 
 /* EA testimonial placeholders */
 .ea-voice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -119,21 +154,29 @@
 .latam-card h3 { font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--text-primary); }
 .latam-card p { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
 
+/* Mid-page CTA */
+.mid-cta { max-width: 640px; margin: 0 auto; padding: 32px; text-align: center; border: 1px solid rgba(16,185,129,0.15); border-radius: var(--radius-xl); }
+.mid-cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
+
 .nav-back { display: flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color .2s; }
 .nav-back:hover { color: var(--green); }
 .nav-back svg { width: 16px; height: 16px; }
 
 @media (max-width: 768px) {
   .ea-hero { padding: 100px 0 48px; }
-  .ea-cloud-wrap { width: 260px; height: 260px; }
-  .ea-avatar-center { width: 100px; height: 100px; }
-  .app-logo-orbit { width: 32px; height: 32px; padding: 5px; }
-  .compare-grid, .bootcamp-grid, .matching-flow, .pi-grid { grid-template-columns: 1fr; }
+  .ea-cloud-wrap { width: 300px; height: 300px; }
+  .ea-avatar-center { width: 120px; height: 120px; }
+  .logo-lg { width: 40px; height: 40px; }
+  .logo-md { width: 34px; height: 34px; }
+  .logo-sm { width: 26px; height: 26px; }
+  .compare-grid, .bootcamp-grid, .matching-flow { grid-template-columns: 1fr; }
+  .pi-hero-layout, .slack-layout { grid-template-columns: 1fr; }
   .ongoing-grid { grid-template-columns: repeat(2, 1fr); }
   .latam-grid { grid-template-columns: repeat(2, 1fr); }
   .ea-voice-grid { grid-template-columns: 1fr; }
   .scroll-funnel { height: 300vh; }
   .scroll-funnel-sticky { top: 60px; }
+  .slack-stats { justify-content: center; }
 }
 </style>
 </head>
@@ -161,30 +204,40 @@
   </div>
 </nav>
 
-<!-- ══════════ 1. HERO + EA CLOUD ══════════ -->
+<!-- ══════════ 1. HERO + ENHANCED EA CLOUD ══════════ -->
 <section class="ea-hero">
   <div class="container">
     <div class="section-badge reveal">Why Our EAs Are Different</div>
-    <h1 class="reveal reveal-delay-1">It Takes 1,000+ Applicants to Produce <span class="accent">One Right Hand</span></h1>
+    <h1 class="reveal reveal-delay-1">The Most Rigorous EA Selection Process <span class="accent">in the Industry</span></h1>
     <p class="hero-sub reveal reveal-delay-2">Most staffing agencies send you a resume and wish you luck. We put every candidate through a multi-week filtration, 40+ hours of training, a real-world final project, and continuous development — before they ever touch your business.</p>
 
-    <!-- EA Avatar + App Logo Cloud -->
+    <!-- EA Avatar + Depth Logo Cloud -->
     <div class="ea-cloud-wrap reveal reveal-delay-3">
+      <div class="ea-cloud-glow"></div>
       <div class="ea-avatar-center">
         <img src="img/ea-avatar.png" alt="Pareto EA" loading="lazy">
       </div>
-      <div class="app-logo-orbit"><img src="img/apps logos/68d5891014d8cf2bec93c71e.png" alt="App" loading="lazy"></div>
-      <div class="app-logo-orbit"><img src="img/apps logos/68d589104cbd203b400645d6.png" alt="App" loading="lazy"></div>
-      <div class="app-logo-orbit"><img src="img/apps logos/68d5891071c31e4c779065c8.png" alt="App" loading="lazy"></div>
-      <div class="app-logo-orbit"><img src="img/apps logos/68d5891096ca2062b926dcac.png" alt="App" loading="lazy"></div>
-      <div class="app-logo-orbit"><img src="img/apps logos/68d5891096ca207ac826dcad.png" alt="App" loading="lazy"></div>
-      <div class="app-logo-orbit"><img src="img/apps logos/68d58910c80edf0714cdc208.png" alt="App" loading="lazy"></div>
-      <div class="app-logo-orbit"><img src="img/apps logos/68d58910c80edf7f30cdc1fc.png" alt="App" loading="lazy"></div>
-      <div class="app-logo-orbit"><img src="img/apps logos/68d58910caea765990948906.png" alt="App" loading="lazy"></div>
-      <div class="app-logo-orbit"><img src="img/apps logos/68d58910caea76909f9488fa.png" alt="App" loading="lazy"></div>
-      <div class="app-logo-orbit"><img src="img/apps logos/68d58910f2acc707d70b2296.png" alt="App" loading="lazy"></div>
-      <div class="app-logo-orbit"><img src="img/apps logos/68d58910f2acc758870b2301.png" alt="App" loading="lazy"></div>
-      <div class="app-logo-orbit"><img src="img/apps logos/68d58910f2acc782cf0b22a1.png" alt="App" loading="lazy"></div>
+      <!-- Large (foreground) -->
+      <div class="app-logo-orbit logo-lg logo-pos-1"><img src="img/apps logos/68d5891014d8cf2bec93c71e.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit logo-lg logo-pos-3"><img src="img/apps logos/68d5891071c31e4c779065c8.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit logo-lg logo-pos-5"><img src="img/apps logos/68d5891096ca207ac826dcad.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit logo-lg logo-pos-7"><img src="img/apps logos/68d58910c80edf7f30cdc1fc.png" alt="App" loading="lazy"></div>
+      <!-- Medium -->
+      <div class="app-logo-orbit logo-md logo-pos-2"><img src="img/apps logos/68d589104cbd203b400645d6.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit logo-md logo-pos-4"><img src="img/apps logos/68d5891096ca2062b926dcac.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit logo-md logo-pos-6"><img src="img/apps logos/68d58910c80edf0714cdc208.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit logo-md logo-pos-8"><img src="img/apps logos/68d58910caea765990948906.png" alt="App" loading="lazy"></div>
+      <!-- Small (background depth — blurred) -->
+      <div class="app-logo-orbit logo-sm logo-pos-9"><img src="img/apps logos/68d58910caea76909f9488fa.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit logo-sm logo-pos-10"><img src="img/apps logos/68d58910f2acc707d70b2296.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit logo-sm logo-pos-11"><img src="img/apps logos/68d58910f2acc758870b2301.png" alt="App" loading="lazy"></div>
+      <div class="app-logo-orbit logo-sm logo-pos-12"><img src="img/apps logos/68d58910f2acc782cf0b22a1.png" alt="App" loading="lazy"></div>
+    </div>
+
+    <!-- Available pool -->
+    <div class="pool-banner reveal reveal-delay-4">
+      <div class="pool-dot"></div>
+      <div class="pool-text"><strong>32 trained assistants</strong> ready to match right now</div>
     </div>
   </div>
 </section>
@@ -201,7 +254,7 @@
   </div>
 </div>
 
-<!-- ══════════ 2. THE PROBLEM ══════════ -->
+<!-- ══════════ 2. THE DIFFERENCE ══════════ -->
 <section class="section-gradient-1">
   <div class="container">
     <div class="text-center" style="margin-bottom: 48px;">
@@ -235,12 +288,12 @@
   </div>
 </section>
 
-<!-- ══════════ 3. SCROLL FUNNEL — 1,000 → 1 ══════════ -->
+<!-- ══════════ 3. SCROLL FUNNEL ══════════ -->
 <section class="section-gradient-2" style="padding: 0;">
   <div class="container">
     <div class="text-center" style="padding: 80px 0 0;">
       <div class="section-badge reveal">The Selection Funnel</div>
-      <h2 class="section-title reveal reveal-delay-1">From 1,000+ Applicants to <span class="accent">Your Right Hand</span></h2>
+      <h2 class="section-title reveal reveal-delay-1">How We Filter <span class="accent">Down to the Best</span></h2>
       <p class="section-subtitle center reveal reveal-delay-2">Scroll to see how the numbers drop — until only one remains.</p>
     </div>
   </div>
@@ -265,8 +318,7 @@
       <p class="section-subtitle center reveal reveal-delay-2">Not a webinar. Not a PDF. Ten days of live instruction, hands-on practice, and real-world application.</p>
     </div>
 
-    <!-- Boot camp GIF -->
-    <div class="bootcamp-gif reveal reveal-delay-1">
+    <div class="media-embed reveal reveal-delay-1">
       <img src="img/bootcamp-process.gif" alt="Pareto Talent boot camp training montage" loading="lazy">
     </div>
 
@@ -331,6 +383,11 @@
       <h2 class="section-title reveal reveal-delay-1">The Final Project: Not a Test. <span class="accent">A Simulation.</span></h2>
       <p class="section-subtitle center reveal reveal-delay-2">Before any EA is placed with a founder, they must prove they can operate autonomously in real-world conditions.</p>
     </div>
+
+    <div class="media-embed reveal reveal-delay-1" style="margin-top: 32px;">
+      <img src="img/final-project.gif" alt="Final project simulation process" loading="lazy">
+    </div>
+
     <ul class="fp-list reveal reveal-delay-2" style="list-style: none; padding: 0;">
       <li>Multi-day autonomous workflow management with no hand-holding</li>
       <li>Real inbox scenarios with competing priorities and tight deadlines</li>
@@ -345,31 +402,47 @@
   </div>
 </section>
 
-<!-- ══════════ 6. PI + MATCHING (EXPANDED) ══════════ -->
+<!-- ══════════ MID-PAGE CTA ══════════ -->
+<section style="padding: 48px 0;">
+  <div class="container">
+    <div class="glass mid-cta reveal-scale">
+      <p>Impressed by the process? See who we'd match you with.</p>
+      <a href="v2-2.html#apply" class="btn-primary">
+        Schedule Your Strategy Call
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 6. PI + MATCHING (VISUAL) ══════════ -->
 <section class="section-gradient-1">
   <div class="container">
     <div class="text-center" style="margin-bottom: 48px;">
       <div class="section-badge reveal">The Science of Matching</div>
       <h2 class="section-title reveal reveal-delay-1">Why <span class="accent">Predictive Index</span> Changes Everything</h2>
-      <p class="section-subtitle center reveal reveal-delay-2">Most agencies match on skills and availability. We match on behavioral DNA — the invisible layer that determines whether a founder and EA actually click.</p>
+      <p class="section-subtitle center reveal reveal-delay-2">Most agencies match on skills and availability. We match on behavioral DNA.</p>
     </div>
 
-    <div class="pi-grid">
-      <div class="glass pi-card reveal reveal-delay-1">
-        <h3>What PI Measures</h3>
-        <p>Predictive Index maps four behavioral drives: Dominance (assertiveness vs. accommodation), Extraversion (social energy), Patience (pace of work), and Formality (structure vs. flexibility). These aren't personality tests — they're predictive models of how someone will naturally behave under pressure.</p>
+    <div class="pi-hero-layout reveal">
+      <div class="pi-visual">
+        <div class="pi-visual-num">93%</div>
+        <div class="pi-visual-label">12-Month Retention Rate</div>
+        <p style="margin-top: 16px; font-size: 14px; color: var(--text-muted); max-width: 280px; margin-left: auto; margin-right: auto;">When the behavioral match is right, everything compounds. That's why retention is our north star metric.</p>
       </div>
-      <div class="glass pi-card reveal reveal-delay-2">
-        <h3>Why It Matters for EA Matching</h3>
-        <p>A fast-paced, direct founder paired with a slow, process-heavy EA will fail — even if both are talented. PI eliminates this blind spot. We cross-reference your behavioral profile against every graduated EA to find the person whose natural operating rhythm complements yours.</p>
-      </div>
-      <div class="glass pi-card reveal reveal-delay-1">
-        <h3>The Matching Algorithm</h3>
-        <p>We built a proprietary app that combines PI data with your intake answers, industry needs, schedule requirements, and communication style. AI generates initial match recommendations. Your Talent Success Manager reviews them with human context and presents your top 3+ candidates.</p>
-      </div>
-      <div class="glass pi-card reveal reveal-delay-2">
-        <h3>The Result: 93% Retention</h3>
-        <p>When the behavioral match is right, everything else compounds. The EA anticipates your needs. Communication feels effortless. The relationship deepens over months, not weeks. That's why our 12-month retention is 93% — behavioral alignment is the foundation.</p>
+      <div class="pi-points">
+        <div class="glass pi-point">
+          <h3>Four Behavioral Drives</h3>
+          <p>PI maps Dominance, Extraversion, Patience, and Formality — predicting how someone naturally behaves under pressure. Not a personality test. A behavioral model.</p>
+        </div>
+        <div class="glass pi-point">
+          <h3>Eliminates the Blind Spot</h3>
+          <p>A fast-paced, direct founder paired with a slow, process-heavy EA will fail — even if both are talented. PI eliminates this invisible mismatch before it ever happens.</p>
+        </div>
+        <div class="glass pi-point">
+          <h3>AI + Human Judgment</h3>
+          <p>Our proprietary app combines PI data, intake answers, industry needs, and schedule requirements. AI generates recommendations. Your Success Manager adds human context.</p>
+        </div>
       </div>
     </div>
 
@@ -377,24 +450,59 @@
       <div class="glass matching-step reveal reveal-delay-1">
         <div class="matching-step-num">&#129504;</div>
         <h3>PI Cross-Reference</h3>
-        <p>Your personality profile matched against every graduated EA. Work style, communication, and energy levels factored in.</p>
+        <p>Your profile matched against every graduated EA. Work style, communication, energy levels factored in.</p>
       </div>
       <div class="glass matching-step reveal reveal-delay-2">
         <div class="matching-step-num">&#129302;</div>
         <h3>AI + Data Analysis</h3>
-        <p>Our proprietary app analyzes intake data against 1,000+ candidate profiles. Industry, skills, schedule, personality.</p>
+        <p>Proprietary app analyzes your data against 1,000+ candidate profiles. Industry, skills, schedule, personality.</p>
       </div>
       <div class="glass matching-step reveal reveal-delay-3">
         <div class="matching-step-num">&#129309;</div>
         <h3>Human Curation</h3>
-        <p>Your Success Manager hand-selects top 3+ candidates. You interview them and choose your Right Hand.</p>
+        <p>Your Success Manager hand-selects top 3+ candidates. You interview. You choose your Right Hand.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ 7. ONGOING DEVELOPMENT + TSM TEAM ══════════ -->
+<!-- ══════════ 7. SLACK COMMUNITY ══════════ -->
 <section class="section-gradient-2">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 48px;">
+      <div class="section-badge reveal">The EA Network</div>
+      <h2 class="section-title reveal reveal-delay-1">250+ EAs Helping <span class="accent">Each Other Succeed</span></h2>
+    </div>
+
+    <div class="slack-layout">
+      <div class="slack-gif reveal reveal-delay-1">
+        <img src="img/slack.gif" alt="Pareto Talent EA Slack community" loading="lazy">
+      </div>
+      <div class="slack-content reveal reveal-delay-2">
+        <h3>A Mastermind for <span class="accent">Executive Assistants</span></h3>
+        <p>Your EA isn't working alone. They're part of a 250+ member community where EAs share vendors, troubleshoot challenges, swap templates, and lift each other up — in real time.</p>
+        <p>When your EA needs a recommendation for a CRM migration tool at 2pm on a Tuesday, they ask the community and get 5 answers in 10 minutes. No other staffing agency has anything like this.</p>
+        <div class="slack-stats">
+          <div class="slack-stat">
+            <div class="slack-stat-num">250+</div>
+            <div class="slack-stat-label">Active EAs</div>
+          </div>
+          <div class="slack-stat">
+            <div class="slack-stat-num">3</div>
+            <div class="slack-stat-label">Weekly Calls</div>
+          </div>
+          <div class="slack-stat">
+            <div class="slack-stat-num">24/7</div>
+            <div class="slack-stat-label">Peer Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 8. ONGOING DEVELOPMENT + TSM TEAM ══════════ -->
+<section class="section-gradient-1">
   <div class="container">
     <div class="text-center" style="margin-bottom: 48px;">
       <div class="section-badge reveal">After Placement</div>
@@ -421,22 +529,21 @@
       </div>
     </div>
 
-    <!-- TSM Team Photo -->
-    <div class="tsm-team-photo reveal-scale" style="margin-top: 48px;">
+    <div class="team-photo reveal-scale">
       <img src="img/tsm-team.jpg" alt="The Pareto Talent internal support team" loading="lazy">
     </div>
     <div style="max-width: 680px; margin: 24px auto 0;">
       <div class="glass reveal" style="padding: 24px 32px; text-align: center;">
         <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.75;">
-          This is the team behind every placement. Dedicated Talent Success Managers, weekly live training, 250+ EA peer community on Slack, monthly founder-EA alignment workshops, and ongoing performance coaching. Your EA is never on their own — and neither are you.
+          This is the team behind every placement. Dedicated Talent Success Managers, weekly live training, monthly founder-EA alignment workshops, and ongoing performance coaching. Your EA is never on their own — and neither are you.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ 8. EA VOICES (PLACEHOLDER) ══════════ -->
-<section class="section-gradient-1">
+<!-- ══════════ 9. EA VOICES (PLACEHOLDER) ══════════ -->
+<section class="section-gradient-2">
   <div class="container">
     <div class="text-center" style="margin-bottom: 48px;">
       <div class="section-badge reveal">From the EAs Themselves</div>
@@ -461,8 +568,8 @@
   </div>
 </section>
 
-<!-- ══════════ 9. WHY LATIN AMERICA ══════════ -->
-<section class="section-gradient-2">
+<!-- ══════════ 10. WHY LATIN AMERICA ══════════ -->
+<section class="section-gradient-1">
   <div class="container">
     <div class="text-center" style="margin-bottom: 48px;">
       <div class="section-badge reveal">Why Latin America</div>
@@ -498,7 +605,7 @@
   </div>
 </section>
 
-<!-- ══════════ 10. FINAL CTA ══════════ -->
+<!-- ══════════ 11. FINAL CTA ══════════ -->
 <section class="final-cta">
   <div class="container">
     <div class="glass final-inner reveal-scale">
@@ -539,14 +646,12 @@
     { num: '1', label: 'Your Right Hand', sub: 'Hand-matched to you. Trained. Ready.' }
   ];
 
-  // Build dots
-  stages.forEach(function (_, i) {
+  stages.forEach(function () {
     var dot = document.createElement('div');
     dot.className = 'funnel-dot';
     dotsWrap.appendChild(dot);
   });
   var dots = dotsWrap.querySelectorAll('.funnel-dot');
-
   var currentStage = -1;
   var rafPending = false;
 
@@ -561,25 +666,14 @@
       if (scrollHeight <= 0) return;
       var progress = Math.max(0, Math.min(1, scrollTop / scrollHeight));
       var stageIndex = Math.min(stages.length - 1, Math.floor(progress * stages.length));
-
       if (stageIndex !== currentStage) {
         currentStage = stageIndex;
         var s = stages[stageIndex];
         numEl.textContent = s.num;
         labelEl.textContent = s.label;
         subEl.textContent = s.sub;
-
-        // Final stage highlight
-        if (stageIndex === stages.length - 1) {
-          display.classList.add('funnel-final');
-        } else {
-          display.classList.remove('funnel-final');
-        }
-
-        // Update dots
-        dots.forEach(function (d, i) {
-          d.classList.toggle('active', i === stageIndex);
-        });
+        display.classList.toggle('funnel-final', stageIndex === stages.length - 1);
+        dots.forEach(function (d, i) { d.classList.toggle('active', i === stageIndex); });
       }
     });
   }, { passive: true });
