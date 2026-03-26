@@ -324,24 +324,32 @@ if (calendarIframe) {
 // --- Tab title blink when user leaves ---
 (function () {
   var originalTitle = document.title;
-  var messages = ['👋 Don\'t forget to book your call!', '⏰ Limited spots remaining...'];
+  // Cycle: short phrase → follow-up → pause with original → repeat
+  var sequence = [
+    '👋 Don\'t forget...',
+    '📞 Book your call!',
+    '⏰ Spots are limited',
+    '🔥 Don\'t miss out...'
+  ];
   var blinkInterval = null;
-  var msgIndex = 0;
+  var step = 0;
 
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
-      // User left the tab — start blinking
-      msgIndex = 0;
+      step = 0;
+      // Show first message immediately
+      document.title = sequence[0];
       blinkInterval = setInterval(function () {
-        document.title = messages[msgIndex % messages.length];
-        msgIndex++;
-        // Alternate with original title every other tick
-        setTimeout(function () {
-          if (document.hidden) document.title = originalTitle;
-        }, 1500);
-      }, 3000);
+        step++;
+        // Alternate: message → original title → message → original...
+        if (step % 2 === 0) {
+          var msgIdx = Math.floor(step / 2) % sequence.length;
+          document.title = sequence[msgIdx];
+        } else {
+          document.title = originalTitle;
+        }
+      }, 2000);
     } else {
-      // User came back — restore title
       clearInterval(blinkInterval);
       blinkInterval = null;
       document.title = originalTitle;
