@@ -320,3 +320,31 @@ if (calendarIframe) {
     });
   }, { passive: true });
 })();
+
+// --- Tab title blink when user leaves ---
+(function () {
+  var originalTitle = document.title;
+  var messages = ['👋 Don\'t forget to book your call!', '⏰ Limited spots remaining...'];
+  var blinkInterval = null;
+  var msgIndex = 0;
+
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+      // User left the tab — start blinking
+      msgIndex = 0;
+      blinkInterval = setInterval(function () {
+        document.title = messages[msgIndex % messages.length];
+        msgIndex++;
+        // Alternate with original title every other tick
+        setTimeout(function () {
+          if (document.hidden) document.title = originalTitle;
+        }, 1500);
+      }, 3000);
+    } else {
+      // User came back — restore title
+      clearInterval(blinkInterval);
+      blinkInterval = null;
+      document.title = originalTitle;
+    }
+  });
+})();
