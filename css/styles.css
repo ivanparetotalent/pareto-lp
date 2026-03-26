@@ -558,7 +558,7 @@ h1, h2, h3, .headline-font {
 /* VSL scroll-grow: starts small, grows to near-fullscreen, sticks, then releases */
 .vsl-scroll-section {
   position: relative;
-  height: 250vh;
+  height: 180vh;
   margin-top: 32px;
 }
 .vsl-scroll-sticky {
