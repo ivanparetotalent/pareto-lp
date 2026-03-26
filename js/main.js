@@ -53,9 +53,11 @@ function trackEvent(name, params) {
 
 // --- Lenis smooth scroll ---
 var lenis = new Lenis({
-  duration: 1.2,
+  duration: 1.1,
   easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
   smoothWheel: true,
+  wrapper: window,
+  content: document.documentElement,
 });
 function lenisRaf(time) {
   lenis.raf(time);
