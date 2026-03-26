@@ -91,7 +91,7 @@
 
     <!-- Lucas Introduction Card -->
     <div class="glass lucas-card reveal reveal-delay-3">
-      <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--bg-card); border: 2px solid rgba(16,185,129,0.2); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; color: var(--text-muted);">&#128100;</div>
+      <img src="img/Pareto Team - Lucas.jpg" alt="Lucas — Founder Success Lead" class="lucas-photo">
       <div>
         <div style="font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">You'll be speaking with</div>
         <div style="font-size: 20px; font-weight: 700; color: var(--text-primary); margin-top: 4px; font-family: 'Plus Jakarta Sans', sans-serif;">Lucas, Founder Success Lead</div>
@@ -318,7 +318,7 @@
   ];
   var doneTexts = [
     'Booking confirmed',
-    'Lucas assigned',
+    'Lucas assigned <img src="img/Pareto Team - Lucas.jpg" class="ty-load-avatar" alt="Lucas">',
     'Ready'
   ];
   var loader = document.getElementById('ty-loader');
@@ -338,7 +338,7 @@
       step.classList.remove('active');
       step.classList.add('done');
       step.querySelector('.ty-load-icon').innerHTML = '&#10003;';
-      step.querySelector('span').textContent = doneTexts[i];
+      step.querySelector('span').innerHTML = doneTexts[i];
     }, delay);
 
     delay += 300;
