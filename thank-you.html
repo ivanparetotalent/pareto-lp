@@ -6,7 +6,7 @@
 <title>Strategy Call Confirmed — Pareto Talent</title>
 <link rel="icon" type="image/jpeg" href="favicon.jpg">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Your strategy call is confirmed. Complete the questionnaire so we can prepare your personalized EA matches.">
+<meta name="description" content="Your strategy call with Lucas is confirmed. Complete the questionnaire so we can prepare your personalized EA matches.">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,18 +19,64 @@
 <!-- Styles -->
 <link rel="stylesheet" href="css/styles.css">
 
-<!-- GA4 — Replace G-XXXXXXXXXX with your Measurement ID -->
-<!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
--->
+<style>
+/* Loading overlay */
+.ty-loader {
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--bg-deep);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+.ty-loader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+.ty-loader-logo { height: 40px; margin-bottom: 48px; filter: brightness(0) invert(1); }
+.ty-loader-steps { display: flex; flex-direction: column; gap: 20px; width: 340px; }
+.ty-load-step { display: flex; align-items: center; gap: 14px; font-size: 15px; color: var(--text-muted); transition: color 0.4s; }
+.ty-load-step.active { color: var(--text-secondary); }
+.ty-load-step.done { color: var(--green-light); }
+.ty-load-icon { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--border-glass-strong); display: flex; align-items: center; justify-content: center; font-size: 13px; transition: all 0.4s; flex-shrink: 0; }
+.ty-load-step.active .ty-load-icon { border-color: var(--green); animation: spin 1s linear infinite; }
+.ty-load-step.done .ty-load-icon { border-color: var(--green); background: rgba(16,185,129,0.15); animation: none; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.ty-load-avatar { width: 22px; height: 22px; border-radius: 50%; margin-left: 4px; vertical-align: middle; }
+
+/* Lucas card */
+.lucas-card { display: flex; gap: 24px; align-items: flex-start; padding: 28px 32px; max-width: 680px; margin: 32px auto 0; text-align: left; }
+.lucas-photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid rgba(16,185,129,0.2); }
+.lucas-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+.lucas-tag { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+
+/* PI callout */
+.pi-callout { max-width: 640px; margin: 24px auto 0; padding: 20px 24px; border-left: 3px solid var(--green); background: rgba(16,185,129,0.04); border-radius: 0 var(--radius-md) var(--radius-md) 0; text-align: left; font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+.pi-callout strong { color: var(--text-primary); }
+
+@media (max-width: 768px) {
+  .lucas-card { flex-direction: column; align-items: center; text-align: center; }
+  .lucas-meta { justify-content: center; }
+  .ty-loader-steps { width: 280px; }
+}
+</style>
 </head>
 <body>
+
+<!-- ══════════ LOADING OVERLAY ══════════ -->
+<div class="ty-loader" id="ty-loader">
+  <img src="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/65d4092400a2ec10ef5c1bef.png" alt="Pareto Talent" class="ty-loader-logo">
+  <div class="ty-loader-steps">
+    <div class="ty-load-step" id="load-step-1">
+      <div class="ty-load-icon">&#8635;</div>
+      <span>Confirming your booking...</span>
+    </div>
+    <div class="ty-load-step" id="load-step-2">
+      <div class="ty-load-icon">&#8635;</div>
+      <span>Assigning your Founder Success Lead...</span>
+    </div>
+    <div class="ty-load-step" id="load-step-3">
+      <div class="ty-load-icon">&#8635;</div>
+      <span>Preparing your matching questionnaire...</span>
+    </div>
+  </div>
+</div>
 
 <!-- ══════════ SECTION 1: CONFIRMATION HEADER ══════════ -->
 <section class="ty-hero text-center">
@@ -41,7 +87,22 @@
 
     <div class="section-badge reveal reveal-delay-1" style="margin-top: 32px;">&#10003; Your Strategy Call Is Confirmed</div>
     <h1 class="reveal reveal-delay-2" style="font-size: clamp(32px, 5vw, 56px); max-width: 720px; margin: 0 auto 20px;">You're In. Here's How to <span class="accent">Make Your Call Count.</span></h1>
-    <p class="hero-sub reveal reveal-delay-3" style="max-width: 600px;">Your Success Manager is already preparing for your call. Complete the questionnaire below so we come ready with your top EA matches.</p>
+    <p class="hero-sub reveal reveal-delay-3" style="max-width: 600px;">Lucas is already preparing for your call. Complete the questionnaire below so he comes ready with your top EA matches.</p>
+
+    <!-- Lucas Introduction Card -->
+    <div class="glass lucas-card reveal reveal-delay-3">
+      <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--bg-card); border: 2px solid rgba(16,185,129,0.2); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; color: var(--text-muted);">&#128100;</div>
+      <div>
+        <div style="font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">You'll be speaking with</div>
+        <div style="font-size: 20px; font-weight: 700; color: var(--text-primary); margin-top: 4px; font-family: 'Plus Jakarta Sans', sans-serif;">Lucas, Founder Success Lead</div>
+        <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin-top: 8px;">Lucas has personally worked with over 200 founders to understand their delegation gaps and match them with the right executive assistant. His job on your call isn't to sell you — it's to understand your business and see if the Right Hand Program is the right fit.</p>
+        <div class="lucas-meta">
+          <span class="lucas-tag">&#128222; 30-minute call</span>
+          <span class="lucas-tag">&#127919; Personalized to your business</span>
+          <span class="lucas-tag">&#9989; Zero pressure</span>
+        </div>
+      </div>
+    </div>
 
     <!-- 3-Step Progress Tracker -->
     <div class="progress-tracker reveal reveal-delay-4">
@@ -67,13 +128,13 @@
 <section id="questionnaire" class="ty-questionnaire section-gradient-3">
   <div class="container text-center">
     <div class="section-badge reveal">Step 1 of 3 — Takes 8 Minutes</div>
-    <h2 class="section-title reveal reveal-delay-1">Tell Us About You — <span class="accent">So We Come Prepared</span></h2>
-    <p class="section-subtitle center reveal reveal-delay-2">The more specific you are, the better your EA candidates will be. Founders who complete this before the call receive their top 3 matches within 24 hours.</p>
+    <h2 class="section-title reveal reveal-delay-1">Tell Us About You — <span class="accent">Turn Your Call Into a Live Matching Session</span></h2>
+    <p class="section-subtitle center reveal reveal-delay-2" style="max-width: 640px;">Complete this before your call and Lucas will show up with pre-vetted candidate profiles already matched to your personality, work style, and the skills your business needs. Skip it, and your call is a conversation about what's possible. Complete it, and your call becomes a live matching session with real candidates.</p>
 
     <ul class="ty-benefits reveal reveal-delay-3">
-      <li>Your Success Manager reviews your answers before the call — no time wasted on basics</li>
-      <li>Our matching engine cross-references your profile against 650+ current candidates</li>
-      <li>You'll see personalized EA profiles, not generic suggestions</li>
+      <li>Lucas reviews your answers before the call — your 30 minutes are spent on strategy, not basics</li>
+      <li>Our AI matching engine cross-references your Predictive Index profile against 650+ candidates</li>
+      <li>Complete the assessment and we'll have matched candidate profiles ready on your call</li>
     </ul>
 
     <div class="questionnaire-embed glass reveal reveal-delay-3">
@@ -88,6 +149,11 @@
       ></iframe>
     </div>
 
+    <!-- PI Callout -->
+    <div class="pi-callout reveal">
+      <strong>&#129504; About the Predictive Index</strong> — This is a behavioral assessment that maps how you think, communicate, and make decisions. Most agencies match on skills alone. We match on behavioral DNA — it's why our retention rate is 93% at 12 months.
+    </div>
+
     <p class="ty-reassurance reveal" style="margin-top: 20px;">&#128274; This takes less than 8 minutes. Your answers stay private and are only used to prepare your matches.</p>
   </div>
 </section>
@@ -95,9 +161,9 @@
 <!-- ══════════ SECTION 3: VSL ══════════ -->
 <section id="vsl" class="section-gradient-1 text-center">
   <div class="container">
-    <div class="section-badge reveal">Step 2: Watch Before Your Call — 6 Minutes</div>
+    <div class="section-badge reveal">Step 2: A Quick Message From Pareto Co-Founder Ivan Bunin — 5 Minutes</div>
     <h2 class="section-title reveal reveal-delay-1">Everything You Need to Know <span class="accent">Before We Talk</span></h2>
-    <p class="section-subtitle center reveal reveal-delay-2">We put this together so your call is spent on your situation — not ours. Watch once and you'll know exactly what to expect.</p>
+    <p class="section-subtitle center reveal reveal-delay-2">Ivan, co-founder of Pareto Talent, walks you through exactly what happens on your call, the one thing to prepare, and why this program works differently than anything you've tried before.</p>
 
     <div class="vsl-vertical reveal-scale">
       <div class="wistia_responsive_padding" style="padding:140% 0 0 0;position:relative;">
@@ -160,32 +226,32 @@
   </div>
 </section>
 
-<!-- ══════════ SECTION 5: DELEGATION RESOURCES ══════════ -->
+<!-- ══════════ SECTION 5: RESOURCES (Updated links) ══════════ -->
 <section class="section-gradient-1 text-center">
   <div class="container">
     <p class="ty-reassurance reveal" style="margin-bottom: 8px;">Already completed the questionnaire? These are for you.</p>
     <div class="section-badge reveal">While You Wait for Your Call</div>
     <h2 class="section-title reveal reveal-delay-1">Get a Head Start on <span class="accent">Your Delegation</span></h2>
-    <p class="section-subtitle center reveal reveal-delay-2">We built these tools to help founders come to their first call already thinking like someone with a Right Hand.</p>
+    <p class="section-subtitle center reveal reveal-delay-2">Explore how we find, train, and match your Right Hand — and hear from founders who've been where you are.</p>
 
     <div class="resources-grid">
-      <a href="#" class="glass resource-card reveal reveal-delay-1">
-        <div class="resource-icon">&#128221;</div>
-        <h3>150+ Tasks to Delegate</h3>
-        <p>A curated list of everything entrepreneurs should stop doing themselves — organized by category.</p>
-        <span class="resource-link">Open Delegation Library &rarr;</span>
+      <a href="wall-of-love.html" class="glass resource-card reveal reveal-delay-1">
+        <div class="resource-icon">&#128150;</div>
+        <h3>What Founders Are Saying</h3>
+        <p>Real quotes, video testimonials, and case studies from 100+ founders in their first 30, 90, and 365 days.</p>
+        <span class="resource-link">See All Testimonials &rarr;</span>
       </a>
-      <a href="#" class="glass resource-card reveal reveal-delay-2">
-        <div class="resource-icon">&#129518;</div>
-        <h3>Time-Value Calculator</h3>
-        <p>Enter your annual income and hours on admin. See exactly what you're losing — and what you'd reclaim.</p>
-        <span class="resource-link">Calculate My Cost &rarr;</span>
+      <a href="ea-training.html" class="glass resource-card reveal reveal-delay-2">
+        <div class="resource-icon">&#127891;</div>
+        <h3>How We Find & Train Your Right Hand</h3>
+        <p>1,000+ applicants. Less than 1% make it through. 40+ hours of training. See the full process.</p>
+        <span class="resource-link">Explore Our Training &rarr;</span>
       </a>
-      <a href="#" class="glass resource-card reveal reveal-delay-3">
-        <div class="resource-icon">&#127916;</div>
-        <h3>Delegation Masterclass</h3>
-        <p>The exact delegation framework Pareto uses with every new client. Watch once and your call will be twice as productive.</p>
-        <span class="resource-link">Watch the Video &rarr;</span>
+      <a href="about.html" class="glass resource-card reveal reveal-delay-3">
+        <div class="resource-icon">&#128587;</div>
+        <h3>Our Story</h3>
+        <p>How an EA and a founder built the system they wish had existed — from a $1K/month start to a million-dollar company.</p>
+        <span class="resource-link">Read the Full Story &rarr;</span>
       </a>
     </div>
   </div>
@@ -201,7 +267,7 @@
     <div class="faq-list">
       <div class="faq-item reveal">
         <div class="faq-q">"What actually happens on the strategy call?"<span class="toggle">+</span></div>
-        <div class="faq-a">It's a focused conversation — not a pitch. Your Success Manager will review your intake, show you which EA profiles match your needs, and walk you through what the first 30 days look like for your specific situation. There's no pressure and no commitment required. The only outcome is clarity.</div>
+        <div class="faq-a">It's a focused 30-minute conversation with Lucas, our Founder Success Lead — not a pitch. Lucas will review your intake questionnaire, walk you through which EA profiles match your needs, and map out what the first 30 days look like for your specific situation. If you completed the questionnaire and Predictive Index before the call, he'll have pre-vetted candidate profiles ready to discuss. No pressure. The only outcome is clarity on whether we're the right fit.</div>
       </div>
       <div class="faq-item reveal">
         <div class="faq-q">"How quickly can I actually get started?"<span class="toggle">+</span></div>
@@ -209,7 +275,7 @@
       </div>
       <div class="faq-item reveal">
         <div class="faq-q">"What if I'm not ready to commit on the call?"<span class="toggle">+</span></div>
-        <div class="faq-a">That's completely fine. A lot of founders come to the call to get informed, not to make a same-day decision. There's no contract, no credit card, and no obligation until you've found an EA you're genuinely excited about. That's what the Matching Guarantee is for.</div>
+        <div class="faq-a">That's completely fine. A lot of founders come to the call to learn more, not to make a same-day decision. There's no obligation until you've found an EA you're genuinely excited about. If we go through the matching process and don't find someone who's the right fit, you pay nothing. That's our Matching Guarantee.</div>
       </div>
     </div>
   </div>
@@ -220,8 +286,8 @@
   <div class="container">
     <div class="glass final-inner reveal-scale">
       <div class="section-badge">One Last Thing</div>
-      <h2>Your Call Is Confirmed. Complete the Questionnaire and <span class="accent">We'll Come Prepared.</span></h2>
-      <p>The founders who get matched fastest are the ones who fill this out before the call.</p>
+      <h2>Your Call With Lucas Is Confirmed. Complete the Questionnaire and <span class="accent">He'll Come With Your Matches.</span></h2>
+      <p>Founders who complete the questionnaire before the call get matched 2x faster.</p>
       <a href="#questionnaire" class="btn-primary">
         Complete Questionnaire — 8 Minutes
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
@@ -241,6 +307,49 @@
     <p>&copy; 2026 Pareto Talent LLC &middot; <a href="https://paretotalent.com">paretotalent.com</a> &middot; <a href="terms.html">Terms &amp; Privacy</a></p>
   </div>
 </footer>
+
+<!-- Loading sequence JS -->
+<script>
+(function () {
+  var steps = [
+    document.getElementById('load-step-1'),
+    document.getElementById('load-step-2'),
+    document.getElementById('load-step-3')
+  ];
+  var doneTexts = [
+    'Booking confirmed',
+    'Lucas assigned',
+    'Ready'
+  ];
+  var loader = document.getElementById('ty-loader');
+  if (!loader) return;
+
+  var delay = 0;
+  steps.forEach(function (step, i) {
+    // Activate step
+    setTimeout(function () {
+      step.classList.add('active');
+    }, delay);
+
+    delay += 1200;
+
+    // Complete step
+    setTimeout(function () {
+      step.classList.remove('active');
+      step.classList.add('done');
+      step.querySelector('.ty-load-icon').innerHTML = '&#10003;';
+      step.querySelector('span').textContent = doneTexts[i];
+    }, delay);
+
+    delay += 300;
+  });
+
+  // Fade out loader
+  setTimeout(function () {
+    loader.classList.add('done');
+  }, delay + 400);
+})();
+</script>
 
 <!-- Thank You JS (deferred) -->
 <script src="js/thank-you.js" defer></script>
