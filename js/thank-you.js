@@ -2,6 +2,10 @@
    PARETO RIGHT HAND — THANK YOU PAGE JS
    ═══════════════════════════════════ */
 
+// Force scroll to top on page load (prevents redirect scroll restoration)
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
 // --- Analytics helper ---
 function trackEvent(name, params) {
   if (typeof gtag === 'function') {
