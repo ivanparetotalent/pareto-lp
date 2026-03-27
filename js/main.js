@@ -9,6 +9,42 @@ function trackEvent(name, params) {
   }
 }
 
+// --- Referral cookie (ref= parameter, 180-day persistence) ---
+(function () {
+  var COOKIE_NAME = 'pt_ref';
+  var COOKIE_DAYS = 180;
+
+  function getCookie(name) {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? decodeURIComponent(match[2]) : null;
+  }
+
+  function setCookie(name, value, days) {
+    var maxAge = days * 24 * 60 * 60;
+    document.cookie = name + '=' + encodeURIComponent(value) + '; path=/; max-age=' + maxAge + '; SameSite=Lax';
+  }
+
+  // Capture ref from URL if present
+  var params = new URLSearchParams(window.location.search);
+  var refParam = params.get('ref');
+  if (refParam) {
+    setCookie(COOKIE_NAME, refParam, COOKIE_DAYS);
+  }
+
+  // Read ref from cookie (may have been set on a previous visit)
+  var ref = getCookie(COOKIE_NAME);
+  if (!ref) return;
+
+  // Inject into all HighLevel iframes on the page
+  document.querySelectorAll('iframe[src*="leadconnectorhq.com"]').forEach(function (iframe) {
+    try {
+      var url = new URL(iframe.src);
+      url.searchParams.set('ref', ref);
+      iframe.src = url.toString();
+    } catch (e) {}
+  });
+})();
+
 // --- Mobile burger menu ---
 (function () {
   var burger = document.getElementById('nav-burger');
