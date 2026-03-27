@@ -18,7 +18,6 @@ wistia-player[media-id='sw5w2b28uk']:not(:defined) {
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { overflow-x: hidden; }
 
 :root {
   --bg-deep: #050A0E;
@@ -246,23 +245,6 @@ h1, h2, h3, .headline-font {
   transform: translateY(-1px);
   box-shadow: 0 0 0 1px rgba(16,185,129,0.4), 0 8px 25px rgba(16,185,129,0.3);
 }
-
-/* Burger menu (mobile) */
-.nav-burger {
-  display: none;
-  background: none; border: none; cursor: pointer;
-  flex-direction: column; gap: 5px; padding: 8px;
-  z-index: 2;
-}
-.nav-burger span {
-  display: block; width: 22px; height: 2px;
-  background: var(--text-primary);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-.nav-burger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.nav-burger.open span:nth-child(2) { opacity: 0; }
-.nav-burger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 /* ═══════════════════════════════════
    GLASS CARD
@@ -578,22 +560,30 @@ h1, h2, h3, .headline-font {
 /* VSL scroll-grow: starts small, grows to near-fullscreen, sticks, then releases */
 .vsl-scroll-section {
   position: relative;
-  height: 250vh;
-  margin-top: 32px;
+  height: 180vh;
+  margin-top: 0;
 }
 .vsl-scroll-sticky {
   position: sticky;
-  top: 80px;
+  top: 60px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 0;
+  padding: 8px 0;
+  max-height: calc(100vh - 80px);
 }
 .vsl-scroll-grow {
   max-width: 1100px;
   width: 100%;
   transform: scale(0.6);
   transform-origin: center center;
+}
+.vsl-scroll-grow .vsl-wrapper {
+  max-height: calc(100vh - 200px);
+}
+.vsl-scroll-grow .vsl-wrapper wistia-player {
+  max-height: calc(100vh - 200px);
 }
 @media (max-width: 768px) {
   .vsl-scroll-section { height: auto; margin-top: 24px; }
@@ -2180,22 +2170,7 @@ section { padding: 120px 0; position: relative; }
   .hero { padding: 48px 0 36px; }
   section { padding: 60px 0; }
   .bridge-card { padding: 40px 24px; }
-  .nav { border-radius: var(--radius-lg); padding: 10px 16px; }
-  .nav-burger { display: flex; }
-  .nav-links {
-    display: none;
-    position: absolute; top: calc(100% + 8px); left: 0; right: 0;
-    background: rgba(5,10,14,0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--border-glass-strong);
-    border-radius: var(--radius-lg);
-    padding: 16px 20px;
-    flex-direction: column; gap: 8px;
-  }
-  .nav-links.open { display: flex; }
-  .nav-link { font-size: 15px; padding: 8px 0; }
-  .nav-cta { text-align: center; margin-top: 4px; }
+  .nav-links { display: none; }
   .problem-grid { grid-template-columns: 1fr; }
   .cta-resources { grid-template-columns: 1fr; }
   .matching-pipeline {
@@ -2204,8 +2179,7 @@ section { padding: 120px 0; position: relative; }
   }
   .matching-pipeline::before {
     top: 32px;
-    left: 50%;
-    transform: translateX(-1px);
+    left: 31px;
     right: auto;
     width: 2px;
     height: calc(100% - 64px);
