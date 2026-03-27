@@ -9,6 +9,23 @@ function trackEvent(name, params) {
   }
 }
 
+// --- Mobile burger menu ---
+(function () {
+  var burger = document.getElementById('nav-burger');
+  var navLinks = document.getElementById('nav-links');
+  if (!burger || !navLinks) return;
+  burger.addEventListener('click', function () {
+    burger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      burger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+})();
+
 // --- UTM forwarding to HighLevel calendar iframe ---
 (function forwardUTMs() {
   var iframe = document.querySelector('.booking-widget iframe');
