@@ -2184,7 +2184,7 @@ section { padding: 120px 0; position: relative; }
   .vsl-vertical { max-width: 85vw; }
   .progress-connector { min-width: 20px; margin: 24px 8px 0; }
   .ty-micro-trust { flex-direction: column; gap: 8px; }
-  .hero { padding: 48px 0 36px; }
+  .hero { padding: 72px 0 36px; }
   section { padding: 60px 0; }
   .bridge-card { padding: 40px 24px; }
   .nav { border-radius: var(--radius-lg); padding: 10px 16px; }
