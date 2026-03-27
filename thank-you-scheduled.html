@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're Scheduled! — Pareto Talent</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/jpeg" href="favicon.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+
+<style>
+.ty-sched-hero {
+  padding: 120px 0 60px; text-align: center;
+  min-height: 100dvh; display: flex; align-items: center;
+}
+.ty-sched-hero .container { width: 100%; }
+.ty-sched-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 20px; background: rgba(16,185,129,0.1);
+  border: 1px solid rgba(16,185,129,0.25); border-radius: 100px;
+  font-size: 14px; font-weight: 600; color: var(--green);
+  margin-bottom: 24px;
+}
+.ty-sched-hero h1 {
+  font-size: clamp(32px, 5vw, 56px); font-weight: 800; line-height: 1.1;
+  margin-bottom: 12px; max-width: 600px; margin-left: auto; margin-right: auto;
+}
+.ty-sched-hero .hero-sub {
+  max-width: 520px; margin: 0 auto 40px; font-size: 16px;
+  color: var(--text-secondary); line-height: 1.75;
+}
+.ty-sched-steps {
+  display: flex; flex-direction: column; gap: 16px;
+  max-width: 520px; margin: 0 auto 40px; text-align: left;
+}
+.ty-sched-step {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 20px 24px;
+}
+.ty-sched-step-num {
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800; font-size: 14px; color: var(--green);
+}
+.ty-sched-step h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px; font-weight: 700; margin-bottom: 4px;
+  color: var(--text-primary);
+}
+.ty-sched-step p {
+  font-size: 14px; color: var(--text-secondary); line-height: 1.6;
+}
+.ty-sched-closing {
+  max-width: 480px; margin: 0 auto; padding: 28px 32px;
+  text-align: center;
+}
+.ty-sched-closing h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px; font-weight: 700; margin-bottom: 8px;
+  color: var(--green);
+}
+.ty-sched-closing p {
+  font-size: 15px; color: var(--text-secondary); line-height: 1.7;
+}
+@media (max-width: 768px) {
+  .ty-sched-hero { padding: 100px 0 40px; }
+}
+</style>
+</head>
+<body>
+
+<div class="ambient">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+
+<!-- Nav -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <a href="/" class="nav-logo">
+      <img src="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/65d4092400a2ec10ef5c1bef.png" alt="Pareto Talent">
+    </a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="/#program" class="nav-link">The Program</a>
+      <a href="ea-training.html" class="nav-link">Our EAs</a>
+      <a href="wall-of-love.html" class="nav-link">Results</a>
+      <a href="about.html" class="nav-link">Our Story</a>
+      <a href="/#apply" class="nav-cta">Book Your Call &rarr;</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero — full screen -->
+<section class="ty-sched-hero">
+  <div class="container">
+    <div class="ty-sched-badge reveal">&#127881; Interview Confirmed</div>
+    <h1 class="reveal reveal-delay-1">You're <span class="accent">Scheduled!</span></h1>
+    <p class="hero-sub reveal reveal-delay-2">You'll receive an email confirmation and calendar invite with the meeting link. Here's how to prepare:</p>
+
+    <div class="ty-sched-steps">
+      <div class="glass ty-sched-step reveal reveal-delay-2">
+        <div class="ty-sched-step-num">1</div>
+        <div>
+          <h3>Review the EA Interview SOP</h3>
+          <p>Check the attached document in your confirmation email for tips on how to get the most out of your interview.</p>
+        </div>
+      </div>
+      <div class="glass ty-sched-step reveal reveal-delay-3">
+        <div class="ty-sched-step-num">2</div>
+        <div>
+          <h3>Prepare Your Notes</h3>
+          <p>Think about the key tasks you want to delegate, your communication style, and any questions for the EA.</p>
+        </div>
+      </div>
+      <div class="glass ty-sched-step reveal reveal-delay-4">
+        <div class="ty-sched-step-num">3</div>
+        <div>
+          <h3>Join at Your Scheduled Time</h3>
+          <p>Click the meeting link in your calendar invite. Your Success Manager will be there to facilitate.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass ty-sched-closing reveal reveal-delay-4">
+      <h3>See You Soon!</h3>
+      <p>We're excited to help you meet your next great assistant and make this process smooth and efficient from start to finish.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Pareto Talent LLC &middot; <a href="https://paretotalent.com">paretotalent.com</a> &middot; <a href="terms.html">Terms &amp; Privacy</a></p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
