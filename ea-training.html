@@ -162,19 +162,21 @@
 .nav-back:hover { color: var(--green); }
 .nav-back svg { width: 16px; height: 16px; }
 
-/* EA Photo Mosaic Background */
+/* EA Photo Mosaic Background — slow vertical drift */
 .ea-mosaic {
   position: relative;
   overflow: hidden;
   padding: 120px 0;
+  height: 420px;
 }
 .ea-mosaic-grid {
   position: absolute;
-  inset: -20px;
+  left: -20px; right: -20px;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 6px;
   z-index: 0;
+  animation: mosaicDrift 40s linear infinite;
 }
 .ea-mosaic-grid img {
   width: 100%;
@@ -182,6 +184,10 @@
   object-fit: cover;
   border-radius: var(--radius-sm);
   opacity: 0.35;
+}
+@keyframes mosaicDrift {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
 }
 /* Top and bottom fade into page background */
 .ea-mosaic::before,
@@ -208,6 +214,12 @@
   max-width: 640px;
   margin: 0 auto;
   padding: 0 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 420px;
 }
 .ea-mosaic-content h2 {
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -238,7 +250,8 @@
   .latam-grid { grid-template-columns: repeat(2, 1fr); }
   .ea-voice-grid { grid-template-columns: 1fr; }
   .ea-mosaic-grid { grid-template-columns: repeat(4, 1fr); }
-  .ea-mosaic { padding: 80px 0; }
+  .ea-mosaic { height: 360px; }
+  .ea-mosaic-content { min-height: 360px; }
   .scroll-funnel { height: 300vh; }
   .scroll-funnel-sticky { top: 60px; }
   .slack-stats { justify-content: center; }
@@ -571,8 +584,23 @@
 
 <!-- ══════════ EA PHOTO MOSAIC ══════════ -->
 <section class="ea-mosaic">
-  <!-- Photo grid as background -->
+  <!-- Photo grid as background — duplicated for seamless vertical loop -->
   <div class="ea-mosaic-grid">
+    <img src="img/Assistants/20260214_121727.jpg" alt="" loading="lazy">
+    <img src="img/Assistants/IMG2026-03-06.jpeg" alt="" loading="lazy">
+    <img src="img/Assistants/IMG_2006.jpg" alt="" loading="lazy">
+    <img src="img/Assistants/IMG_20260130_171602642.jpg" alt="" loading="lazy">
+    <img src="img/Assistants/IMG_20260202_131917.jpg" alt="" loading="lazy">
+    <img src="img/Assistants/IMG_20260202_153941.jpg" alt="" loading="lazy">
+    <img src="img/Assistants/IMG_20260306_112753174~2.jpg" alt="" loading="lazy">
+    <img src="img/Assistants/IMG_20260320_165506 (2).jpg" alt="" loading="lazy">
+    <img src="img/Assistants/IMG_6411.jpg" alt="" loading="lazy">
+    <img src="img/Assistants/Pareto Hoodie.jpeg" alt="" loading="lazy">
+    <img src="img/Assistants/Photo Feb 16 2026 (1).jpg" alt="" loading="lazy">
+    <img src="img/Assistants/WhatsApp Image 2026-01-30 at 12.06.47.jpeg" alt="" loading="lazy">
+    <img src="img/Assistants/WhatsApp Image 2026-01-30 at 16.47.01.jpeg" alt="" loading="lazy">
+    <img src="img/Assistants/WhatsApp Image 2026-02-16 at 10.38.29 AM.jpeg" alt="" loading="lazy">
+    <!-- duplicate set for seamless loop -->
     <img src="img/Assistants/20260214_121727.jpg" alt="" loading="lazy">
     <img src="img/Assistants/IMG2026-03-06.jpeg" alt="" loading="lazy">
     <img src="img/Assistants/IMG_2006.jpg" alt="" loading="lazy">
