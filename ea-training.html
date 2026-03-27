@@ -162,37 +162,67 @@
 .nav-back:hover { color: var(--green); }
 .nav-back svg { width: 16px; height: 16px; }
 
-/* EA Hoodie Photo Marquee */
-.ea-marquee-wrap { overflow: hidden; }
-.ea-marquee {
-  display: flex;
-  gap: 16px;
-  width: max-content;
+/* EA Photo Mosaic Background */
+.ea-mosaic {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
 }
-.ea-marquee-left { animation: marqueeLeft 35s linear infinite; }
-.ea-marquee-right { animation: marqueeRight 35s linear infinite; }
-.ea-marquee img {
-  width: 80px; height: 80px;
-  border-radius: 50%;
+.ea-mosaic-grid {
+  position: absolute;
+  inset: -20px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  z-index: 0;
+}
+.ea-mosaic-grid img {
+  width: 100%;
+  aspect-ratio: 1;
   object-fit: cover;
-  border: 2px solid rgba(16,185,129,0.12);
-  opacity: 0.7;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  opacity: 0.35;
 }
-.ea-marquee img:hover {
-  opacity: 1;
-  border-color: rgba(16,185,129,0.5);
-  transform: scale(1.15);
-  box-shadow: 0 0 24px rgba(16,185,129,0.25);
+/* Top and bottom fade into page background */
+.ea-mosaic::before,
+.ea-mosaic::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 50%;
+  z-index: 1;
+  pointer-events: none;
 }
-@keyframes marqueeLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.ea-mosaic::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--bg-deep) 0%, transparent 100%);
 }
-@keyframes marqueeRight {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+.ea-mosaic::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--bg-deep) 0%, transparent 100%);
+}
+.ea-mosaic-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+.ea-mosaic-content h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+  text-shadow: 0 4px 40px rgba(5,10,14,0.8);
+}
+.ea-mosaic-content p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  text-shadow: 0 2px 20px rgba(5,10,14,0.9);
 }
 
 @media (max-width: 768px) {
@@ -207,7 +237,8 @@
   .ongoing-grid { grid-template-columns: repeat(2, 1fr); }
   .latam-grid { grid-template-columns: repeat(2, 1fr); }
   .ea-voice-grid { grid-template-columns: 1fr; }
-  .ea-marquee img { width: 60px; height: 60px; }
+  .ea-mosaic-grid { grid-template-columns: repeat(4, 1fr); }
+  .ea-mosaic { padding: 80px 0; }
   .scroll-funnel { height: 300vh; }
   .scroll-funnel-sticky { top: 60px; }
   .slack-stats { justify-content: center; }
@@ -538,46 +569,29 @@
   </div>
 </section>
 
-<!-- ══════════ EA HOODIE GALLERY — MARQUEE ══════════ -->
-<section style="padding: 40px 0;">
-  <p style="text-align:center; font-size: 12px; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; font-weight: 600;">The People Behind Pareto</p>
-  <div class="ea-marquee-wrap">
-    <div class="ea-marquee ea-marquee-left">
-      <img src="img/Assistants/20260214_121727.jpg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/IMG2026-03-06.jpeg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/IMG_2006.jpg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/IMG_20260130_171602642.jpg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/IMG_20260202_131917.jpg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/IMG_20260202_153941.jpg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/IMG_20260306_112753174~2.jpg" alt="Pareto EA" loading="lazy">
-      <!-- duplicate for seamless loop -->
-      <img src="img/Assistants/20260214_121727.jpg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/IMG2026-03-06.jpeg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/IMG_2006.jpg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/IMG_20260130_171602642.jpg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/IMG_20260202_131917.jpg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/IMG_20260202_153941.jpg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/IMG_20260306_112753174~2.jpg" alt="Pareto EA" loading="lazy">
-    </div>
+<!-- ══════════ EA PHOTO MOSAIC ══════════ -->
+<section class="ea-mosaic">
+  <!-- Photo grid as background -->
+  <div class="ea-mosaic-grid">
+    <img src="img/Assistants/20260214_121727.jpg" alt="" loading="lazy">
+    <img src="img/Assistants/IMG2026-03-06.jpeg" alt="" loading="lazy">
+    <img src="img/Assistants/IMG_2006.jpg" alt="" loading="lazy">
+    <img src="img/Assistants/IMG_20260130_171602642.jpg" alt="" loading="lazy">
+    <img src="img/Assistants/IMG_20260202_131917.jpg" alt="" loading="lazy">
+    <img src="img/Assistants/IMG_20260202_153941.jpg" alt="" loading="lazy">
+    <img src="img/Assistants/IMG_20260306_112753174~2.jpg" alt="" loading="lazy">
+    <img src="img/Assistants/IMG_20260320_165506 (2).jpg" alt="" loading="lazy">
+    <img src="img/Assistants/IMG_6411.jpg" alt="" loading="lazy">
+    <img src="img/Assistants/Pareto Hoodie.jpeg" alt="" loading="lazy">
+    <img src="img/Assistants/Photo Feb 16 2026 (1).jpg" alt="" loading="lazy">
+    <img src="img/Assistants/WhatsApp Image 2026-01-30 at 12.06.47.jpeg" alt="" loading="lazy">
+    <img src="img/Assistants/WhatsApp Image 2026-01-30 at 16.47.01.jpeg" alt="" loading="lazy">
+    <img src="img/Assistants/WhatsApp Image 2026-02-16 at 10.38.29 AM.jpeg" alt="" loading="lazy">
   </div>
-  <div class="ea-marquee-wrap" style="margin-top: 12px;">
-    <div class="ea-marquee ea-marquee-right">
-      <img src="img/Assistants/IMG_20260320_165506 (2).jpg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/IMG_6411.jpg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/Pareto Hoodie.jpeg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/Photo Feb 16 2026 (1).jpg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/WhatsApp Image 2026-01-30 at 12.06.47.jpeg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/WhatsApp Image 2026-01-30 at 16.47.01.jpeg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/WhatsApp Image 2026-02-16 at 10.38.29 AM.jpeg" alt="Pareto EA" loading="lazy">
-      <!-- duplicate for seamless loop -->
-      <img src="img/Assistants/IMG_20260320_165506 (2).jpg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/IMG_6411.jpg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/Pareto Hoodie.jpeg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/Photo Feb 16 2026 (1).jpg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/WhatsApp Image 2026-01-30 at 12.06.47.jpeg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/WhatsApp Image 2026-01-30 at 16.47.01.jpeg" alt="Pareto EA" loading="lazy">
-      <img src="img/Assistants/WhatsApp Image 2026-02-16 at 10.38.29 AM.jpeg" alt="Pareto EA" loading="lazy">
-    </div>
+  <!-- Text overlay -->
+  <div class="ea-mosaic-content">
+    <h2>Real People. <span class="accent">Real Culture.</span></h2>
+    <p>Every Pareto EA is part of a community — trained together, growing together, wearing the hoodie with pride. These aren't contractors on a spreadsheet. They're professionals who chose to be here.</p>
   </div>
 </section>
 
