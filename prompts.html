@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scroll-Stop Prompts: Holographic Command Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Space Grotesk',sans-serif;background:#02040a;color:#e2e8f0;min-height:100vh;overflow-x:hidden}
+.orb{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0}
+.orb-1{width:500px;height:500px;background:rgba(16,185,129,0.08);top:-200px;right:-100px}
+.orb-2{width:400px;height:400px;background:rgba(99,102,241,0.06);bottom:10%;left:-150px}
+.container{max-width:860px;margin:0 auto;padding:60px 24px;position:relative;z-index:1}
+h1{font-size:clamp(36px,6vw,56px);font-weight:700;line-height:1.05;margin-bottom:8px;letter-spacing:-0.03em}
+h1 span{color:#64748b}
+.sub{color:#64748b;font-size:15px;margin-bottom:48px}
+.tabs{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap}
+.tab{padding:10px 20px;border-radius:100px;border:1px solid rgba(255,255,255,0.08);background:transparent;color:#94a3b8;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.3s}
+.tab:hover{border-color:rgba(16,185,129,0.3);color:#e2e8f0}
+.tab.active{background:#10B981;color:#02040a;border-color:#10B981}
+.prompt-panel{display:none}
+.prompt-panel.active{display:block}
+.prompt-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:32px;position:relative}
+.prompt-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#10B981;margin-bottom:16px}
+.prompt-text{font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.8;color:#cbd5e1;white-space:pre-wrap;word-break:break-word}
+.copy-btn{position:absolute;top:24px;right:24px;padding:8px 16px;border-radius:8px;border:1px solid rgba(16,185,129,0.3);background:rgba(16,185,129,0.08);color:#10B981;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s}
+.copy-btn:hover{background:#10B981;color:#02040a}
+.copy-btn.copied{background:#10B981;color:#02040a}
+.tip{margin-top:24px;padding:16px 20px;background:rgba(16,185,129,0.04);border:1px solid rgba(16,185,129,0.1);border-radius:12px;font-size:13px;color:#94a3b8;line-height:1.6}
+.tip strong{color:#10B981}
+canvas#confetti{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:999}
+.keys{margin-top:32px;text-align:center;font-size:12px;color:#475569}
+.keys kbd{display:inline-block;padding:2px 8px;border:1px solid rgba(255,255,255,0.1);border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:11px;margin:0 2px}
+@media(max-width:640px){.container{padding:32px 16px}.prompt-card{padding:20px}.prompt-text{font-size:12px}.copy-btn{position:static;display:block;width:100%;margin-top:16px;text-align:center}}
+</style>
+</head>
+<body>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<canvas id="confetti"></canvas>
+<div class="container">
+<h1>HOLOGRAPHIC <span>COMMAND CENTER</span></h1>
+<p class="sub">Three coordinated prompts &mdash; compressed HUD expands into three holographic panels</p>
+
+<div class="tabs">
+  <button class="tab active" data-tab="a">Compressed HUD</button>
+  <button class="tab" data-tab="b">Expanded Panels</button>
+  <button class="tab" data-tab="c">Video Transition</button>
+</div>
+
+<div class="prompt-panel active" id="panel-a">
+  <div class="prompt-card">
+    <div class="prompt-label">Prompt A &mdash; Compressed State (Start Frame)</div>
+    <button class="copy-btn" data-target="prompt-a">Copy</button>
+    <div class="prompt-text" id="prompt-a">A single compact holographic interface element floating in the center of a completely dark void. The background is pure deep black with a very subtle navy tint (#050A0E). No floor, no horizon, no environment -- just darkness.
+
+The holographic element is a small, dense, luminous geometric core -- a compressed hexagonal prism, approximately 15cm across, hovering in space. It is made of translucent glass-like material with sharp edges and clean geometry. The surface has a faint frosted glass quality.
+
+Inside the prism, dense layers of holographic data are visible but compressed together -- thin horizontal lines of emerald green (#10B981) light, small grid patterns, and micro-circuit traces all stacked tightly, like a hard drive of light compressed into a jewel. The overall glow is predominantly emerald green with hints of teal (#14B8A6) and soft indigo (#6366F1) refracting at the edges.
+
+Around the prism, a thin ring of light orbits slowly -- emerald green, barely visible. A few tiny particle dots (5-8 dots, no more) drift in the immediate vicinity, like fireflies. A very subtle green lens flare catches one edge.
+
+The image is quiet, minimal, and loaded with potential energy -- like a compressed file about to decompress. No text. No words. No labels. No UI chrome. No human figures. Just the glowing object in pure darkness.
+
+Photorealistic 3D render. Cinematic lighting: single soft light source from above-left creating subtle caustics in the glass material. Slight depth of field -- the prism is tack sharp, background particles slightly soft. 16:9 widescreen. 4K resolution. Octane render quality.</div>
+    <div class="tip"><strong>Settings:</strong> 16:9 aspect ratio, highest quality. This is the compressed state -- all the system's power contained in one dense object.</div>
+  </div>
+</div>
+
+<div class="prompt-panel" id="panel-b">
+  <div class="prompt-card">
+    <div class="prompt-label">Prompt B &mdash; Expanded State (End Frame)</div>
+    <button class="copy-btn" data-target="prompt-b">Copy</button>
+    <div class="prompt-text" id="prompt-b">Three large holographic interface panels floating in a triangular formation in a completely dark void (#050A0E background). The panels are arranged with generous spacing between them -- left, center-back, and right -- creating depth and dimensionality. No floor, no horizon, no environment.
+
+Each panel is a tall, slightly curved, translucent holographic display made of frosted glass-like material, approximately the proportions of a large tablet or monitor (roughly 3:4 ratio). They hover at slightly different heights and angles, each tilted 10-15 degrees to face the viewer, creating a wraparound command center feel.
+
+LEFT PANEL: Dominated by emerald green (#10B981) holographic light. The surface shows abstract geometric patterns -- interconnected node graphs, concentric circles suggesting a community/network, thin pulsing connection lines between small circular nodes arranged in a constellation pattern. The overall impression is "connected humans" without showing any literal human figures. Clean, abstract, data-visualization aesthetic.
+
+CENTER PANEL: The largest of the three, positioned slightly further back and elevated. Glowing with bright green (#34D399). Its surface displays a clean grid layout with small card-like rectangles arranged in an organized dashboard pattern -- suggesting workflows, task management, structured operations. Thin horizontal progress bars, small status indicators (dots of green light), and a central focal element that looks like a calendar or scheduling matrix. The impression is "organized execution" -- everything in its place.
+
+RIGHT PANEL: Glowing with a gradient from teal (#14B8A6) at the top to soft indigo (#6366F1) at the bottom. Its surface shows flowing data streams -- vertical cascading lines of tiny characters (like The Matrix but elegant and sparse), branching tree/graph structures suggesting knowledge organization, and small glowing orbs connected by thin lines representing a knowledge graph. The impression is "intelligent memory system" -- AI processing and cataloging information.
+
+Between the three panels, thin threads of green light (#34D399 at 30% opacity) arc gracefully, connecting them into one system. A few dozen tiny particle dots float throughout the scene, more than in the compressed state, suggesting released energy. The remnants of the original hexagonal prism are faintly visible as a small glowing wireframe outline in the center of the triangular formation, now hollow/empty.
+
+No text. No words. No labels. No human figures. Pure abstract holographic interface aesthetic.
+
+Photorealistic 3D render. Cinematic lighting from above with subtle green and teal ambient fill. Volumetric light rays barely visible between panels. Slight depth of field -- the center panel sharpest, side panels very slightly softer. 16:9 widescreen. 4K resolution. Octane render quality. The overall mood is "the future of operations" -- calm, powerful, expansive.</div>
+    <div class="tip"><strong>Tip:</strong> Generate Prompt A first. Then reference that output as a style reference when generating this one to ensure the same glass material, lighting quality, and color treatment carries through.</div>
+  </div>
+</div>
+
+<div class="prompt-panel" id="panel-c">
+  <div class="prompt-card">
+    <div class="prompt-label">Prompt C &mdash; Video Transition</div>
+    <button class="copy-btn" data-target="prompt-c">Copy</button>
+    <div class="prompt-text" id="prompt-c">START FRAME: A small, dense hexagonal glass prism floating in pure darkness, glowing with compressed emerald green holographic data inside. A faint orbital ring of green light surrounds it. Minimal particles. Quiet, loaded with potential.
+
+END FRAME: Three large holographic glass panels arranged in a triangular command-center formation in the same dark void. Left panel glows green with network node patterns, center panel glows bright green with dashboard grid layouts, right panel glows teal-to-indigo with flowing data streams and knowledge graphs. Thin green connection threads arc between all three. The original prism is now a faint hollow wireframe in the center.
+
+TRANSITION: The prism hovers still for 0.5 seconds. Then it begins to pulse with intensifying light -- the internal glow brightens, the orbital ring spins faster. At the peak of intensity, the prism fractures along three clean geometric planes with a flash of white-green light. The three fragments immediately begin transforming and expanding -- each one unfolding, growing, and reshaping into one of the three large holographic panels.
+
+The expansion happens simultaneously but at slightly staggered speeds -- center panel forms first (0.2s ahead), then left and right unfurl outward. As each panel materializes, its surface content (nodes, grids, data streams) appears in a quick cascade from top to bottom, like a screen powering on.
+
+The connection threads between panels appear last, drawing themselves in thin green arcs. A burst of tiny particles releases from the center point during the fracture moment, then settles into gentle ambient drift.
+
+Camera: Completely locked. No camera movement whatsoever. The only motion is the object transforming. Dark background throughout.
+
+Style: Photorealistic 3D, glass-morphism materials, volumetric green and teal lighting. Premium, cinematic. The aesthetic of Stripe, Linear, or Apple product videos. Satisfying, precise mechanical motion with eased timing (slow-in, slow-out on all movements).
+
+Duration: 4-5 seconds total. Aspect ratio: 16:9. Quality: Ultra-high fidelity, 30fps minimum, no artifacts. Clean motion blur on expanding elements.</div>
+    <div class="tip"><strong>How to use:</strong> Upload Prompt A output as start frame, Prompt B output as end frame. Works with Runway, Kling, Pika, or Higgsfield. Try both directions -- the <strong>reverse</strong> (panels compressing into the prism) can work as a "scroll back up" animation.</div>
+  </div>
+</div>
+
+<div class="keys">Press <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> to switch tabs</div>
+</div>
+
+<script>
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.prompt-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+  });
+});
+document.addEventListener('keydown', e => {
+  if (e.key === '1') document.querySelector('[data-tab="a"]').click();
+  if (e.key === '2') document.querySelector('[data-tab="b"]').click();
+  if (e.key === '3') document.querySelector('[data-tab="c"]').click();
+});
+const canvas = document.getElementById('confetti');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+let particles = [];
+function createConfetti(x, y) {
+  const colors = ['#10B981', '#34D399', '#6EE7B7', '#14B8A6', '#6366F1'];
+  for (let i = 0; i < 60; i++) {
+    particles.push({ x, y, vx: (Math.random() - 0.5) * 12, vy: (Math.random() - 0.5) * 12 - 4, w: Math.random() * 8 + 3, h: Math.random() * 4 + 2, color: colors[Math.floor(Math.random() * colors.length)], rotation: Math.random() * 360, rv: (Math.random() - 0.5) * 10, life: 1 });
+  }
+}
+function animateConfetti() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles = particles.filter(p => p.life > 0);
+  particles.forEach(p => { p.x += p.vx; p.y += p.vy; p.vy += 0.2; p.rotation += p.rv; p.life -= 0.015; ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rotation * Math.PI / 180); ctx.globalAlpha = p.life; ctx.fillStyle = p.color; ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h); ctx.restore(); });
+  if (particles.length > 0) requestAnimationFrame(animateConfetti);
+}
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const text = document.getElementById(btn.dataset.target).textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = 'Copied!'; btn.classList.add('copied');
+      const rect = btn.getBoundingClientRect();
+      createConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2);
+      requestAnimationFrame(animateConfetti);
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+    });
+  });
+});
+</script>
+</body>
+</html>
