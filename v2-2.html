@@ -718,40 +718,73 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <!-- ROI Math Section -->
+    <!-- Interactive ROI Calculator -->
     <div class="reveal-scale" style="margin-top: 48px; max-width: 860px; margin-left: auto; margin-right: auto;">
       <div class="glass" style="padding: 48px 40px; border: 1px solid rgba(16,185,129,0.12); border-radius: var(--radius-xl); text-align: center;">
         <div class="section-badge" style="margin-bottom: 16px;">The ROI</div>
         <h3 style="font-size: clamp(24px, 3vw, 36px); font-weight: 800; font-family: 'Plus Jakarta Sans', sans-serif; margin-bottom: 32px;">The Math That <span class="accent">Changes Everything</span></h3>
 
-        <!-- Equation visual -->
+        <!-- Slider input -->
+        <div style="max-width: 480px; margin: 0 auto 32px;">
+          <label style="display: block; font-size: 14px; color: var(--text-secondary); margin-bottom: 12px;">What's your effective hourly rate?</label>
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <input type="range" min="50" max="1000" value="200" step="25" id="roi-rate" style="flex: 1; height: 6px; -webkit-appearance: none; appearance: none; background: rgba(255,255,255,0.1); border-radius: 3px; outline: none; cursor: pointer;">
+            <span id="roi-rate-val" style="font-size: 24px; font-weight: 800; color: var(--green-bright); font-family: 'Plus Jakarta Sans', sans-serif; min-width: 110px; text-align: right;">$200/hr</span>
+          </div>
+        </div>
+
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 28px;">Our founders save <strong style="color: var(--text-secondary);">10–15 hours/week</strong> in their first month. We use 12.5 hrs/week for this calculation.</p>
+
+        <!-- Live equation cards -->
         <div style="display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 32px;">
           <div class="glass" style="padding: 20px 24px; border-radius: var(--radius-md); text-align: center; min-width: 140px;">
             <div style="font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;">Your Rate</div>
-            <div style="font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: var(--text-primary); font-family: 'Plus Jakarta Sans', sans-serif;">$200<span style="font-size: 14px; font-weight: 500; color: var(--text-muted);">/hr</span></div>
+            <div style="font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: var(--text-primary); font-family: 'Plus Jakarta Sans', sans-serif;"><span id="roi-your-rate">$200</span><span style="font-size: 14px; font-weight: 500; color: var(--text-muted);">/hr</span></div>
           </div>
           <span style="font-size: 24px; font-weight: 700; color: var(--text-muted);">&times;</span>
           <div class="glass" style="padding: 20px 24px; border-radius: var(--radius-md); text-align: center; min-width: 140px;">
-            <div style="font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;">Wasted Hours</div>
-            <div style="font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: var(--text-primary); font-family: 'Plus Jakarta Sans', sans-serif;">15<span style="font-size: 14px; font-weight: 500; color: var(--text-muted);">hrs/wk</span></div>
+            <div style="font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;">Hours Saved</div>
+            <div style="font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: var(--text-primary); font-family: 'Plus Jakarta Sans', sans-serif;">12.5<span style="font-size: 14px; font-weight: 500; color: var(--text-muted);">hrs/wk</span></div>
           </div>
           <span style="font-size: 24px; font-weight: 700; color: var(--text-muted);">=</span>
           <div style="padding: 20px 24px; border-radius: var(--radius-md); text-align: center; min-width: 160px; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2);">
-            <div style="font-size: 12px; color: var(--green); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;">Opportunity Cost</div>
-            <div style="font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: var(--green-bright); font-family: 'Plus Jakarta Sans', sans-serif;">$12,000<span style="font-size: 14px; font-weight: 500; color: var(--green);">/mo</span></div>
+            <div style="font-size: 12px; color: var(--green); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;">You're Losing</div>
+            <div style="font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: var(--green-bright); font-family: 'Plus Jakarta Sans', sans-serif;"><span id="roi-loss">$10,750</span><span style="font-size: 14px; font-weight: 500; color: var(--green);">/mo</span></div>
           </div>
         </div>
 
         <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.75; max-width: 600px; margin: 0 auto 24px;">
-          If you earn $200/hr and spend 15 hours/week on tasks your EA should handle, you're losing <strong style="color: var(--text-primary);">$12,000/month</strong> in opportunity cost. The Right Hand Program costs <strong style="color: var(--green-light);">$2,500/month</strong>.
+          The Right Hand Program costs <strong style="color: var(--green-light);">$2,500/month</strong>. That's a:
         </p>
 
         <div style="display: inline-block; padding: 16px 32px; border-radius: var(--radius-md); background: linear-gradient(135deg, rgba(16,185,129,0.12), rgba(16,185,129,0.04)); border: 1px solid rgba(16,185,129,0.2);">
-          <span style="font-size: clamp(28px, 4vw, 44px); font-weight: 800; font-family: 'Plus Jakarta Sans', sans-serif; color: var(--green-bright);">5x Return</span>
+          <span id="roi-mult" style="font-size: clamp(28px, 4vw, 44px); font-weight: 800; font-family: 'Plus Jakarta Sans', sans-serif; color: var(--green-bright);">4.3x Return</span>
           <span style="display: block; font-size: 14px; color: var(--green); margin-top: 4px;">Before your EA does anything strategic.</span>
         </div>
       </div>
     </div>
+
+    <script>
+    (function(){
+      var slider = document.getElementById('roi-rate');
+      if (!slider) return;
+      var rateVal = document.getElementById('roi-rate-val');
+      var yourRate = document.getElementById('roi-your-rate');
+      var loss = document.getElementById('roi-loss');
+      var mult = document.getElementById('roi-mult');
+      function update() {
+        var rate = parseInt(slider.value);
+        var monthlyLoss = Math.round(rate * 12.5 * 4.3);
+        var multiplier = (monthlyLoss / 2500).toFixed(1);
+        rateVal.textContent = '$' + rate + '/hr';
+        yourRate.textContent = '$' + rate;
+        loss.textContent = '$' + monthlyLoss.toLocaleString();
+        mult.textContent = multiplier + 'x Return';
+      }
+      slider.addEventListener('input', update);
+      update();
+    })();
+    </script>
   </div>
 </section>
 

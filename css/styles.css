@@ -19,6 +19,21 @@ wistia-player[media-id='sw5w2b28uk']:not(:defined) {
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Range slider styling */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: #10B981; cursor: pointer;
+  box-shadow: 0 0 12px rgba(16,185,129,0.4);
+  border: 2px solid rgba(255,255,255,0.2);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: #10B981; cursor: pointer;
+  box-shadow: 0 0 12px rgba(16,185,129,0.4);
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
 :root {
   --bg-deep: #050A0E;
   --bg-surface: #0B1119;
