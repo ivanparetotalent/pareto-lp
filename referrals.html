@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Referral Program — Pareto Talent</title>
+<link rel="icon" type="image/jpeg" href="favicon.jpg">
+<meta name="description" content="Share Pareto. Everyone Wins. Refer an entrepreneur and they save $3,000. You earn a free month or $1,500 cash. Your right-hand gets a bonus too.">
+
+<meta property="og:title" content="Referral Program — Pareto Talent">
+<meta property="og:description" content="Refer an entrepreneur to Pareto Talent. They save $3,000. You earn a free month or $1,500 cash.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/68269830dcadfd145ee05544.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+
+<style>
+/* Referral page-specific styles */
+.ref-hero { padding: 120px 0 60px; text-align: center; }
+.ref-hero h1 { font-size: clamp(36px, 5vw, 64px); font-weight: 800; line-height: 1.05; margin-bottom: 20px; }
+.ref-hero .hero-sub { max-width: 640px; margin: 0 auto 32px; font-size: 17px; color: var(--text-secondary); line-height: 1.75; }
+
+/* 3-step pipeline (adapted from matching-pipeline) */
+.ref-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; position: relative; margin-top: 56px; }
+.ref-steps::before { content: ''; position: absolute; top: 32px; left: 16%; right: 16%; height: 2px; background: linear-gradient(90deg, transparent, rgba(16,185,129,0.3), transparent); z-index: 0; }
+.ref-step { text-align: center; position: relative; z-index: 1; }
+.ref-step-num { width: 64px; height: 64px; border-radius: 50%; background: var(--bg-deep); border: 2px solid rgba(16,185,129,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 24px; font-weight: 800; color: var(--green); box-shadow: 0 0 0 8px var(--bg-deep), 0 0 0 10px rgba(16,185,129,0.15); }
+.ref-step h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+.ref-step p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+
+/* Big number accent */
+.big-value { font-size: clamp(48px, 8vw, 80px); font-weight: 800; font-family: 'Plus Jakarta Sans', sans-serif; color: var(--green-bright); line-height: 1; margin-bottom: 16px; }
+
+/* Options grid */
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 800px; margin: 0 auto; }
+.option-card { padding: 36px 28px; text-align: center; border: 1px solid rgba(16,185,129,0.12); }
+.option-label { font-size: 12px; color: var(--green); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 8px; }
+.option-value { font-size: clamp(32px, 4vw, 48px); font-weight: 800; font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-primary); margin-bottom: 12px; }
+.option-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+
+/* Milestone card */
+.milestone-card { max-width: 720px; margin: 0 auto; padding: 40px 36px; border: 1px solid rgba(16,185,129,0.25); box-shadow: 0 0 40px rgba(16,185,129,0.06); }
+.milestone-list { list-style: none; padding: 0; margin: 24px 0 0; text-align: left; }
+.milestone-list li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 15px; color: var(--text-secondary); line-height: 1.65; display: flex; align-items: flex-start; gap: 12px; }
+.milestone-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 9px; }
+
+/* Gift card mockup */
+.gift-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; max-width: 900px; margin: 48px auto 0; }
+.gift-mockup { padding: 32px 28px; border-radius: var(--radius-xl); border: 2px solid rgba(16,185,129,0.3); background: linear-gradient(135deg, rgba(16,185,129,0.06), rgba(16,185,129,0.02)); text-align: center; }
+.gift-mockup-badge { display: inline-block; padding: 4px 12px; background: var(--green); color: #050A0E; font-size: 11px; font-weight: 700; border-radius: 100px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.06em; }
+.gift-mockup-value { font-size: 36px; font-weight: 800; font-family: 'Plus Jakarta Sans', sans-serif; color: var(--green-bright); margin-bottom: 12px; }
+.gift-mockup-text { font-size: 14px; color: var(--text-secondary); line-height: 1.65; font-style: italic; }
+.gift-content h3 { font-size: clamp(20px, 2.5vw, 28px); font-weight: 800; margin-bottom: 16px; }
+.gift-content p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 16px; }
+
+/* Math cards */
+.math-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.math-card { padding: 28px 20px; text-align: center; }
+.math-card-refs { font-size: 14px; color: var(--green); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
+.math-card-num { font-size: clamp(20px, 2.5vw, 28px); font-weight: 800; font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-primary); margin-bottom: 4px; }
+.math-card-label { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
+.math-card-line { font-size: 13px; color: var(--text-secondary); line-height: 1.6; padding: 6px 0; border-top: 1px solid rgba(255,255,255,0.04); }
+.math-card-special { font-size: 12px; color: var(--green-light); margin-top: 8px; font-weight: 600; }
+
+/* Partner section — distinct visual */
+.partner-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
+.partner-step { padding: 24px 20px; text-align: center; }
+.partner-step-num { font-size: 20px; font-weight: 800; color: var(--green); margin-bottom: 8px; }
+.partner-step h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.partner-step p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+@media (max-width: 768px) {
+  .ref-hero { padding: 100px 0 48px; }
+  .ref-steps { grid-template-columns: 1fr; gap: 40px; }
+  .ref-steps::before { display: none; }
+  .options-grid { grid-template-columns: 1fr; }
+  .gift-layout { grid-template-columns: 1fr; }
+  .math-grid { grid-template-columns: 1fr 1fr; }
+  .partner-steps { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .math-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WKKLHG3N');</script>
+<!-- End Google Tag Manager -->
+<script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="ivOFDhuMoCMOcApS" data-version="062024"></script>
+
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('D41QF9JC77U9LG1FSAP0');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKKLHG3N"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="ambient">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+
+<!-- Nav -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <a href="/" class="nav-logo">
+      <img src="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/65d4092400a2ec10ef5c1bef.png" alt="Pareto Talent">
+    </a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="/#program" class="nav-link">The Program</a>
+      <a href="ea-training.html" class="nav-link">Our EAs</a>
+      <a href="wall-of-love.html" class="nav-link">Results</a>
+      <a href="about.html" class="nav-link">Our Story</a>
+      <a href="/#apply" class="nav-cta">Book Your Call &rarr;</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ 1. HERO ══════════ -->
+<section class="ref-hero">
+  <div class="container">
+    <div class="section-badge reveal">Referral Program</div>
+    <h1 class="reveal reveal-delay-1">Share Pareto. <span class="accent">Everyone Wins.</span></h1>
+    <p class="hero-sub reveal reveal-delay-2">When you refer an entrepreneur to Pareto Talent, they save $3,000. You earn a free month of service or $1,500 in cash. And your right-hand gets a bonus, too.</p>
+    <div class="reveal reveal-delay-3">
+      <a href="/#apply" class="btn-primary">Get Your Referral Link</a>
+    </div>
+    <p class="reveal reveal-delay-4" style="font-size: 13px; color: var(--text-muted); margin-top: 16px;">Already a client? Log in to access your referral link and Gift Cards.</p>
+  </div>
+</section>
+
+<!-- ══════════ 2. HOW IT WORKS ══════════ -->
+<section class="section-gradient-1">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-badge reveal">How It Works</div>
+      <h2 class="section-title reveal reveal-delay-1">Three Steps. <span class="accent">Three Winners.</span></h2>
+    </div>
+
+    <div class="ref-steps">
+      <div class="ref-step reveal reveal-delay-1">
+        <div class="ref-step-num">1</div>
+        <h3>Share Your Link</h3>
+        <p>Send your unique referral link to any entrepreneur who could use a dedicated right-hand. Or send them one of your 3 Gift Cards — each one waives their $3,000 placement fee.</p>
+      </div>
+      <div class="ref-step reveal reveal-delay-2">
+        <div class="ref-step-num">2</div>
+        <h3>They Start With Pareto</h3>
+        <p>Your referral books an intro call, gets matched with a world-class right-hand, and starts their journey — with their $3,000 placement fee completely waived, thanks to you.</p>
+      </div>
+      <div class="ref-step reveal reveal-delay-3">
+        <div class="ref-step-num">3</div>
+        <h3>You Both Get Rewarded</h3>
+        <p>Once your referral starts service, you choose your reward: one free month of service or $1,500 in cash. Your right-hand receives a $100 cash bonus. Same reward, every time — no limits.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 3. WHAT YOUR REFERRAL GETS ══════════ -->
+<section class="section-gradient-2">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 40px;">
+      <div class="section-badge reveal">For Your Referral</div>
+      <h2 class="section-title reveal reveal-delay-1">Give Your Network a <span class="accent">$3,000 Head Start</span></h2>
+    </div>
+    <div class="glass reveal-scale" style="max-width: 720px; margin: 0 auto; padding: 48px 40px; text-align: center; border: 1px solid rgba(16,185,129,0.15);">
+      <div class="big-value">$3,000</div>
+      <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.75; max-width: 540px; margin: 0 auto;">
+        Every entrepreneur you refer to Pareto gets their $3,000 placement fee waived entirely. No catch. No fine print. They simply mention your name or use your link, and the fee disappears.
+      </p>
+      <p style="font-size: 15px; color: var(--text-muted); margin-top: 20px; font-style: italic;">
+        It's the kind of introduction that makes people remember you.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 4. WHAT YOU GET ══════════ -->
+<section class="section-gradient-1">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 40px;">
+      <div class="section-badge reveal">For You</div>
+      <h2 class="section-title reveal reveal-delay-1">Your Reward, <span class="accent">Your Choice</span></h2>
+    </div>
+    <div class="options-grid">
+      <div class="glass option-card reveal reveal-delay-1">
+        <div class="option-label">Option A</div>
+        <div class="option-value">Free Month</div>
+        <p class="option-desc">Your next billing cycle drops to $0. Whether you're on a monthly, quarterly, or annual plan, we credit one full month of service to your account. Applied automatically.</p>
+      </div>
+      <div class="glass option-card reveal reveal-delay-2">
+        <div class="option-label">Option B</div>
+        <div class="option-value">$1,500</div>
+        <p class="option-desc">Prefer cash? We'll send you $1,500 within 30 days of your referral starting service. No strings attached.</p>
+      </div>
+    </div>
+    <p class="reveal" style="text-align: center; font-size: 13px; color: var(--text-muted); margin-top: 24px; max-width: 600px; margin-left: auto; margin-right: auto;">
+      You choose independently for each referral. Take the free month for referral #1, cash for #2 — entirely up to you. There's no limit to how many times you can earn rewards.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════ 5. YOUR RIGHT-HAND WINS TOO ══════════ -->
+<section class="section-gradient-2">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-badge reveal">For Your Right-Hand</div>
+      <h2 class="section-title reveal reveal-delay-1">Your Right-Hand <span class="accent">Gets Rewarded, Too</span></h2>
+      <p class="section-subtitle center reveal reveal-delay-2" style="max-width: 560px;">
+        Every time one of your referrals starts with Pareto, your right-hand receives a <strong style="color: var(--green-bright);">$100 cash bonus</strong>.
+      </p>
+      <p class="reveal reveal-delay-3" style="font-size: 15px; color: var(--text-muted); margin-top: 12px; font-style: italic;">
+        When you grow, they grow.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 6. THE 3-REFERRAL MILESTONE ══════════ -->
+<section class="section-gradient-1">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 40px;">
+      <div class="section-badge reveal">The Milestone</div>
+      <h2 class="section-title reveal reveal-delay-1">Refer 3. <span class="accent">Make an Impact.</span></h2>
+    </div>
+    <div class="glass milestone-card reveal-scale">
+      <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.75; text-align: center; margin-bottom: 8px;">When your third referral starts service, something special happens.</p>
+      <ul class="milestone-list">
+        <li>We donate a laptop and educational resources to a young person in Latin America through <strong style="color: var(--green-light);">Pareto Futures</strong> — in your name. You'll receive a photo, their name, and a personal thank-you note.</li>
+        <li>Your right-hand receives a <strong style="color: var(--text-primary);">$500 milestone bonus</strong> on top of their per-referral rewards.</li>
+        <li>You receive <strong style="color: var(--text-primary);">3 fresh Gift Cards</strong> to keep sharing.</li>
+      </ul>
+      <p style="font-size: 14px; color: var(--text-muted); text-align: center; margin-top: 20px;">
+        This milestone resets every 3 referrals. At 6, another laptop. At 9, another. Every 3 referrals, you change a life.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 7. GIFT CARDS ══════════ -->
+<section class="section-gradient-2">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 16px;">
+      <div class="section-badge reveal">Gift Cards</div>
+      <h2 class="section-title reveal reveal-delay-1">Skip the Pitch. <span class="accent">Send a Gift Card.</span></h2>
+    </div>
+
+    <div class="gift-layout">
+      <div class="gift-content reveal reveal-delay-1">
+        <p>When you joined Pareto, we gave you 3 digital Gift Cards. Each one waives the $3,000 placement fee for anyone you share it with.</p>
+        <p>No awkward selling. No long explanation. Just send a Gift Card and let it speak for itself.</p>
+        <p style="font-size: 13px; color: var(--text-muted);">Gift Cards expire 90 days after issue. You receive 3 new ones each time you hit a 3-referral milestone.</p>
+        <a href="/#apply" class="btn-primary" style="margin-top: 8px; font-size: 13px; padding: 12px 24px;">Send a Gift Card Now</a>
+      </div>
+      <div class="glass gift-mockup reveal reveal-delay-2">
+        <div class="gift-mockup-badge">Pareto Talent Gift Card</div>
+        <div class="gift-mockup-value">$3,000 OFF</div>
+        <p class="gift-mockup-text">"[Your Name] wants to give you $3,000 off your placement at Pareto Talent. Claim your Gift Card to get matched with a dedicated right-hand."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 8. PARETO PARTNERS (Non-Clients) ══════════ -->
+<section class="section-gradient-2" style="border-top: 1px solid rgba(99,102,241,0.08);">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 40px;">
+      <div class="section-badge reveal" style="background: rgba(99,102,241,0.08); border-color: rgba(99,102,241,0.15); color: #818CF8;">For Non-Clients</div>
+      <h2 class="section-title reveal reveal-delay-1">You Don't Need a Right-Hand <span class="accent">to Earn One</span></h2>
+      <p class="section-subtitle center reveal reveal-delay-2" style="max-width: 600px;">Not a Pareto client? You can still refer entrepreneurs and earn $1,500 for every person who starts service.</p>
+    </div>
+
+    <div class="reveal" style="max-width: 680px; margin: 0 auto;">
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.75; text-align: center; margin-bottom: 32px;">
+        If you run a community, host a podcast, lead a mastermind, or simply know entrepreneurs who are drowning in tasks they shouldn't be doing — you can earn $1,500 in cash for every person you refer who starts service. Your referral gets the same $3,000 placement fee waiver.
+      </p>
+    </div>
+
+    <div class="partner-steps">
+      <div class="glass partner-step reveal reveal-delay-1">
+        <div class="partner-step-num">1</div>
+        <h3>Sign Up Free</h3>
+        <p>Create a free Pareto Partner account. We'll give you a unique referral link.</p>
+      </div>
+      <div class="glass partner-step reveal reveal-delay-2">
+        <div class="partner-step-num">2</div>
+        <h3>Share Your Link</h3>
+        <p>In your newsletter, podcast, DMs — however you want. No tracking hassle.</p>
+      </div>
+      <div class="glass partner-step reveal reveal-delay-3">
+        <div class="partner-step-num">3</div>
+        <h3>Get Paid</h3>
+        <p>When someone uses your link and starts service, you get $1,500 within 30 days.</p>
+      </div>
+    </div>
+
+    <div class="text-center reveal" style="margin-top: 32px;">
+      <a href="/#apply" class="btn-primary">Become a Pareto Partner</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 9. THE MATH ══════════ -->
+<section class="section-gradient-1">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 40px;">
+      <div class="section-badge reveal">The Math</div>
+      <h2 class="section-title reveal reveal-delay-1">What Referrals <span class="accent">Add Up To</span></h2>
+    </div>
+
+    <div class="math-grid">
+      <div class="glass math-card reveal reveal-delay-1">
+        <div class="math-card-refs">1 Referral</div>
+        <div class="math-card-num" style="color: var(--green-bright);">$1,500</div>
+        <div class="math-card-label">or 1 free month</div>
+        <div class="math-card-line">Right-hand earns: $100</div>
+        <div class="math-card-line">Friend saves: $3,000</div>
+      </div>
+      <div class="glass math-card reveal reveal-delay-2">
+        <div class="math-card-refs">3 Referrals</div>
+        <div class="math-card-num" style="color: var(--green-bright);">$4,500</div>
+        <div class="math-card-label">or 3 free months</div>
+        <div class="math-card-line">Right-hand earns: $800</div>
+        <div class="math-card-line">Friends save: $9,000</div>
+        <div class="math-card-special">+ Laptop donated in your name</div>
+      </div>
+      <div class="glass math-card reveal reveal-delay-3">
+        <div class="math-card-refs">5 Referrals</div>
+        <div class="math-card-num" style="color: var(--green-bright);">$7,500</div>
+        <div class="math-card-label">or 5 free months</div>
+        <div class="math-card-line">Right-hand earns: $1,000</div>
+        <div class="math-card-line">Friends save: $15,000</div>
+      </div>
+      <div class="glass math-card reveal reveal-delay-4">
+        <div class="math-card-refs">10 Referrals</div>
+        <div class="math-card-num" style="color: var(--green-bright);">$15,000</div>
+        <div class="math-card-label">or 10 free months</div>
+        <div class="math-card-line">Right-hand earns: $2,500</div>
+        <div class="math-card-line">Friends save: $30,000</div>
+        <div class="math-card-special">+ 3 laptops donated</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 10. FAQ ══════════ -->
+<section class="section-gradient-2">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-badge reveal">Questions</div>
+      <h2 class="section-title reveal reveal-delay-1">Referral <span class="accent">FAQ</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal"><div class="faq-q">When do I receive my reward?<span class="toggle">+</span></div><div class="faq-a">If you choose the free month, it's applied to your next billing cycle after your referral starts service. If you choose cash, it's sent within 30 days.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Is there a limit to how many people I can refer?<span class="toggle">+</span></div><div class="faq-a">No. Refer 1 person or 100. The reward is the same every time — no caps, no limits, no expiration on the program.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Can I switch between the free month and cash for different referrals?<span class="toggle">+</span></div><div class="faq-a">Yes. You choose independently for each referral. Take the free month for one, cash for the next — completely up to you.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">What if I'm on an annual plan — how does the free month work?<span class="toggle">+</span></div><div class="faq-a">We credit the equivalent of one month's value toward your next renewal. At 3 referrals on the annual plan, you'd have $7,500 credited toward Year 2.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">What counts as a "successful referral"?<span class="toggle">+</span></div><div class="faq-a">Your referral must sign up for a Pareto plan and start service with their right-hand. The reward is triggered once they begin their first billing cycle.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">What if someone I refer was already in Pareto's pipeline?<span class="toggle">+</span></div><div class="faq-a">If they used your link or Gift Card before booking their intro call, you get credit. We track referrals by link, Gift Card, and booking form — the first referral source wins.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Do my Gift Cards expire?<span class="toggle">+</span></div><div class="faq-a">Yes, 90 days after they're issued. You receive 3 new Gift Cards every time you hit a 3-referral milestone.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">I'm not a Pareto client. Can I still refer people?<span class="toggle">+</span></div><div class="faq-a">Absolutely. Sign up as a Pareto Partner — it's free. You'll earn $1,500 cash for every person you refer who starts service.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Does my right-hand really get a bonus?<span class="toggle">+</span></div><div class="faq-a">Yes. $100 for every successful referral, plus a $500 milestone bonus when you hit 3 referrals. It's real cash, paid in their next payroll cycle.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 11. FINAL CTA ══════════ -->
+<section class="final-cta">
+  <div class="container">
+    <div class="glass final-inner reveal-scale">
+      <h2>You <span class="accent">Know Someone</span> Who Needs This</h2>
+      <p>Think about the entrepreneur in your life who's buried in tasks, missing opportunities, and running on fumes. You can save them $3,000 and introduce them to the support that changed how you work.</p>
+      <a href="/#apply" class="btn-primary">
+        Share Your Referral Link
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+      </a>
+      <a href="/" style="display: inline-block; margin-top: 16px; font-size: 14px; color: var(--text-muted); text-decoration: none;">Not a client yet? Learn how Pareto works &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Pareto Talent LLC &middot; <a href="https://paretotalent.com">paretotalent.com</a> &middot; <a href="terms.html">Terms &amp; Privacy</a></p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
