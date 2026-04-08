@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How To Build A Business In The Age Of AI — Delegation Mastermind Webinar</title>
+<link rel="icon" type="image/jpeg" href="favicon.jpg">
+<meta name="description" content="A live 2-hour working session with Kasim Aslam. Not a webinar. Not a lecture. A room full of serious founders doing the actual work — together. $47.">
+
+<meta property="og:title" content="How To Build A Business In The Age Of AI — Delegation Mastermind Webinar">
+<meta property="og:description" content="A live 2-hour working session with Kasim Aslam. Limited seats. $47.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/68269830dcadfd145ee05544.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+
+<style>
+/* Webinar page-specific styles */
+.wb-hero { padding: 100px 0 60px; text-align: center; }
+.wb-stars { font-size: 16px; color: #FFD700; letter-spacing: 2px; margin-bottom: 12px; }
+.wb-hero-trust { font-size: 13px; color: var(--text-muted); margin-bottom: 32px; max-width: 520px; margin-left: auto; margin-right: auto; }
+.wb-hero h1 { font-size: clamp(32px, 5vw, 58px); font-weight: 800; line-height: 1.05; margin-bottom: 20px; max-width: 860px; margin-left: auto; margin-right: auto; }
+.wb-hero-sub { font-size: clamp(16px, 1.8vw, 20px); color: var(--text-secondary); line-height: 1.6; max-width: 720px; margin: 0 auto 24px; font-weight: 500; }
+.wb-hero-meta { font-size: 15px; color: var(--green-light); font-weight: 700; margin-bottom: 32px; letter-spacing: 0.02em; }
+
+/* VSL placeholder */
+.wb-vsl { max-width: 780px; margin: 0 auto 40px; aspect-ratio: 16/9; border-radius: var(--radius-xl); border: 2px dashed rgba(16,185,129,0.25); background: linear-gradient(135deg, rgba(16,185,129,0.06), rgba(16,185,129,0.02)); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px; }
+.wb-vsl-icon { font-size: 64px; margin-bottom: 16px; opacity: 0.5; }
+.wb-vsl-label { font-size: 15px; color: var(--text-secondary); font-weight: 600; margin-bottom: 4px; }
+.wb-vsl-sub { font-size: 13px; color: var(--text-muted); }
+
+/* Hero bullet list */
+.wb-hero-bullets { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; max-width: 520px; margin: 24px auto 0; text-align: left; }
+.wb-hero-bullets li { list-style: none; font-size: 14px; color: var(--text-secondary); display: flex; align-items: flex-start; gap: 10px; line-height: 1.6; }
+.wb-hero-bullets li::before { content: '✓'; color: var(--green); font-weight: 800; flex-shrink: 0; }
+
+/* Why paid glass card */
+.wb-why-card { max-width: 780px; margin: 0 auto; padding: 48px 44px; }
+.wb-why-card p { font-size: 16px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
+.wb-why-card p:last-child { margin-bottom: 0; }
+.wb-why-card strong { color: var(--text-primary); }
+.wb-why-quote { margin-top: 24px; padding: 20px 24px; border-left: 3px solid var(--green); background: rgba(16,185,129,0.04); border-radius: 0 var(--radius-md) var(--radius-md) 0; font-size: 16px; color: var(--text-primary); font-style: italic; }
+
+/* Problem section — with big question */
+.wb-problem-question { font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; color: var(--text-primary); max-width: 720px; margin: 0 auto 24px; line-height: 1.4; }
+.wb-problem-body { max-width: 680px; margin: 0 auto; font-size: 16px; color: var(--text-secondary); line-height: 1.8; }
+.wb-problem-body p { margin-bottom: 18px; }
+.wb-problem-body strong { color: var(--text-primary); }
+.wb-problem-callout { max-width: 720px; margin: 32px auto; padding: 28px 32px; background: rgba(239,68,68,0.04); border-left: 3px solid #ef4444; border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+.wb-problem-callout strong { color: var(--text-primary); font-size: 17px; }
+
+/* Honesty list — the bullets about being honest with yourself */
+.wb-honesty-list { max-width: 680px; margin: 32px auto; padding: 28px 32px; list-style: none; border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius-lg); background: rgba(255,255,255,0.02); }
+.wb-honesty-list li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 15px; color: var(--text-secondary); line-height: 1.65; display: flex; align-items: flex-start; gap: 12px; }
+.wb-honesty-list li:last-child { border-bottom: none; }
+.wb-honesty-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #ef4444; flex-shrink: 0; margin-top: 9px; }
+
+/* Curriculum parts */
+.wb-parts { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 820px; margin: 48px auto 0; }
+.wb-part { padding: 32px 36px; border-left: 3px solid rgba(16,185,129,0.3); }
+.wb-part-label { font-size: 12px; color: var(--green); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+.wb-part h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 12px; line-height: 1.25; }
+.wb-part p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; }
+
+/* What you'll receive — icon cards */
+.wb-receive { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 920px; margin: 48px auto 0; }
+.wb-receive-card { padding: 28px 28px; }
+.wb-receive-icon { font-size: 28px; margin-bottom: 10px; }
+.wb-receive-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800; margin-bottom: 8px; color: var(--text-primary); }
+.wb-receive-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+/* Who this is for */
+.wb-audience { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 920px; margin: 48px auto 0; }
+.wb-audience-card { padding: 36px 32px; }
+.wb-audience-for { border: 1px solid rgba(16,185,129,0.15); }
+.wb-audience-not { border: 1px solid rgba(239,68,68,0.15); }
+.wb-audience-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 800; margin-bottom: 20px; }
+.wb-audience-for h3 { color: var(--green-light); }
+.wb-audience-not h3 { color: #f87171; }
+.wb-audience-card ul { list-style: none; padding: 0; margin: 0; }
+.wb-audience-card li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 14px; color: var(--text-secondary); line-height: 1.65; display: flex; align-items: flex-start; gap: 12px; }
+.wb-audience-card li:last-child { border-bottom: none; }
+.wb-audience-for li::before { content: '✓'; color: var(--green); font-weight: 800; flex-shrink: 0; }
+.wb-audience-not li::before { content: '✕'; color: #f87171; font-weight: 800; flex-shrink: 0; }
+
+/* About Kasim — photo + text layout */
+.wb-kasim { display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; align-items: center; max-width: 1000px; margin: 48px auto 0; }
+.wb-kasim-photo { border-radius: var(--radius-xl); overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
+.wb-kasim-photo img { width: 100%; height: auto; display: block; }
+.wb-kasim-content h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(22px, 2.5vw, 30px); font-weight: 800; margin-bottom: 16px; }
+.wb-kasim-content p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 14px; }
+.wb-kasim-content strong { color: var(--text-primary); }
+.wb-kasim-quote { margin-top: 20px; padding: 16px 20px; border-left: 3px solid var(--green); background: rgba(16,185,129,0.04); font-size: 15px; color: var(--text-primary); font-style: italic; border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+
+/* Social proof video section */
+.wb-social { max-width: 860px; margin: 48px auto 0; display: grid; grid-template-columns: 360px 1fr; gap: 40px; align-items: center; }
+.wb-social-video { border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-glass-strong); aspect-ratio: 9/16; background: var(--bg-surface); }
+.wb-social-video iframe { width: 100%; height: 100%; border: none; display: block; }
+.wb-social-content h3 { font-size: 14px; color: var(--green); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
+.wb-social-content blockquote { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(18px, 2.2vw, 26px); font-weight: 700; line-height: 1.4; color: var(--text-primary); margin-bottom: 16px; font-style: italic; }
+.wb-social-author { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+.wb-social-author strong { color: var(--text-primary); display: block; margin-bottom: 2px; }
+
+/* Guarantee pill */
+.wb-guarantee { max-width: 680px; margin: 32px auto 0; padding: 20px 28px; border-radius: var(--radius-lg); background: rgba(16,185,129,0.04); border: 1px solid rgba(16,185,129,0.15); display: flex; align-items: flex-start; gap: 14px; }
+.wb-guarantee-icon { font-size: 22px; flex-shrink: 0; }
+.wb-guarantee p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin: 0; }
+.wb-guarantee strong { color: var(--text-primary); }
+
+/* Large CTA button */
+.wb-cta-lg { font-size: 18px !important; padding: 20px 40px !important; }
+
+/* Meta line */
+.wb-meta-line { font-size: 14px; color: var(--text-muted); margin-top: 16px; }
+
+@media (max-width: 900px) {
+  .wb-kasim { grid-template-columns: 1fr; gap: 32px; }
+  .wb-social { grid-template-columns: 1fr; gap: 32px; }
+  .wb-social-video { max-width: 300px; margin: 0 auto; }
+}
+@media (max-width: 768px) {
+  .wb-hero { padding: 80px 0 40px; }
+  .wb-receive, .wb-audience { grid-template-columns: 1fr; }
+  .wb-why-card { padding: 32px 24px; }
+  .wb-part { padding: 24px 24px; }
+}
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WKKLHG3N');</script>
+<script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="ivOFDhuMoCMOcApS" data-version="062024"></script>
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('D41QF9JC77U9LG1FSAP0');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKKLHG3N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="ambient">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+
+<!-- Urgency Strip -->
+<div class="strip">
+  &#9889; LIVE PAID TRAINING &middot; [DATE] &middot; [TIME] ET &middot; LIMITED TO [X] SEATS &middot; $47 &middot; RESERVE YOUR SEAT NOW
+</div>
+
+<!-- Nav -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <a href="/" class="nav-logo"><img src="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/65d4092400a2ec10ef5c1bef.png" alt="Pareto Talent"></a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="nav-links">
+      <a href="/#program" class="nav-link">The Program</a>
+      <a href="ea-training.html" class="nav-link">Our EAs</a>
+      <a href="wall-of-love.html" class="nav-link">Results</a>
+      <a href="about.html" class="nav-link">Our Story</a>
+      <a href="#register" class="nav-cta">Claim My Seat &rarr;</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ 1. HERO ══════════ -->
+<section class="wb-hero">
+  <div class="container">
+    <div class="reveal wb-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <p class="wb-hero-trust reveal reveal-delay-1">Trusted by 100+ Founders from Genius Network, Front Row Dads &amp; Lifestyle Investor</p>
+
+    <h1 class="reveal reveal-delay-1">How To Build A Business In The Age Of AI — <span class="accent">Without Doing It Yourself</span></h1>
+
+    <p class="wb-hero-sub reveal reveal-delay-2">A live 2-hour working session with Kasim Aslam. Not a webinar. Not a lecture. A room full of serious founders doing the actual work — together.</p>
+
+    <p class="wb-hero-meta reveal reveal-delay-2">[DATE] &middot; [TIME] ET &middot; Live on Zoom &middot; $47</p>
+
+    <!-- VSL Placeholder -->
+    <div class="wb-vsl reveal-scale">
+      <div class="wb-vsl-icon">&#127916;</div>
+      <div class="wb-vsl-label">VSL Placeholder</div>
+      <div class="wb-vsl-sub">Video sales letter from Kasim will go here</div>
+    </div>
+
+    <div class="reveal reveal-delay-3">
+      <a href="#register" class="btn-primary wb-cta-lg">Claim My Seat for $47 &rarr;</a>
+    </div>
+
+    <ul class="wb-hero-bullets reveal reveal-delay-4">
+      <li>Permanent recording included</li>
+      <li>Live Q&amp;A with Kasim</li>
+      <li>3 frameworks and workbooks yours to keep</li>
+      <li>Limited seats — this is a working session, not a broadcast</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════ 2. WHY PAID ══════════ -->
+<section class="section-gradient-1">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 40px;">
+      <div class="section-badge reveal">The $47 Filter</div>
+      <h2 class="section-title reveal reveal-delay-1">Why Does This <span class="accent">Cost $47?</span></h2>
+      <p class="section-subtitle center reveal reveal-delay-2">Most webinars are free. This one isn't. Here's why — and why that's good for you.</p>
+    </div>
+
+    <div class="glass wb-why-card reveal-scale">
+      <p>Free webinars attract everyone. That sounds like a good thing until you're in the room. When anyone can register with a single click and no commitment, the room fills with people who are half-present, half-distracted, and half-gone by the time the important parts land.</p>
+      <p>This is a working session. You will be <strong>building your Big Three framework</strong> live on this call. You will be diagnosing where your leverage is leaking. You will be leaving with documents your team can use the next morning.</p>
+      <p>That requires a room of founders who actually showed up — mentally, not just technically.</p>
+      <p>The $47 is not a barrier. For the founder this is designed for, it's a rounding error. What it does is ensure that <strong>every person in the room paid to be there, intends to be there, and is ready to do the work.</strong></p>
+      <div class="wb-why-quote">That room is worth 10x a free one. We've run both. We know.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 3. THE PROBLEM ══════════ -->
+<section class="section-gradient-2">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 32px;">
+      <div class="section-badge reveal">The Honest Diagnosis</div>
+      <h2 class="section-title reveal reveal-delay-1">Everyone Told You To Learn AI. <span class="accent">How's That Going?</span></h2>
+    </div>
+
+    <div class="wb-problem-question reveal text-center">Do you feel calmer? More focused? More in control?</div>
+    <div class="wb-problem-body reveal reveal-delay-1">
+      <p>Or do you feel even more behind — because the opportunity is bigger than ever, and you have less time than ever to pursue it?</p>
+      <p>Here's what nobody's saying out loud:</p>
+    </div>
+
+    <div class="wb-problem-callout reveal reveal-delay-2">
+      <strong>Your problem isn't AI. Your problem is that your business only scales with your personal time. And that model is broken.</strong>
+    </div>
+
+    <div class="wb-problem-body reveal reveal-delay-3">
+      <p>Every decision flows through you. Every deliverable waits on you. Every fire needs you to put it out. You're not running a business — you're running yourself into the ground managing one.</p>
+      <p>The ceiling of your business is you. And no amount of AI tools, better systems, or longer hours is going to change that until you fix the root problem: <strong>leverage.</strong></p>
+    </div>
+
+    <p style="text-align: center; font-size: 15px; color: var(--text-secondary); margin-top: 32px; font-weight: 600;" class="reveal">If you're honest with yourself, you recognize this:</p>
+
+    <ul class="wb-honesty-list reveal reveal-delay-1">
+      <li>You're generating real revenue but still doing work that doesn't deserve your attention</li>
+      <li>Things that should be off your plate keep boomeranging back</li>
+      <li>You have more ideas than you have time to pursue — and that gap keeps widening</li>
+      <li>You watch other founders seem to multiply themselves and you can't figure out how</li>
+      <li>You feel one missed week away from things falling behind</li>
+    </ul>
+
+    <p style="text-align: center; font-size: 15px; color: var(--green-light); margin-top: 24px; font-style: italic;" class="reveal">This training was built for exactly that founder.</p>
+  </div>
+</section>
+
+<!-- ══════════ 4. THE REFRAME ══════════ -->
+<section class="section-gradient-1">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 32px;">
+      <div class="section-badge reveal">The Reframe</div>
+      <h2 class="section-title reveal reveal-delay-1">The Founders Winning Right Now Aren't The Best AI Users. They're The <span class="accent">Best Delegators.</span></h2>
+    </div>
+
+    <div class="wb-problem-body reveal reveal-delay-2" style="text-align: center;">
+      <p>AI didn't eliminate the need for people. It multiplied it.</p>
+      <p>The tools are everywhere. Execution is the scarce resource. And the founders who figured that out — who found extraordinary people, pointed them at an opportunity, and got out of the way — are building faster than anyone around them.</p>
+      <p style="color: var(--green-light); font-weight: 600;">Sometimes those people even bring <em>them</em> the opportunity.</p>
+      <p>That's not luck. That's leverage architecture. And it's a <strong>learnable skill.</strong></p>
+      <p>In this training, Kasim is going to show you exactly how it works — drawn from running this system across 100+ founder businesses — and give you the frameworks to start installing it in yours the same week.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 5. CURRICULUM ══════════ -->
+<section class="section-gradient-2">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 32px;">
+      <div class="section-badge reveal">The Curriculum</div>
+      <h2 class="section-title reveal reveal-delay-1">Here's Exactly What We're Covering <span class="accent">In 2 Hours</span></h2>
+    </div>
+
+    <div class="wb-parts">
+      <div class="glass wb-part reveal reveal-delay-1">
+        <div class="wb-part-label">Part 1</div>
+        <h3>Surviving the AI Evolution</h3>
+        <p>Most founders are using the wrong strategy for the environment we're actually in. We'll show you why doubling down on specialization right now might be the thing that buries you — and what to do instead. You'll leave with a completely different mental model for how to grow in the next 12 months.</p>
+      </div>
+
+      <div class="glass wb-part reveal reveal-delay-2">
+        <div class="wb-part-label">Part 2</div>
+        <h3>Delegation Is the New AI Skill</h3>
+        <p>Using AI isn't a technical problem. It's a delegation problem. We'll walk through the exact operating model we use with 100+ founders: how to hand over outcomes, not just tasks — and genuinely get out of the way. This section alone changes the way you work with everyone on your team.</p>
+      </div>
+
+      <div class="glass wb-part reveal reveal-delay-1">
+        <div class="wb-part-label">Part 3 &middot; Live Exercise</div>
+        <h3>The Big Three Framework</h3>
+        <p>The single most powerful thing you can do with your team this week. We'll work through your Big Rocks (what matters most right now), your Big Risks (what could take you down), and your Big Reaches (what you'd go after if you had the time). You build yours live on the call. You leave with a completed document.</p>
+      </div>
+
+      <div class="glass wb-part reveal reveal-delay-2">
+        <div class="wb-part-label">Part 4</div>
+        <h3>The 7 Laws of Delegation</h3>
+        <p>The framework we've spent a year developing and testing with real founders. These aren't productivity hacks. They're psychological principles that change how the people around you show up — and how much they're capable of producing without you in the loop.</p>
+      </div>
+
+      <div class="glass wb-part reveal reveal-delay-1" style="border-left-color: var(--green);">
+        <div class="wb-part-label" style="color: var(--green-bright);">Live Q&amp;A</div>
+        <h3>Bring Your Real Problems</h3>
+        <p>The last portion of the session is open floor. Bring your actual situation. Kasim will work through it live. This is where the mastermind effect kicks in — the combined brain of a room full of serious founders focused on your specific problem is worth more than most consulting you'll pay for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 6. WHAT YOU RECEIVE ══════════ -->
+<section class="section-gradient-1">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 32px;">
+      <div class="section-badge reveal">What's Included</div>
+      <h2 class="section-title reveal reveal-delay-1">Everything Included In Your <span class="accent">$47 Seat</span></h2>
+    </div>
+
+    <div class="wb-receive">
+      <div class="glass wb-receive-card reveal reveal-delay-1">
+        <div class="wb-receive-icon">&#127910;</div>
+        <h3>Permanent Recording</h3>
+        <p>Can't make it to a section live? Life happens. Your $47 includes the full recording, yours to keep and reference whenever you need it. No expiry. No upsell to access it later.</p>
+      </div>
+
+      <div class="glass wb-receive-card reveal reveal-delay-2">
+        <div class="wb-receive-icon">&#128203;</div>
+        <h3>The Big Three Workbook</h3>
+        <p>The exact framework Kasim uses with every founder he works with to identify what matters most, what could destroy the business, and what's worth going after. You'll complete it live on the call and leave with a document your team can operate from immediately.</p>
+      </div>
+
+      <div class="glass wb-receive-card reveal reveal-delay-1">
+        <div class="wb-receive-icon">&#128273;</div>
+        <h3>The 7 Laws of Delegation — First Principles</h3>
+        <p>The research-backed, psychologically grounded breakdown of why delegation actually works — and where it breaks. Built from neuroscience, behavioral economics, and two years of live testing with 100+ founders.</p>
+      </div>
+
+      <div class="glass wb-receive-card reveal reveal-delay-2">
+        <div class="wb-receive-icon">&#9889;</div>
+        <h3>The Sovereignty Brief Template</h3>
+        <p>The tool Kasim uses to turn a messy brain dump into a clean, delegatable assignment — without over-specifying the process, killing ownership, or creating work for yourself. One page. Immediately usable.</p>
+      </div>
+
+      <div class="glass wb-receive-card reveal reveal-delay-1" style="grid-column: 1 / -1;">
+        <div class="wb-receive-icon">&#128172;</div>
+        <h3>Live Q&amp;A With Kasim</h3>
+        <p>Not a pre-submitted question form. Not a moderator filtering what gets asked. A live, open Q&amp;A where you can bring your real situation and get a real answer. Kasim is blunt, specific, and doesn't do vague consulting speak.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 7. WHO IS THIS FOR ══════════ -->
+<section class="section-gradient-2">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 16px;">
+      <div class="section-badge reveal">The Fit Check</div>
+      <h2 class="section-title reveal reveal-delay-1">Is This <span class="accent">For You?</span></h2>
+    </div>
+
+    <div class="wb-audience">
+      <div class="glass wb-audience-card wb-audience-for reveal reveal-delay-1">
+        <h3>This Is For You If:</h3>
+        <ul>
+          <li>You're generating $50K–$1M/month and still personally involved in too much</li>
+          <li>You want to grow without adding more to your plate or more hours to your day</li>
+          <li>You have people around you — employees, assistants, contractors — who you know could be doing more</li>
+          <li>You're serious about building a business that doesn't depend on you being in it every day</li>
+          <li>You're ready to actually implement, not just consume another framework</li>
+        </ul>
+      </div>
+      <div class="glass wb-audience-card wb-audience-not reveal reveal-delay-2">
+        <h3>This Is Not For You If:</h3>
+        <ul>
+          <li>You're not yet generating $50K/month — build revenue before you build leverage</li>
+          <li>You want theory without action — this is a working session, not a lecture</li>
+          <li>You're not open to changing how you operate — this training will challenge assumptions you've held for a long time</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 8. ABOUT KASIM ══════════ -->
+<section class="section-gradient-1">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 16px;">
+      <div class="section-badge reveal">Your Host</div>
+      <h2 class="section-title reveal reveal-delay-1">About <span class="accent">Kasim Aslam</span></h2>
+    </div>
+
+    <div class="wb-kasim">
+      <div class="wb-kasim-photo reveal">
+        <img src="img/kasim-ivan-colombia.jpg" alt="Kasim Aslam — co-founder of Pareto Talent" loading="lazy">
+      </div>
+      <div class="wb-kasim-content reveal reveal-delay-1">
+        <h3>He doesn't build things himself. <span class="accent">He builds builders.</span></h3>
+        <p>Kasim built, scaled, and sold <strong>Solutions 8</strong> — one of the world's top-rated Google Ads agencies. In the three years since, he's built eleven additional businesses, all cash flow positive, several in the seven and eight-figure range.</p>
+        <p>He's co-founded <strong>Pareto Talent</strong>, which has placed and supported 100+ executive assistants with founders across some of the most respected entrepreneurial communities in the world — including Genius Network, Front Row Dads, and Lifestyle Investor.</p>
+        <p>He hosts the Delegation Mastermind every Friday — a live working session that founders describe as the one meeting on their calendar they don't move and don't miss.</p>
+        <div class="wb-kasim-quote">
+          He's not smarter than you. He doesn't work harder than you. He just figured out a specific form of leverage — and this training is him showing you exactly what it is.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 9. SOCIAL PROOF — KEVIN MOHLER VIDEO ══════════ -->
+<section class="section-gradient-2">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 16px;">
+      <div class="section-badge reveal">What Founders Say</div>
+      <h2 class="section-title reveal reveal-delay-1">What Founders Say About <span class="accent">Kasim's Training</span></h2>
+    </div>
+
+    <div class="wb-social">
+      <div class="wb-social-video reveal-scale">
+        <iframe src="https://player.vimeo.com/video/1176691589?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Kevin Mohler Testimonial" loading="lazy"></iframe>
+      </div>
+      <div class="wb-social-content reveal reveal-delay-1">
+        <h3>Delegation Mastermind Member</h3>
+        <blockquote>"I'm on the cutting edge of a world where if you're not sharpening the ax on a regular basis, you're going to be left behind. This is how I make sure I stay on top."</blockquote>
+        <div class="wb-social-author">
+          <strong>Kevin Mohler</strong>
+          Portfolio founder &middot; Non-profit president &middot; Father &middot; Delegation Mastermind member
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 10. FINAL CTA / REGISTER ══════════ -->
+<section class="final-cta" id="register">
+  <div class="container">
+    <div class="glass final-inner reveal-scale">
+      <div class="section-badge">Reserve Your Seat</div>
+      <h2>Reserve Your Seat. <span class="accent">$47. One Time.</span></h2>
+      <p style="font-weight: 600; color: var(--green-light); font-size: 16px; margin-bottom: 16px;">[DATE] &middot; [TIME] ET &middot; Live on Zoom &middot; Recording Included &middot; Limited Seats</p>
+      <p>You get the live session, the Q&amp;A, the recording, and three frameworks you can hand to your team the same week. The $47 is not the point. The room it creates is.</p>
+      <p style="color: var(--text-primary); font-weight: 600; margin-top: 12px;">If you're serious about your time, your team, and getting out of your own way — this is where it starts.</p>
+      <a href="#" class="btn-primary wb-cta-lg" style="margin-top: 24px;">
+        Claim My Seat for $47
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+      </a>
+
+      <div class="wb-guarantee">
+        <div class="wb-guarantee-icon">&#128737;</div>
+        <p><strong>100% satisfaction guarantee.</strong> If you attend the live session and don't feel it was worth your time, email us within 24 hours for a full refund. We're that confident in what Kasim delivers in that room.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 11. FAQ ══════════ -->
+<section class="section-gradient-1">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-badge reveal">Common Questions</div>
+      <h2 class="section-title reveal reveal-delay-1">Frequently <span class="accent">Asked Questions</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal"><div class="faq-q">Why does this cost $47?<span class="toggle">+</span></div><div class="faq-a">Because free webinars attract everyone, and this is a working session, not a broadcast. The $47 ensures the room is full of founders who are serious about being there. For the founder this is built for, $47 is nothing. What it buys is a different quality of room — and a different quality of result.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Is there a recording?<span class="toggle">+</span></div><div class="faq-a">Yes. Your $47 includes permanent access to the full recording. No expiry, no additional fee.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">What are the three frameworks I get?<span class="toggle">+</span></div><div class="faq-a">The Big Three Workbook, the 7 Laws of Delegation First Principles Document, and the Sovereignty Brief Template. All three are immediately usable. All three are included in your $47.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Is there a refund policy?<span class="toggle">+</span></div><div class="faq-a">Yes. If you attend live and don't feel it was worth your time, email us within 24 hours for a full refund.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">How long is it?<span class="toggle">+</span></div><div class="faq-a">Two hours. We start on time.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Do I need to have an EA or assistant already?<span class="toggle">+</span></div><div class="faq-a">No. The frameworks apply whether you're working with an EA, a team, or thinking about building one. You'll get value regardless of where you are.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Who gets the most out of this?<span class="toggle">+</span></div><div class="faq-a">Founders generating $50K–$1M/month who are still personally carrying more than they should and are ready to change that.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">What platform is it on?<span class="toggle">+</span></div><div class="faq-a">Live on Zoom. You'll get the link immediately after you register.</div></div>
+    </div>
+
+    <div class="text-center reveal" style="margin-top: 48px;">
+      <a href="#register" class="btn-primary wb-cta-lg">Claim My Seat for $47 &rarr;</a>
+      <p style="font-size: 12px; color: var(--text-muted); margin-top: 16px; font-style: italic;">By registering, you agree to receive occasional emails related to this training. We don't spam.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Pareto Talent LLC &middot; <a href="https://paretotalent.com">paretotalent.com</a> &middot; <a href="terms.html">Terms &amp; Privacy</a></p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
